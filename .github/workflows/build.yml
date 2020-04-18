@@ -1,0 +1,45 @@
+name: build
+
+on: [push, pull_request]
+
+env:
+  BUILDX_VERSION: v0.3.1
+  # https://github.com/chalk/supports-color/issues/106
+  FORCE_COLOR: true
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: github-cleanup
+        uses: renovatebot/internal-tools@v0
+        continue-on-error: true
+        with:
+          command: github-cleanup
+          token: ${{ secrets.GH_TOKEN }}
+
+  build:
+    needs: [cleanup]
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 60
+
+    steps:
+      - name: Set up Docker Buildx ${{ env.BUILDX_VERSION }}
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: ${{ env.BUILDX_VERSION }}
+
+      - uses: actions/checkout@v2
+
+      - name: Docker registry login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Build and Publish
+        uses: renovatebot/internal-tools@v0
+        with:
+          command: "docker-builder"
+          last-only: true
+          dry-run: ${{github.ref != 'refs/heads/master'}}
