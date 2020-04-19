@@ -8,8 +8,10 @@
   "scripts": {
     "build": "ncc build src/index.js"
   },
-  "devDependencies": {
-    "@zeit/ncc": "0.22.1",
+  "dependencies": {
     "renovate": "19.213.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "0.22.1"
   }
 }
