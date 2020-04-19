@@ -29,7 +29,17 @@ jobs:
       matrix:
         tag: [latest, slim]
 
+
+    env:
+      IMAGE: ${{ matrix.tag }}
+      TAG: ${{ matrix.tag }}
+
     steps:
+      - name: Init platform
+        if: ${{ matrix.tag == 'latest' }}
+        run: |
+          echo "::set-env name=TAG::"
+
       - name: Set up Docker Buildx ${{ env.BUILDX_VERSION }}
         uses: crazy-max/ghaction-docker-buildx@v1
         with:
@@ -45,8 +55,6 @@ jobs:
         with:
           command: "docker-builder"
           last-only: true
-          tag-suffix: ${{ matrix.tag == 'latest' ? '' : matrix.tag }}
+          tag-suffix: ${{ env.TAG }}
           build-args: IMAGE
           dry-run: ${{github.ref != 'refs/heads/master'}}
-        env:
-          IMAGE: ${{ matrix.tag }}
