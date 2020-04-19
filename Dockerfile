@@ -32,7 +32,7 @@ RUN yarn build
 
 # compatability file
 RUN echo "require('./index.js');" > dist/renovate.js
-RUN cp -r ./node_modules/data ./data
+RUN cp -r ./node_modules/renovate/data ./data
 
 
 # Final-base image
