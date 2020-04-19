@@ -210,7 +210,7 @@ CMD []
 
 
 # renovate: datasource=npm depName=renovate versioning=npm
-ARG RENOVATE_VERSION=19.213.0
+ARG RENOVATE_VERSION=19.213.2
 
 RUN npm --no-git-tag-version version ${RENOVATE_VERSION}
 
