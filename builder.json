@@ -1,10 +1,6 @@
 {
-  "datasource": "npm",
-  "versioning": "npm",
-  "depName": "renovate",
   "buildArg": "RENOVATE_VERSION",
   "image": "cache-test",
   "startVersion": "19.213.0",
-  "latestVersion": null,
   "cache": "docker-build-cache"
 }

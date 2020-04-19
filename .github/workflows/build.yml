@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
 
     timeout-minutes: 60
+    strategy:
+      matrix:
+        tag: [latest, slim]
 
     steps:
       - name: Set up Docker Buildx ${{ env.BUILDX_VERSION }}
@@ -42,4 +45,8 @@ jobs:
         with:
           command: "docker-builder"
           last-only: true
+          tag-suffix: ${{ matrix.tag == 'latest' ? '' : matrix.tag }}
+          build-args: IMAGE
           dry-run: ${{github.ref != 'refs/heads/master'}}
+        env:
+          IMAGE: ${{ matrix.tag }}
