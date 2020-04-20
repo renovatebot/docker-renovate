@@ -24,15 +24,17 @@ RUN rm -rf /usr/bin/python && ln /usr/bin/python3 /usr/bin/python
 
 COPY package.json .
 COPY yarn.lock .
-RUN yarn install --frozen-lockfile --link-duplicates
+RUN yarn install --frozen-lockfile --link-duplicates --production
 
-COPY src src
+# TODO: remove in v20
+RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
 
-RUN yarn build
-
+# TODO: enable in v20
+#COPY src src
+#RUN yarn build
 # compatability file
-RUN echo "require('./index.js');" > dist/renovate.js
-RUN cp -r ./node_modules/renovate/data ./dist/data
+#RUN echo "require('./index.js');" > dist/renovate.js
+#RUN cp -r ./node_modules/renovate/data ./dist/data
 
 
 # Final-base image
@@ -61,6 +63,9 @@ ENV RENOVATE_BINARY_SOURCE=docker
 # Full image
 #============
 FROM final-base as latest
+
+# renovate: datasource=docker depName=node versioning=docker
+ARG NODE_VERSION=12
 
 RUN apt-get update && \
     apt-get install -y gpg wget unzip xz-utils openssh-client bsdtar build-essential openjdk-8-jdk-headless dirmngr && \
@@ -161,6 +166,11 @@ RUN ruby --version
 ENV COCOAPODS_VERSION 1.9.1
 RUN gem install --no-rdoc --no-ri cocoapods -v ${COCOAPODS_VERSION}
 
+
+# renovate: datasource=npm depName=npm versioning=npm
+ARG PNPM_VERSION=4.12.0
+RUN /usr/local/build/pnpm.sh
+
 USER ubuntu
 
 # HOME does not get passed after user switch :-(
@@ -197,6 +207,7 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 ENV PATH="${HOME}/.poetry/bin:$PATH"
 RUN poetry config virtualenvs.in-project false
 
+
 # Renovate
 #=========
 FROM $IMAGE as final
@@ -204,7 +215,10 @@ FROM $IMAGE as final
 COPY package.json package.json
 COPY --from=tsbuild /usr/src/app/dist dist
 
-ENTRYPOINT ["node", "/usr/src/app/dist/index.js"]
+# TODO: remove in v20
+COPY --from=tsbuild /usr/src/app/node_modules node_modules
+
+ENTRYPOINT ["node", "/usr/src/app/dist/renovate.js"]
 CMD []
 
 
