@@ -3,7 +3,15 @@
 
 # docker-renovate
 
+
 This repository is the source for the Docker Hub image `renovate/renovate`. Commits to `master` branch are automatically built and published.
 
 
 🚧 Work in progress
+
+Currently this image is pushed to `renovate/cache-test` on Docker Hub for testing and compare with original image.
+
+*TODO*
+- [ ] remove `buildArg` from `builder.json`
+- [ ] set `image="renovate"` in `builder.json`
+- [ ] update `readme.md`
