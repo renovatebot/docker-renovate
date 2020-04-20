@@ -27,7 +27,7 @@ COPY yarn.lock .
 RUN yarn install --frozen-lockfile --link-duplicates
 
 # TODO: remove in v20
-RUN echo "require('renovate/dist/renovate.js');" > dist/renovate.js
+RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
 
 # TODO: enable in v20
 #COPY src src
