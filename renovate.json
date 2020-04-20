@@ -3,8 +3,10 @@
   "extends": ["github>renovatebot/presets-internal:docker-images"],
   "packageRules": [
     {
+      "description": "Automerge renovate minor and patch updates",
       "packageNames": ["renovate"],
-      "extends": [":automergeMinor"],
+      "updateTypes": ["minor", "patch"],
+      "automerge": true,
       "masterIssueApproval": false
     }
   ]
