@@ -26,13 +26,15 @@ COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile --link-duplicates
 
-COPY src src
+# TODO: remove in v20
+RUN echo "require('renovate/dist/renovate.js');" > dist/renovate.js
 
-RUN yarn build
-
+# TODO: enable in v20
+#COPY src src
+#RUN yarn build
 # compatability file
-RUN echo "require('./index.js');" > dist/renovate.js
-RUN cp -r ./node_modules/renovate/data ./dist/data
+#RUN echo "require('./index.js');" > dist/renovate.js
+#RUN cp -r ./node_modules/renovate/data ./dist/data
 
 
 # Final-base image
@@ -213,7 +215,10 @@ FROM $IMAGE as final
 COPY package.json package.json
 COPY --from=tsbuild /usr/src/app/dist dist
 
-ENTRYPOINT ["node", "/usr/src/app/dist/index.js"]
+# TODO: remove in v20
+COPY --from=tsbuild /usr/src/app/node_modules node_modules
+
+ENTRYPOINT ["node", "/usr/src/app/dist/renovate.js"]
 CMD []
 
 
