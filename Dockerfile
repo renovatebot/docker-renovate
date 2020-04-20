@@ -24,7 +24,7 @@ RUN rm -rf /usr/bin/python && ln /usr/bin/python3 /usr/bin/python
 
 COPY package.json .
 COPY yarn.lock .
-RUN yarn install --frozen-lockfile --link-duplicates
+RUN yarn install --frozen-lockfile --link-duplicates --production
 
 # TODO: remove in v20
 RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
