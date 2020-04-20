@@ -62,6 +62,9 @@ ENV RENOVATE_BINARY_SOURCE=docker
 #============
 FROM final-base as latest
 
+# renovate: datasource=docker depName=node versioning=docker
+ARG NODE_VERSION=12
+
 RUN apt-get update && \
     apt-get install -y gpg wget unzip xz-utils openssh-client bsdtar build-essential openjdk-8-jdk-headless dirmngr && \
     rm -rf /var/lib/apt/lists/*
@@ -161,6 +164,11 @@ RUN ruby --version
 ENV COCOAPODS_VERSION 1.9.1
 RUN gem install --no-rdoc --no-ri cocoapods -v ${COCOAPODS_VERSION}
 
+
+# renovate: datasource=npm depName=npm versioning=npm
+ARG PNPM_VERSION=4.12.0
+RUN /usr/local/build/pnpm.sh
+
 USER ubuntu
 
 # HOME does not get passed after user switch :-(
@@ -196,6 +204,7 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 
 ENV PATH="${HOME}/.poetry/bin:$PATH"
 RUN poetry config virtualenvs.in-project false
+
 
 # Renovate
 #=========
