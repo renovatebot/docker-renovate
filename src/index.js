@@ -1,1 +1,1 @@
-import "renovate";
+import 'renovate/dist/renovate.js';
