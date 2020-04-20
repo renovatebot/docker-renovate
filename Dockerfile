@@ -32,7 +32,7 @@ RUN yarn build
 
 # compatability file
 RUN echo "require('./index.js');" > dist/renovate.js
-RUN cp -r ./node_modules/renovate/data ./data
+RUN cp -r ./node_modules/renovate/data ./dist/data
 
 
 # Final-base image
@@ -203,7 +203,6 @@ FROM $IMAGE as final
 
 COPY package.json package.json
 COPY --from=tsbuild /usr/src/app/dist dist
-COPY --from=tsbuild /usr/src/app/data data
 
 ENTRYPOINT ["node", "/usr/src/app/dist/index.js"]
 CMD []
