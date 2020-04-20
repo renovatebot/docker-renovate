@@ -1,6 +1,5 @@
 {
-  "buildArg": "RENOVATE_VERSION",
-  "image": "cache-test",
+  "image": "renovate",
   "startVersion": "19.213.0",
   "cache": "docker-build-cache"
 }
