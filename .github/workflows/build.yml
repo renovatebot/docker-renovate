@@ -35,6 +35,10 @@ jobs:
       TAG: ${{ matrix.tag }}
 
     steps:
+      - uses: actions/checkout@v2
+
+      - run: ./.github/workflows/configure-docker.sh
+
       - name: Init platform
         if: ${{ matrix.tag == 'latest' }}
         run: |
@@ -44,8 +48,6 @@ jobs:
         uses: crazy-max/ghaction-docker-buildx@v1
         with:
           version: ${{ env.BUILDX_VERSION }}
-
-      - uses: actions/checkout@v2
 
       - name: Docker registry login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
