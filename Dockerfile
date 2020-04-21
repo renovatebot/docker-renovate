@@ -2,7 +2,7 @@ ARG IMAGE=latest
 
 # Base image
 #============
-FROM renovate/yarn:1.22.4@sha256:b7c43fa2915bdc6082aae63260c0afe67ae18d013e6dbaf4b0d14c221dd4f0b7 AS base
+FROM renovate/buildpack:1@sha256:2a94923b7bb1956f5faf1c82b4578436774e13786ce4f693a713b63185e88af2 AS base
 
 LABEL maintainer="Rhys Arkins <rhys@arkins.net>"
 LABEL name="renovate"
@@ -13,6 +13,14 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
 USER root
 WORKDIR /usr/src/app/
 
+# renovate: datasource=docker depName=node versioning=docker
+ARG NODE_VERSION=12.16.2
+RUN install-tool node
+
+# renovate: datasource=npm depName=yarn versioning=npm
+ARG YARN_VERSION=1.22.4
+RUN install-tool yarn
+
 # Build image
 #============
 FROM base as tsbuild
@@ -20,11 +28,14 @@ FROM base as tsbuild
 # Python 3 and make are required to build node-re2
 RUN apt-get update && apt-get install -y python3-minimal build-essential
 # force python3 for node-gyp
-RUN rm -rf /usr/bin/python && ln /usr/bin/python3 /usr/bin/python
+RUN ln -sf /usr/bin/python3 /usr/bin/python
 
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile --link-duplicates --production
+
+# check is re2 is usable
+RUN node -e "new require('re2')('.*').exec('test')"
 
 # TODO: remove in v20
 RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
@@ -64,24 +75,19 @@ ENV RENOVATE_BINARY_SOURCE=docker
 #============
 FROM final-base as latest
 
-# renovate: datasource=docker depName=node versioning=docker
-ARG NODE_VERSION=12
-
 RUN apt-get update && \
-    apt-get install -y gpg wget unzip xz-utils openssh-client bsdtar build-essential openjdk-8-jdk-headless dirmngr && \
+    apt-get install -y gpg wget unzip xz-utils openssh-client bsdtar build-essential dirmngr && \
     rm -rf /var/lib/apt/lists/*
 
 
-## Gradle (needs java-jre, installed above)
+# renovate: datasource=docker depName=openjdk versioning=docker
+ARG JAVA_VERSION=8
+RUN install-tool java
 
+## Gradle (needs java-jdk, installed above)
 # renovate: datasource=gradle-version depName=gradle versioning=maven
 ENV GRADLE_VERSION=6.3
-
-RUN wget --no-verbose https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
-    unzip -q -d /opt/ gradle-$GRADLE_VERSION-bin.zip && \
-    rm -f gradle-$GRADLE_VERSION-bin.zip && \
-    mv /opt/gradle-$GRADLE_VERSION /opt/gradle && \
-    ln -s /opt/gradle/bin/gradle /usr/local/bin/gradle
+RUN install-tool gradle
 
 # Erlang
 
@@ -99,6 +105,7 @@ RUN apt-get update && \
 
 # Elixir
 
+# renovate: datasource=docker depName=elixir versioning=docker
 ENV ELIXIR_VERSION=1.8.2
 
 RUN curl -L https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip -o Precompiled.zip && \
@@ -110,49 +117,23 @@ ENV PATH $PATH:/opt/elixir-${ELIXIR_VERSION}/bin
 
 # PHP Composer
 
-RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu bionic main" > /etc/apt/sources.list.d/ondrej-php.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C && \
-    apt-get update && \
-    apt-get -y install php7.4-cli php7.4-mbstring php7.4-curl && \
-    rm -rf /var/lib/apt/lists/*
-
 # renovate: datasource=github-releases depName=composer/composer
 ENV COMPOSER_VERSION=1.10.5
-
-RUN php -r "copy('https://github.com/composer/composer/releases/download/$COMPOSER_VERSION/composer.phar', '/usr/local/bin/composer');"
-
-RUN chmod +x /usr/local/bin/composer
+RUN install-tool composer
 
 # Go Modules
 
-RUN apt-get update && apt-get install -y bzr mercurial && \
-    rm -rf /var/lib/apt/lists/*
-
-ENV GOLANG_VERSION=1.13.4
-
-# Disable GOPROXY and GOSUMDB until we offer a solid solution to configure
-# private repositories.
-ENV GOPROXY=direct GOSUMDB=off
-
-RUN wget -q -O go.tgz "https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" && \
-  tar -C /usr/local -xzf go.tgz && \
-  rm go.tgz && \
-  export PATH="/usr/local/go/bin:$PATH"
-
-ENV GOPATH /go
-ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
-
-RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-
-ENV CGO_ENABLED=0
+# renovate: datasource=docker depName=golang versioning=docker
+ARG GOLANG_VERSION=1.14.2
+RUN install-tool golang
 
 # Python
 
 RUN apt-get update && apt-get install -y python3.8-dev python3.8-venv python3-distutils && \
     rm -rf /var/lib/apt/lists/*
 
-RUN rm -fr /usr/bin/python3 && ln /usr/bin/python3.8 /usr/bin/python3
-RUN rm -rf /usr/bin/python && ln /usr/bin/python3.8 /usr/bin/python
+RUN ln -sf /usr/bin/python3.8 /usr/bin/python3
+RUN ln -sf /usr/bin/python3.8 /usr/bin/python
 
 # Pip
 
@@ -169,18 +150,16 @@ RUN gem install --no-rdoc --no-ri cocoapods -v ${COCOAPODS_VERSION}
 
 # renovate: datasource=npm depName=npm versioning=npm
 ARG PNPM_VERSION=4.12.0
-RUN /usr/local/build/pnpm.sh
+RUN install-tool pnpm
 
 USER ubuntu
-
-# HOME does not get passed after user switch :-(
-ENV HOME=/home/ubuntu
 
 # Cargo
 
 ENV RUST_BACKTRACE=1 \
   PATH=${HOME}/.cargo/bin:$PATH
 
+# renovate: datasource=docker depName=rust versioning=docker
 ENV RUST_VERSION=1.36.0
 
 RUN set -ex ;\
