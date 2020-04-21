@@ -26,7 +26,7 @@ RUN install-tool yarn
 FROM base as tsbuild
 
 # Python 3 and make are required to build node-re2
-RUN apt-get update && apt-get install -y python3-minimal build-essential
+RUN apt-get update && apt-get install -y python3 build-essential
 # force python3 for node-gyp
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 
