@@ -2,7 +2,7 @@ ARG IMAGE=latest
 
 # Base image
 #============
-FROM renovate/buildpack:1@sha256:aa28e984ed1a4cae5c2bb051e341637020951de5c199ff6de851a3f090cdb020 AS base
+FROM renovate/buildpack AS base
 
 LABEL maintainer="Rhys Arkins <rhys@arkins.net>"
 LABEL name="renovate"
@@ -150,6 +150,9 @@ RUN install-gem cocoapods
 # renovate: datasource=npm depName=npm versioning=npm
 ARG PNPM_VERSION=4.12.0
 RUN install-tool pnpm
+
+RUN chmod +x /usr/local/poetry/bin/poetry
+RUN install-apt python3.8-venv
 
 USER ubuntu
 
