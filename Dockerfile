@@ -13,20 +13,28 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
 USER root
 WORKDIR /usr/src/app/
 
+# Python
+
+# renovate: datasource=docker depName=python
+ENV PYTHON_VERSION=3.8.2
+RUN install-tool python
+
+# Node
+
 # renovate: datasource=docker depName=node versioning=docker
-ARG NODE_VERSION=12.16.2
+ENV NODE_VERSION=12.16.2
 RUN install-tool node
 
+# Yarn
+
 # renovate: datasource=npm depName=yarn versioning=npm
-ARG YARN_VERSION=1.22.4
+ENV YARN_VERSION=1.22.4
 RUN install-tool yarn
 
 # Build image
 #============
 FROM base as tsbuild
 
-# Python 3 and make are required to build node-re2
-RUN install-apt python3 build-essential
 
 COPY package.json .
 COPY yarn.lock .
@@ -50,10 +58,7 @@ RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.j
 #============
 FROM base as final-base
 
-# Docker client and group
-
-RUN groupadd -g 999 docker
-RUN usermod -aG docker ubuntu
+# Docker client
 
 # renovate: datasource=docker depName=docker versioning=docker
 ENV DOCKER_VERSION=19.03.8
@@ -69,14 +74,16 @@ ENV RENOVATE_BINARY_SOURCE=docker
 #============
 FROM final-base as latest
 
-RUN install-apt gpg wget unzip xz-utils openssh-client bsdtar build-essential dirmngr
+# General tools
 
+RUN install-apt gpg wget unzip xz-utils openssh-client bsdtar dirmngr
+
+# Gradle
 
 # renovate: datasource=docker depName=openjdk versioning=docker
-ARG JAVA_VERSION=8
+ENV JAVA_VERSION=8
 RUN install-tool java
 
-## Gradle (needs java-jdk, installed above)
 # renovate: datasource=gradle-version depName=gradle versioning=maven
 ENV GRADLE_VERSION=6.3
 RUN install-tool gradle
@@ -102,16 +109,11 @@ RUN install-tool php
 ENV COMPOSER_VERSION=1.10.5
 RUN install-tool composer
 
-# Go Modules
+# Golang
 
 # renovate: datasource=docker depName=golang versioning=docker
-ARG GOLANG_VERSION=1.14.2
+ENV GOLANG_VERSION=1.14.2
 RUN install-tool golang
-
-# Python
-# required by poetry
-RUN install-apt python3  python3-distutils
-RUN install-tool python 3.8
 
 # Pip
 
@@ -123,11 +125,10 @@ RUN install-tool pip
 
 # renovate: datasource=pypi depName=pipenv
 ENV PIPENV_VERSION=2018.11.26
-RUN pip install pipenv==${PIPENV_VERSION}
+RUN install-pip pipenv
 
 # Poetry
 
-# python3-distutils installs python3.6
 # renovate: datasource=github-releases depName=python-poetry/poetry
 ENV POETRY_VERSION=1.0.5
 RUN install-tool poetry
@@ -139,25 +140,22 @@ ENV RUST_VERSION=1.36.0
 RUN install-tool rust
 
 # CocoaPods
-RUN install-apt ruby ruby2.5-dev
-RUN ruby --version
+
+# renovate: datasource=docker depName=ruby versioning=docker
+ENV RUBY_VERSION 2.5.8
+RUN install-tool ruby
 
 # renovate: datasource=rubygems depName=cocoapods versioning=ruby
 ENV COCOAPODS_VERSION 1.9.1
 RUN install-gem cocoapods
 
+# Pnpm
 
 # renovate: datasource=npm depName=npm versioning=npm
-ARG PNPM_VERSION=4.12.0
+ENV PNPM_VERSION=4.12.0
 RUN install-tool pnpm
 
-RUN chmod +x /usr/local/poetry/bin/poetry
-RUN install-apt python3.8-venv
-
 USER ubuntu
-
-# Add python user home
-ENV PATH=/home/ubuntu/.local:$PATH
 
 # Mix and Rebar
 
