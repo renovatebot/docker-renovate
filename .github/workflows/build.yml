@@ -37,17 +37,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: ./.github/workflows/configure-docker.sh
+      - name: docker-config
+        uses: renovatebot/internal-tools@v0
+        with:
+          command: docker-config
 
       - name: Init platform
         if: ${{ matrix.tag == 'latest' }}
         run: |
           echo "::set-env name=TAG::"
-
-      - name: Set up Docker Buildx ${{ env.BUILDX_VERSION }}
-        uses: crazy-max/ghaction-docker-buildx@v1
-        with:
-          version: ${{ env.BUILDX_VERSION }}
 
       - name: Docker registry login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
