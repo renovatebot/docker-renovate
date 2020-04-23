@@ -76,7 +76,8 @@ FROM final-base as latest
 
 # General tools
 
-RUN install-apt gpg wget unzip xz-utils openssh-client bsdtar dirmngr
+# go suggests: git svn bzr mercurial
+RUN install-apt bzr mercurial
 
 # Gradle
 
