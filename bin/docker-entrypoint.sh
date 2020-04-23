@@ -1,6 +1,8 @@
 #!/bin/bash
 
-. /usr/local/docker/env
+if [[-f $BASH_ENV ]]; then
+  . $BASH_ENV
+fi
 
 if [[ "${1:0:1}" = '-' ]]; then
   # assume $1 is renovate flag

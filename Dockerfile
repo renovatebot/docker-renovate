@@ -2,7 +2,7 @@ ARG IMAGE=latest
 
 # Base image
 #============
-FROM renovate/buildpack:1@sha256:e2e416bf17d2e58a8a6042a15dcb559048b11bc5e3143b7c7a33d38e01d8236a AS base
+FROM renovate/buildpack:1@sha256:10e98460170e2ed4ea5150f5baefe0589c60bd8c63bf1f06fac5b8a61b61040d AS base
 
 LABEL maintainer="Rhys Arkins <rhys@arkins.net>"
 LABEL name="renovate"
@@ -142,14 +142,6 @@ RUN install-gem cocoapods 1.9.1
 # renovate: datasource=npm versioning=npm
 RUN install-tool pnpm 4.12.0
 
-USER ubuntu
-
-# Mix and Rebar
-
-RUN mix local.hex --force
-RUN mix local.rebar --force
-
-USER root
 
 # Renovate
 #=========
@@ -161,22 +153,15 @@ COPY --from=tsbuild /usr/src/app/dist dist
 # TODO: remove in v20
 COPY --from=tsbuild /usr/src/app/node_modules node_modules
 
-
+# exec helper
 COPY bin/ /usr/local/bin/
-
-RUN set -ex; \
-  ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate; \
-  renovate --version;
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-
+RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
 CMD ["renovate"]
-
 
 # renovate: datasource=npm depName=renovate versioning=npm
 ARG RENOVATE_VERSION=19.215.0
 
-RUN npm --no-git-tag-version version ${RENOVATE_VERSION}
+RUN npm --no-git-tag-version version ${RENOVATE_VERSION} && renovate --version;
 
 LABEL org.opencontainers.image.version="${RENOVATE_VERSION}"
 
