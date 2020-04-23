@@ -15,21 +15,18 @@ WORKDIR /usr/src/app/
 
 # Python
 
-# renovate: datasource=docker depName=python
-ENV PYTHON_VERSION=3.8.2
-RUN install-tool python
+# renovate: datasource=docker
+RUN install-tool python 3.8.2
 
 # Node
 
-# renovate: datasource=docker depName=node versioning=docker
-ENV NODE_VERSION=12.16.2
-RUN install-tool node
+# renovate: datasource=docker versioning=docker
+RUN install-tool node 12.16.2
 
 # Yarn
 
-# renovate: datasource=npm depName=yarn versioning=npm
-ENV YARN_VERSION=1.22.4
-RUN install-tool yarn
+# renovate: datasource=npm versioning=npm
+RUN install-tool yarn 1.22.4
 
 # Build image
 #============
@@ -64,9 +61,8 @@ FROM base as final-base
 
 # Docker client
 
-# renovate: datasource=docker depName=docker versioning=docker
-ENV DOCKER_VERSION=19.03.8
-RUN install-tool docker
+# renovate: datasource=docker versioning=docker
+RUN install-tool docker 19.03.8
 
 # Slim image
 #============
@@ -85,80 +81,66 @@ RUN install-apt bzr mercurial
 
 # Gradle
 
-# renovate: datasource=docker depName=openjdk versioning=docker
-ENV JAVA_VERSION=8
-RUN install-tool java
+# renovate: datasource=docker lookupName=openjdk versioning=docker
+RUN install-tool java 8
 
-# renovate: datasource=gradle-version depName=gradle versioning=maven
-ENV GRADLE_VERSION=6.3
-RUN install-tool gradle
+# renovate: datasource=gradle-version versioning=maven
+RUN install-tool gradle 6.3
 
 # Erlang
 
-ENV ERLANG_VERSION=22.0.2-1
-RUN install-tool erlang
+RUN install-tool erlang 22.0.2-1
 
 # Elixir
 
-# renovate: datasource=docker depName=elixir versioning=docker
-ENV ELIXIR_VERSION=1.8.2
-RUN install-tool elixir
+# renovate: datasource=docker versioning=docker
+RUN install-tool elixir 1.8.2
 
 # PHP Composer
 
-# renovate: datasource=docker depName=php versioning=docker
-ENV PHP_VERSION=7.4
-RUN install-tool php
+# renovate: datasource=docker versioning=docker
+RUN install-tool php 7.4
 
-# renovate: datasource=github-releases depName=composer/composer
-ENV COMPOSER_VERSION=1.10.5
-RUN install-tool composer
+# renovate: datasource=github-releases lookupName=composer/composer
+RUN install-tool composer 1.10.5
 
 # Golang
 
-# renovate: datasource=docker depName=golang versioning=docker
-ENV GOLANG_VERSION=1.14.2
-RUN install-tool golang
+# renovate: datasource=docker versioning=docker
+RUN install-tool golang 1.14.2
 
 # Pip
 
-# renovate: datasource=pypi depName=pip
-ENV PIP_VERSION=20.0.2
-RUN install-tool pip
+# renovate: datasource=pypi
+RUN install-tool pip 20.0.2
 
 # Pipenv
 
-# renovate: datasource=pypi depName=pipenv
-ENV PIPENV_VERSION=2018.11.26
-RUN install-pip pipenv
+# renovate: datasource=pypi
+RUN install-pip pipenv 2018.11.26
 
 # Poetry
 
-# renovate: datasource=github-releases depName=python-poetry/poetry
-ENV POETRY_VERSION=1.0.5
-RUN install-tool poetry
+# renovate: datasource=github-releases lookupName=python-poetry/poetry
+RUN install-tool poetry 1.0.5
 
 # Cargo
 
-# renovate: datasource=docker depName=rust versioning=docker
-ENV RUST_VERSION=1.36.0
-RUN install-tool rust
+# renovate: datasource=docker versioning=docker
+RUN install-tool rust 1.36.0
 
 # CocoaPods
 
-# renovate: datasource=docker depName=ruby versioning=docker
-ENV RUBY_VERSION 2.5.8
-RUN install-tool ruby
+# renovate: datasource=docker versioning=docker
+RUN install-tool ruby 2.5.8
 
-# renovate: datasource=rubygems depName=cocoapods versioning=ruby
-ENV COCOAPODS_VERSION 1.9.1
-RUN install-gem cocoapods
+# renovate: datasource=rubygems versioning=ruby
+RUN install-gem cocoapods 1.9.1
 
 # Pnpm
 
-# renovate: datasource=npm depName=npm versioning=npm
-ENV PNPM_VERSION=4.12.0
-RUN install-tool pnpm
+# renovate: datasource=npm versioning=npm
+RUN install-tool pnpm 4.12.0
 
 USER ubuntu
 
