@@ -6,12 +6,26 @@
 
 This repository is the source for the Docker Hub image `renovate/renovate`. Commits to `master` branch are automatically built and published.
 
+## Usage
 
-🚧 Work in progress
+See [docs](https://github.com/renovatebot/renovate/blob/master/docs/development/self-hosting.md#self-hosting-renovate) for additional information to self-hosting renovate with docker.
 
-Currently this image is pushed to `renovate/cache-test` on Docker Hub for testing and compare with original image.
+### run full image samples
+```sh
+$ docker run --rm -it -v $PWD/config.js:/usr/src/app/config.js -e LOG_LEVEL=debug renovate/renovate --include-forks=true renovate-tests/gomod1
+```
 
-*TODO*
-- [ ] remove `buildArg` from `builder.json`
-- [ ] set `image="renovate"` in `builder.json`
-- [ ] update `readme.md`
+```sh
+$ export RENOVATE_TOKEN=xxxxxxx
+$ docker run --rm -it -e RENOVATE_TOKEN renovate/renovate renovate-tests/gomod1
+```
+
+### run slim image samples
+```sh
+$ docker run --rm -it -v $PWD/config.js:/usr/src/app/config.js -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock -e LOG_LEVEL=debug renovate/renovate:slim --include-forks=true renovate-tests/gomod1
+```
+
+```sh
+$ export RENOVATE_TOKEN=xxxxxxx
+$ docker run --rm -it -e RENOVATE_TOKEN -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock renovate/renovate:slim renovate-tests/gomod1
+```
