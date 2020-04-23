@@ -7,8 +7,8 @@ FROM renovate/buildpack AS base
 LABEL maintainer="Rhys Arkins <rhys@arkins.net>"
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
-      org.opencontainers.image.url="https://renovatebot.com" \
-      org.opencontainers.image.licenses="AGPL-3.0-only"
+  org.opencontainers.image.url="https://renovatebot.com" \
+  org.opencontainers.image.licenses="AGPL-3.0-only"
 
 USER root
 WORKDIR /usr/src/app/
@@ -44,7 +44,11 @@ RUN yarn install --frozen-lockfile --link-duplicates --production
 RUN node -e "new require('re2')('.*').exec('test')"
 
 # TODO: remove in v20
-RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
+RUN set -ex; \
+  mkdir dist; \
+  echo "#!/usr/bin/env node" >> dist/renovate.js; \
+  echo "require('renovate/dist/renovate.js');" >> dist/renovate.js; \
+  chmod +x dist/renovate.js;
 
 # TODO: enable in v20
 #COPY src src
@@ -163,6 +167,8 @@ USER ubuntu
 RUN mix local.hex --force
 RUN mix local.rebar --force
 
+USER root
+
 # Renovate
 #=========
 FROM $IMAGE as final
@@ -173,8 +179,16 @@ COPY --from=tsbuild /usr/src/app/dist dist
 # TODO: remove in v20
 COPY --from=tsbuild /usr/src/app/node_modules node_modules
 
-ENTRYPOINT [ "/usr/bin/dumb-init", "--", "/usr/local/docker/entrypoint.sh", "node", "/usr/src/app/dist/renovate.js" ]
-CMD []
+
+COPY bin/ /usr/local/bin/
+
+RUN set -ex; \
+  ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate; \
+  renovate --version;
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["renovate"]
 
 
 # renovate: datasource=npm depName=renovate versioning=npm
