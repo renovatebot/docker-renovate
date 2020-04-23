@@ -13,17 +13,11 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
 USER root
 WORKDIR /usr/src/app/
 
-# Python
-
 # renovate: datasource=docker
 RUN install-tool python 3.8.2
 
-# Node
-
 # renovate: datasource=docker versioning=docker
 RUN install-tool node 12.16.2
-
-# Yarn
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.4
@@ -59,8 +53,6 @@ RUN set -ex; \
 #============
 FROM base as final-base
 
-# Docker client
-
 # renovate: datasource=docker versioning=docker
 RUN install-tool docker 19.03.8
 
@@ -74,12 +66,8 @@ ENV RENOVATE_BINARY_SOURCE=docker
 #============
 FROM final-base as latest
 
-# General tools
-
 # go suggests: git svn bzr mercurial
 RUN install-apt bzr mercurial
-
-# Gradle
 
 # renovate: datasource=docker lookupName=openjdk versioning=docker
 RUN install-tool java 8
@@ -87,16 +75,10 @@ RUN install-tool java 8
 # renovate: datasource=gradle-version versioning=maven
 RUN install-tool gradle 6.3
 
-# Erlang
-
 RUN install-tool erlang 22.0.2-1
-
-# Elixir
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool elixir 1.8.2
-
-# PHP Composer
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool php 7.4
@@ -104,40 +86,27 @@ RUN install-tool php 7.4
 # renovate: datasource=github-releases lookupName=composer/composer
 RUN install-tool composer 1.10.5
 
-# Golang
-
 # renovate: datasource=docker versioning=docker
 RUN install-tool golang 1.14.2
-
-# Pip
 
 # renovate: datasource=pypi
 RUN install-tool pip 20.0.2
 
-# Pipenv
-
 # renovate: datasource=pypi
 RUN install-pip pipenv 2018.11.26
 
-# Poetry
 
 # renovate: datasource=github-releases lookupName=python-poetry/poetry
 RUN install-tool poetry 1.0.5
 
-# Cargo
-
 # renovate: datasource=docker versioning=docker
 RUN install-tool rust 1.36.0
-
-# CocoaPods
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool ruby 2.5.8
 
 # renovate: datasource=rubygems versioning=ruby
 RUN install-gem cocoapods 1.9.1
-
-# Pnpm
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool pnpm 4.12.0
