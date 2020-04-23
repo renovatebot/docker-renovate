@@ -10,7 +10,6 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
   org.opencontainers.image.url="https://renovatebot.com" \
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
-USER root
 WORKDIR /usr/src/app/
 
 # renovate: datasource=docker
