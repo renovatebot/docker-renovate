@@ -37,7 +37,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: ./.github/workflows/configure-docker.sh
+      - name: docker-config
+        uses: renovatebot/internal-tools@v0
+        with:
+          command: docker-config
 
       - name: Init platform
         if: ${{ matrix.tag == 'latest' }}

@@ -2,7 +2,7 @@ ARG IMAGE=latest
 
 # Base image
 #============
-FROM renovate/yarn:1.22.4@sha256:b7c43fa2915bdc6082aae63260c0afe67ae18d013e6dbaf4b0d14c221dd4f0b7 AS base
+FROM renovate/yarn:1.22.4@sha256:d4299ffaa9f7edff4dbe19ae45a88ea1edb65e721219f6ce1ac6ae340351fffb AS base
 
 LABEL maintainer="Rhys Arkins <rhys@arkins.net>"
 LABEL name="renovate"
@@ -169,7 +169,7 @@ RUN gem install --no-rdoc --no-ri cocoapods -v ${COCOAPODS_VERSION}
 
 # renovate: datasource=npm depName=npm versioning=npm
 ARG PNPM_VERSION=4.12.0
-RUN /usr/local/build/pnpm.sh
+RUN install-tool pnpm
 
 USER ubuntu
 
