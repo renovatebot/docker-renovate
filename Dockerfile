@@ -169,7 +169,7 @@ RUN gem install --no-rdoc --no-ri cocoapods -v ${COCOAPODS_VERSION}
 
 # renovate: datasource=npm depName=npm versioning=npm
 ARG PNPM_VERSION=4.12.0
-RUN /usr/local/build/pnpm.sh
+RUN install-tool pnpm
 
 USER ubuntu
 
