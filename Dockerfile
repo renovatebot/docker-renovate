@@ -18,13 +18,16 @@ WORKDIR /usr/src/app/
 FROM base as tsbuild
 
 # Python 3 and make are required to build node-re2
-RUN apt-get update && apt-get install -y python3-minimal build-essential
+RUN apt-get update && apt-get install -y python3 build-essential
 # force python3 for node-gyp
 RUN rm -rf /usr/bin/python && ln /usr/bin/python3 /usr/bin/python
 
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile --link-duplicates --production
+
+# check is re2 is usable
+RUN node -e "new require('re2')('.*').exec('test')"
 
 # TODO: remove in v20
 RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
