@@ -26,6 +26,9 @@ COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile --link-duplicates --production
 
+# check is re2 is usable
+RUN node -e "new require('re2')('.*').exec('test')"
+
 # TODO: remove in v20
 RUN mkdir dist && echo "require('renovate/dist/renovate.js');" > dist/renovate.js
 
