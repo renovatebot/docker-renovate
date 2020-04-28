@@ -7,9 +7,6 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
   org.opencontainers.image.url="https://renovatebot.com" \
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
-# renovate: datasource=docker
-RUN install-tool python 3.8.2
-
 # renovate: datasource=docker versioning=docker
 RUN install-tool node 12.16.2
 
@@ -20,6 +17,8 @@ RUN install-tool yarn 1.22.4
 #============
 FROM base as tsbuild
 
+# use buildin python to faster build
+RUN install-apt build-essential python3
 
 COPY package.json .
 COPY yarn.lock .
@@ -49,7 +48,6 @@ FROM base as final
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool docker 19.03.8
-
 
 ENV RENOVATE_BINARY_SOURCE=docker
 
