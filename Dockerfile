@@ -18,7 +18,7 @@ RUN install-tool yarn 1.22.4
 FROM base as tsbuild
 
 # use buildin python to faster build
-RUN install-tool build-essential python3
+RUN install-apt build-essential python3
 
 COPY package.json .
 COPY yarn.lock .
