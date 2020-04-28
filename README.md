@@ -1,17 +1,25 @@
 [![Build status](https://github.com/renovatebot/docker-renovate/workflows/build/badge.svg)](https://github.com/renovatebot/docker-renovate/actions?query=workflow%3Abuild)
-[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/renovate/renovate?sort=date)](https://hub.docker.com/r/renovate/renovate)
+[![Docker Image Size](https://img.shields.io/docker/image-size/renovate/renovate/slim)](https://hub.docker.com/r/renovate/renovate)
+[![Version](https://img.shields.io/docker/v/renovate/renovate/slim)](https://hub.docker.com/r/renovate/renovate)
 
 # docker-renovate
 
 
 This repository is the source for the Docker Hub image `renovate/renovate`. Commits to `master` branch are automatically built and published.
+It will publish the `slim` and the versioned tags with `slim` suffix.
+For the `latest` image see [here](https://github.com/renovatebot/docker-renovate-full)
+
+## Usage
+
+See [docs](https://github.com/renovatebot/renovate/blob/master/docs/development/self-hosting.md#self-hosting-renovate) for additional information to self-hosting renovate with docker.
 
 
-🚧 Work in progress
+### Samples
+```sh
+$ docker run --rm -it -v $PWD/config.js:/usr/src/app/config.js -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock -e LOG_LEVEL=debug renovate/renovate:slim --include-forks=true renovate-tests/gomod1
+```
 
-Currently this image is pushed to `renovate/cache-test` on Docker Hub for testing and compare with original image.
-
-*TODO*
-- [ ] remove `buildArg` from `builder.json`
-- [ ] set `image="renovate"` in `builder.json`
-- [ ] update `readme.md`
+```sh
+$ export RENOVATE_TOKEN=xxxxxxx
+$ docker run --rm -it -e RENOVATE_TOKEN -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock renovate/renovate:slim renovate-tests/gomod1
+```
