@@ -1,9 +1,14 @@
 name: build
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - 'renovate/**'
+
+  pull_request:
 
 env:
-  BUILDX_VERSION: v0.3.1
   # https://github.com/chalk/supports-color/issues/106
   FORCE_COLOR: true
 
@@ -25,14 +30,6 @@ jobs:
     runs-on: ubuntu-latest
 
     timeout-minutes: 60
-    strategy:
-      matrix:
-        tag: [latest, slim]
-
-
-    env:
-      IMAGE: ${{ matrix.tag }}
-      TAG: ${{ matrix.tag }}
 
     steps:
       - uses: actions/checkout@v2
@@ -42,11 +39,6 @@ jobs:
         with:
           command: docker-config
 
-      - name: Init platform
-        if: ${{ matrix.tag == 'latest' }}
-        run: |
-          echo "::set-env name=TAG::"
-
       - name: Docker registry login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
@@ -55,6 +47,5 @@ jobs:
         with:
           command: "docker-builder"
           last-only: true
-          tag-suffix: ${{ env.TAG }}
-          build-args: IMAGE
+          tag-suffix: slim
           dry-run: ${{github.ref != 'refs/heads/master'}}
