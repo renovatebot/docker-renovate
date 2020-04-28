@@ -65,7 +65,7 @@ RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
 CMD ["renovate"]
 
 # renovate: datasource=npm depName=renovate versioning=npm
-ARG RENOVATE_VERSION=19.220.1
+ARG RENOVATE_VERSION=19.220.2
 
 RUN npm --no-git-tag-version version ${RENOVATE_VERSION} && renovate --version;
 
