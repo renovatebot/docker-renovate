@@ -11,6 +11,7 @@ on:
 env:
   # https://github.com/chalk/supports-color/issues/106
   FORCE_COLOR: true
+  DUMMY: true
 
 jobs:
   cleanup:
