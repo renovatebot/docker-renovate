@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
 # renovate: datasource=docker versioning=docker
-RUN install-tool node 12.16.2
+RUN install-tool node 12.16.3
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.4
