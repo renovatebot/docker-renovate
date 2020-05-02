@@ -28,12 +28,17 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@snyk/ruby-semver@2.1.2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@snyk/ruby-semver/-/ruby-semver-2.1.2.tgz#5c85a388d927a86c6ea3022b02ba77c4cac1098b"
-  integrity sha512-hYiNnwzNJ5DYM9JydeK3d2rd0lupgB/r5Nh154uazsV6EJn+lcba49X8+pdMMQIBhGQNvLtWLqYpeGfG07WcGQ==
+"@snyk/lodash@4.17.15-patch":
+  version "4.17.15-patch"
+  resolved "https://registry.yarnpkg.com/@snyk/lodash/-/lodash-4.17.15-patch.tgz#fb61af14b75d10a20015b40af5d0423944af89dc"
+  integrity sha512-e4+t34bGyjjRnwXwI14hqye9J/nRbG9iwaqTgXWHskm5qC+iK0UrjgYdWXiHJCf3Plbpr+1rpW+4LPzZnCGMhQ==
+
+"@snyk/ruby-semver@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@snyk/ruby-semver/-/ruby-semver-2.2.0.tgz#dfb2f11c52e52f8273ec8750e9327db7c84e679c"
+  integrity sha512-FqUayoVjcyCsQFYPm3DcaCKdFR4xmapUkCGY+bcNBs3jqCUw687PoP9CPQ1Jvtaw5YpfBNl/62jyntsWCeciuA==
   dependencies:
-    lodash "^4.17.14"
+    "@snyk/lodash" "4.17.15-patch"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -2266,7 +2271,7 @@ lodash.without@~4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
 
-lodash@4.17.15, lodash@^4.17.14:
+lodash@4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -3684,14 +3689,14 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@19.228.1:
-  version "19.228.1"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-19.228.1.tgz#352225510cb68b0985b3d492bfc268defe72d570"
-  integrity sha512-hFxDoKiWOOxXbPJOAxlzof9aumO/pgMAT+LqszRXZw98LOa5O5j9dyWChWDyHMZvUVavScK4hUWuzNi0/Ms8Aw==
+renovate@19.228.2:
+  version "19.228.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-19.228.2.tgz#c677d9c925be7f614e6d3ac36a6737945f59d1f2"
+  integrity sha512-8owfiCdKWhC5WNVwlT8cH2IGDc7kt2TjwpqNpavtpVzTzwhCb0nJA2P5xdEgxQRBZ+aERaQ2CZ08UMkV3eJJHg==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
-    "@snyk/ruby-semver" "2.1.2"
+    "@snyk/ruby-semver" "2.2.0"
     "@yarnpkg/lockfile" "1.1.0"
     aws-sdk "2.662.0"
     azure-devops-node-api "10.1.1"
