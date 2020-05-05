@@ -711,11 +711,6 @@ conventional-commits-detector@1.0.2:
     meow "^5.0.0"
     through2-concurrent "^2.0.0"
 
-convert-hrtime@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/convert-hrtime/-/convert-hrtime-3.0.0.tgz#62c7593f5809ca10be8da858a6d2f702bcda00aa"
-  integrity sha512-7V+KqSvMiHp8yWDuwfww06XleMWVVB9b9tURBx+G7UTADuo5hYPuowKloz4OzOqbPezxgo+fdQ1522WzPG4OeA==
-
 copy-concurrently@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/copy-concurrently/-/copy-concurrently-1.0.5.tgz#92297398cae34937fcafd6ec8139c18051f0b5e0"
@@ -3689,10 +3684,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@19.231.0:
-  version "19.231.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-19.231.0.tgz#473d46533643e5ab6ea6d2aa643b0bb6cd6e83c0"
-  integrity sha512-xEy1skhkHaTzhPc0JloSacFpQD8PzX+fL+sJig7QmGBaL31vT63fFtdwUTdQ/oneYOU0L45bdqfRBDQTho221Q==
+renovate@19.231.2:
+  version "19.231.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-19.231.2.tgz#a43d0875f494e287e243f024442dc31b52f363b8"
+  integrity sha512-XtgK/7+a4COWok4wlhkugdEkrNm5u8bb50JNcl7k3nXefbn0DhjlMsxvO+J69hT2AEAHWiuKFiBNnWl6lr7BjQ==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -3707,7 +3702,6 @@ renovate@19.231.0:
     clean-git-ref "2.0.1"
     commander "5.1.0"
     conventional-commits-detector "1.0.2"
-    convert-hrtime "3.0.0"
     deepmerge "4.2.2"
     delay "4.3.0"
     detect-indent "6.0.0"
