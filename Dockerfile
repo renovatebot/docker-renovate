@@ -1,6 +1,6 @@
 # Base image
 #============
-FROM renovate/buildpack:2@sha256:47bcabe187fc8c25bf0b53d921840d827a2ec17c0636bf23cdbacfb4fcc765b7 AS base
+FROM renovate/buildpack:2@sha256:4e9a0bb008683ff418a4ac643f7fb65a003a87a6599094d53443fadac20c9385 AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
