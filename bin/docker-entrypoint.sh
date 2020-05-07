@@ -14,4 +14,4 @@ if [[ ! -x "$(command -v ${1})" ]]; then
   set -- renovate "$@"
 fi
 
-exec dumb-init -- $@
+exec dumb-init -- "$@"
