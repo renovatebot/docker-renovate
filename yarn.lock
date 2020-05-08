@@ -3747,10 +3747,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@19.232.0:
-  version "19.232.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-19.232.0.tgz#25414d37f27b6706b8310126f54235f7fe9a0182"
-  integrity sha512-0EXEtHs5KH7Ghd9pMm1M+iusorGg1LCuORci2ZMlvdoaJSa3VE4MM5lNAxq3toX7MzE1oyPKEXQybwyICn9jXA==
+renovate@19.233.1:
+  version "19.233.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-19.233.1.tgz#94f3c5d35069e564c1c0cc19edf07fc3ccf4fdbb"
+  integrity sha512-LPt5yJ5wSQO7wkUmaEltPOjfYKlOOIh8Eh6o15RIy/DnAqdX3cb8DVHj3v+NQNnAfIO8sDN2Oev9xZFA0BAZjg==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -3796,6 +3796,7 @@ renovate@19.232.0:
     node-html-parser "1.2.16"
     npm "6.14.5"
     p-all "2.1.0"
+    p-map "^4.0.0"
     parse-diff "0.7.0"
     parse-link-header "1.0.1"
     pnpm "3.8.1"
