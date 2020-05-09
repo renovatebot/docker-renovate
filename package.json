@@ -9,7 +9,7 @@
     "build": "ncc build src/index.js"
   },
   "dependencies": {
-    "renovate": "19.233.2"
+    "renovate": "19.233.4"
   },
   "devDependencies": {
     "@zeit/ncc": "0.22.1"
