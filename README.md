@@ -14,6 +14,9 @@ For the `latest` image see [here](https://github.com/renovatebot/docker-renovate
 See [docs](https://github.com/renovatebot/renovate/blob/master/docs/development/self-hosting.md#self-hosting-renovate) for additional information to self-hosting renovate with docker.
 
 
+See [Gitlab docs](./docs/gitlab.md) for some gitlab configuration samples.
+
+
 ### Samples
 ```sh
 $ docker run --rm -it -v $PWD/config.js:/usr/src/app/config.js -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock -e LOG_LEVEL=debug renovate/renovate:slim --include-forks=true renovate-tests/gomod1
