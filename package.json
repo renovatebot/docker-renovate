@@ -12,6 +12,6 @@
     "renovate": "19.239.8"
   },
   "devDependencies": {
-    "@zeit/ncc": "0.22.1"
+    "@zeit/ncc": "0.22.2"
   }
 }
