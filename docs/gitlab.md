@@ -149,3 +149,123 @@ module.exports = {
   ],
 };
 ```
+
+
+## Renovate slim with docker-in-docker
+
+This sample uses the `docker-in-docker` gitlab runner.
+
+### Gitlab pipeline
+```yml
+image: docker:19.03-dind
+
+variables:
+  RENOVATE_ARGS: '--log-file=renovate.log --log-file-level=debug'
+
+# templates
+.base:
+  artifacts:
+    paths:
+      - renovate.log
+
+.deploy:
+  extends: .base
+  stage: deploy
+  tags:
+    - renovate
+  script:
+    - docker run --tty
+      -e RENOVATE_PLATFORM=gitlab
+      -e RENOVATE_ENDPOINT=$CI_API_V4_URL
+      -e RENOVATE_TOKEN
+      -e GITHUB_COM_TOKEN
+      -e LOG_LEVEL=debug
+      --rm
+      -v /tmp:/tmp
+      -v /var/run/docker.sock:/var/run/docker.sock
+      -v $PWD/config.js:/usr/src/app/config.js
+      renovate/renovate:slim $RENOVATE_ARGS
+
+# jobs
+test:
+  extends: .base
+  stage: test
+  script:
+    - docker run --tty
+      -e RENOVATE_PLATFORM=gitlab
+      -e RENOVATE_ENDPOINT=$CI_API_V4_URL
+      -e RENOVATE_TOKEN
+      -e GITHUB_COM_TOKEN
+      -e LOG_LEVEL=debug
+      --rm
+      -v /tmp:/tmp
+      -v /var/run/docker.sock:/var/run/docker.sock
+      -v $PWD/config.js:/usr/src/app/config.js
+      renovate/renovate:slim --version $RENOVATE_ARGS
+
+deploy-dry-run:
+  extends: .deploy
+  except:
+    - master
+    - schedules
+  script:
+    - docker run --tty
+      -e RENOVATE_PLATFORM=gitlab
+      -e RENOVATE_ENDPOINT=$CI_API_V4_URL
+      -e RENOVATE_TOKEN
+      -e GITHUB_COM_TOKEN
+      -e LOG_LEVEL=debug
+      --rm
+      -v /tmp:/tmp
+      -v /var/run/docker.sock:/var/run/docker.sock
+      -v $PWD/config.js:/usr/src/app/config.js
+      renovate/renovate:slim --dry-run $RENOVATE_ARGS
+
+deploy:
+  extends: .deploy
+  only:
+    - schedules
+```
+
+### Renovate config
+
+The `config.js` should be in repo root, because we will mount it to renovate container.
+
+```js
+module.exports = {
+  username: 'renovate-bot',
+  gitAuthor: 'Renovate Bot <bot@example.com>',
+  autodiscover: true,
+  autodiscoverFilter: '!{group/test,test/**}',
+  semanticCommits: true,
+  prCreation: 'not-pending',
+  onboarding: true,
+  onboardingConfig: {
+    extends: ['config:base', ':assignAndReview(user)'],
+    automergeType: 'branch',
+    semanticCommits: true,
+  },
+  nuget: {
+    fileMatch: ['\\.csproj$', '\\.props$', '\\.targets$'],
+  },
+  packageRules: [
+    {
+      packageNames: ['gitlab/gitlab-runner'],
+      versionScheme:
+        'regex:^(?<compatibility>.*)-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$',
+      groupName: 'gitlab docker images',
+    },
+    {
+      packageNames: ['gitlab/gitlab-ce'],
+      versionScheme:
+        'regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<compatibility>ce\\.\\d+)$',
+      groupName: 'gitlab docker images',
+    },
+    {
+      depTypeList: ['devDependencies'],
+      extends: [':automergeMinor', 'schedule:nonOfficeHours'],
+      automergeType: 'pr',
+    },
+  ],
+};
+```
