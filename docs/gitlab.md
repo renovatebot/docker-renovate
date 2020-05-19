@@ -176,7 +176,7 @@ renovate:
       --rm
       -v /tmp:/tmp
       -v /var/run/docker.sock:/var/run/docker.sock
-      renovate/renovate
+      renovate/renovate:slim
 
   only:
     - schedules
