@@ -10,6 +10,12 @@ Some [managers](https://docs.renovatebot.com/modules/manager/) need side contain
 
 This sample will not work on gitlab.com hosted shared runner, you need a self-hosted runner!
 
+
+**Additional project environment:**
+- `RENOVATE_TOKEN`: access token for renovate to gitlab api (**required**)
+- `GITHUB_COM_TOKEN`: suppress github api rate limits (**required**)
+- `RENOVATE_EXTRA_FLAGS`: pass additional commandline args (**optional**)
+
 ### Gitlab runner config
 
 You should register and use a separate gitlab runner, because we are mapping the host docker socket to renovate.
@@ -45,43 +51,23 @@ Renovate will map `baseDir` to the docker side container running tools like `pyt
 The following pipeline runs renovate normally on master branch and for self-update it runs in [`dryRun`](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) mode.
 
 ```yml
+image: renovate/renovate:19.239.11-slim@sha256:89204468bca26ee7b776afe1ecac4d78ef88b78a24607e674742376a75ada935
+
 variables:
-  RENOVATE_ARGS: '--log-file=renovate.log --log-file-level=debug'
+  LOG_LEVEL: debug
 
-# templates
-.base:
-  image:
-    name: renovate/renovate:19.231.8-slim@sha256:bf041f6cdacf96021df1f50e97449883d8e223db06184b2a3025a568c6f6c259
-  artifacts:
-    paths:
-      - renovate.log
-
-.deploy:
-  extends: .base
-  stage: deploy
-  tags:
-    - renovate
-  script:
-    - renovate $RENOVATE_ARGS
-
-# jobs
-test:
-  extends: .base
-  stage: test
-  script:
-    - renovate --version $RENOVATE_ARGS
-
-deploy-dry-run:
-  extends: .deploy
-  except:
-    - master
-  script:
-    - renovate --dry-run $RENOVATE_ARGS
-
-deploy:
-  extends: .deploy
+renovate:on-schedule:
   only:
-    - master
+    - schedules
+  script:
+    - renovate $RENOVATE_EXTRA_FLAGS
+
+renovate:
+  except:
+    - schedules
+  script:
+    - renovate --dry-run $RENOVATE_EXTRA_FLAGS
+
 ```
 
 # Renovate config
@@ -116,37 +102,6 @@ module.exports = {
   username: 'renovate-bot',
   gitAuthor: 'Renovate Bot <bot@example.com>',
   autodiscover: true,
-  autodiscoverFilter: '!{group/test,test/**}',
-  semanticCommits: true,
-  prCreation: 'not-pending',
-  onboarding: true,
-  onboardingConfig: {
-    extends: ['config:base', ':assignAndReview(user)'],
-    automergeType: 'branch',
-    semanticCommits: true,
-  },
-  nuget: {
-    fileMatch: ['\\.csproj$', '\\.props$', '\\.targets$'],
-  },
-  packageRules: [
-    {
-      packageNames: ['gitlab/gitlab-runner'],
-      versionScheme:
-        'regex:^(?<compatibility>.*)-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$',
-      groupName: 'gitlab docker images',
-    },
-    {
-      packageNames: ['gitlab/gitlab-ce'],
-      versionScheme:
-        'regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<compatibility>ce\\.\\d+)$',
-      groupName: 'gitlab docker images',
-    },
-    {
-      depTypeList: ['devDependencies'],
-      extends: [':automergeMinor', 'schedule:nonOfficeHours'],
-      automergeType: 'pr',
-    },
-  ],
 };
 ```
 
@@ -155,30 +110,39 @@ module.exports = {
 
 This sample uses the `docker-in-docker` gitlab runner.
 
+**Additional project environment:**
+- `RENOVATE_TOKEN`: access token for renovate to gitlab api (**required**)
+- `GITHUB_COM_TOKEN`: suppress github api rate limits (**required**)
+- `RENOVATE_EXTRA_FLAGS`: pass additional commandline args (**optional**)
+
 ### Gitlab pipeline
 ```yml
-image: docker:19.03-dind
+image: renovate/renovate:19.239.11-slim@sha256:89204468bca26ee7b776afe1ecac4d78ef88b78a24607e674742376a75ada935
 
-stages:
-  - renovate
+variables:
+  RENOVATE_BASE_DIR: $CI_PROJECT_DIR/renovate
+  RENOVATE_PLATFORM: gitlab
+  RENOVATE_ENDPOINT: $CI_API_V4_URL
+  RENOVATE_AUTODISCOVER: true
+  LOG_LEVEL: debug
 
-renovate:
-  stage: renovate
-  services:
-    - docker:19.03-dind
-  script:
-    - docker run --tty
-      -e RENOVATE_PLATFORM=gitlab
-      -e RENOVATE_ENDPOINT=$CI_API_V4_URL
-      -e RENOVATE_TOKEN
-      -e GITHUB_COM_TOKEN
-      -e LOG_LEVEL=debug
-      --rm
-      -v /tmp:/tmp
-      -v /var/run/docker.sock:/var/run/docker.sock
-      renovate/renovate:slim
+services:
+  - docker:19.03-dind
 
+before_script:
+  # Prepare renovate directory
+  - mkdir $RENOVATE_BASE_DIR
+
+renovate:on-schedule:
   only:
     - schedules
-```
+  script:
+    - renovate $RENOVATE_EXTRA_FLAGS
 
+# test self updates with dry-run
+renovate:
+  except:
+    - schedules
+  script:
+    - renovate --dry-run $RENOVATE_EXTRA_FLAGS
+```
