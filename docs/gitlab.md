@@ -46,7 +46,7 @@ Renovate will map `baseDir` to the docker side container running tools like `pyt
     run_exec = ""
 ```
 
-# Gitlab pipeline
+### Gitlab pipeline
 
 The following pipeline runs renovate normally on master branch and for self-update it runs in [`dryRun`](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) mode.
 
@@ -70,7 +70,7 @@ renovate:
 
 ```
 
-# Renovate config
+### Renovate config
 
 The `config.js` should be in repo root, because renovate will load it from current directory by default.
 
