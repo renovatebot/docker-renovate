@@ -2,7 +2,7 @@ name: cron
 
 on:
   schedule:
-    - '0 1 * * *'
+    - cron: '0 1 * * *'
 
 env:
   # https://github.com/chalk/supports-color/issues/106
