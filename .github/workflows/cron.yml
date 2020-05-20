@@ -1,12 +1,8 @@
-name: build
+name: cron
 
 on:
-  push:
-    branches:
-      - master
-      - 'renovate/**'
-
-  pull_request:
+  schedule:
+    - '0 1 * * *'
 
 env:
   # https://github.com/chalk/supports-color/issues/106
@@ -15,8 +11,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    timeout-minutes: 60
 
     steps:
       - uses: actions/checkout@v2
@@ -33,6 +27,5 @@ jobs:
         uses: renovatebot/internal-tools@v0
         with:
           command: "docker-builder"
-          last-only: true
           tag-suffix: slim
           dry-run: ${{github.ref != 'refs/heads/master'}}
