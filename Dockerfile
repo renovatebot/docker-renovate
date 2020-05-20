@@ -50,7 +50,7 @@ RUN set -ex; \
 FROM base as final
 
 # renovate: datasource=docker versioning=docker
-RUN install-tool docker 19.03.8
+RUN install-tool docker 19.03.9
 
 ENV RENOVATE_BINARY_SOURCE=docker
 
