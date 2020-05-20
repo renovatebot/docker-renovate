@@ -1,3 +1,6 @@
+# renovate: datasource=npm depName=renovate versioning=npm
+ARG RENOVATE_VERSION=20.0.2
+
 # Base image
 #============
 FROM renovate/buildpack:2@sha256:8b26457c4f06a8e7c490d01e37c14feaad9cc28f84b50dd1001dd1e337801e34 AS base
@@ -62,8 +65,7 @@ COPY bin/ /usr/local/bin/
 RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
 CMD ["renovate"]
 
-# renovate: datasource=npm depName=renovate versioning=npm
-ARG RENOVATE_VERSION=20.0.2
+ARG RENOVATE_VERSION
 
 RUN npm --no-git-tag-version version ${RENOVATE_VERSION} && renovate --version;
 
