@@ -149,3 +149,36 @@ module.exports = {
   ],
 };
 ```
+
+
+## Renovate slim with docker-in-docker
+
+This sample uses the `docker-in-docker` gitlab runner.
+
+### Gitlab pipeline
+```yml
+image: docker:19.03-dind
+
+stages:
+  - renovate
+
+renovate:
+  stage: renovate
+  services:
+    - docker:19.03-dind
+  script:
+    - docker run --tty
+      -e RENOVATE_PLATFORM=gitlab
+      -e RENOVATE_ENDPOINT=$CI_API_V4_URL
+      -e RENOVATE_TOKEN
+      -e GITHUB_COM_TOKEN
+      -e LOG_LEVEL=debug
+      --rm
+      -v /tmp:/tmp
+      -v /var/run/docker.sock:/var/run/docker.sock
+      renovate/renovate:slim
+
+  only:
+    - schedules
+```
+
