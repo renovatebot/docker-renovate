@@ -3,7 +3,7 @@ ARG RENOVATE_VERSION=20.2.1
 
 # Base image
 #============
-FROM renovate/buildpack:2@sha256:8b26457c4f06a8e7c490d01e37c14feaad9cc28f84b50dd1001dd1e337801e34 AS base
+FROM renovate/buildpack:2@sha256:49d9a23a813aa12c102d139fd8cde07ce16fad603f8d4adf9d918c05c6a3ddb8 AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
@@ -22,10 +22,15 @@ FROM base as tsbuild
 
 # use buildin python to faster build
 RUN install-apt build-essential python3
+RUN npm install -g yarn-deduplicate
 
 COPY package.json .
-COPY yarn.lock .
-RUN yarn install --frozen-lockfile --link-duplicates --production
+
+ARG RENOVATE_VERSION
+RUN yarn install --link-duplicates --production
+RUN yarn add renovate@${RENOVATE_VERSION} --link-duplicates --production
+RUN yarn-deduplicate --strategy fewer
+RUN yarn install --link-duplicates --production
 
 # check is re2 is usable
 RUN node -e "new require('re2')('.*').exec('test')"
@@ -54,7 +59,7 @@ RUN install-tool docker 19.03.9
 
 ENV RENOVATE_BINARY_SOURCE=docker
 
-COPY package.json package.json
+COPY --from=tsbuild /usr/src/app/package.json package.json
 COPY --from=tsbuild /usr/src/app/dist dist
 
 # TODO: remove in v20
