@@ -32,3 +32,4 @@ jobs:
           command: "docker-builder"
           tag-suffix: slim
           dry-run: ${{github.ref != 'refs/heads/master'}}
+          prune: true
