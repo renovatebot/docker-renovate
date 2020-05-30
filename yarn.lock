@@ -946,6 +946,11 @@ ieee754@1.1.13, ieee754@^1.1.4:
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
   integrity sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==
 
+ignore@5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
+  integrity sha512-MzbUSahkTW1u7JpKKjY7LCARd1fU5W2rLdxlM4kdkayuCwZImjkpluF9CM1aLewYJguPDqewLam18Y6AU69A8A==
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -2012,10 +2017,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@20.12.0:
-  version "20.12.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-20.12.0.tgz#4785b0e134af3325e0a8a9173c82f6f2975cad38"
-  integrity sha512-5kLXEJtBALFmzPY6ekiXvV7sSoYowzzhUhwrP+QL6mBEvSntAtxtrmr8OtuvlyKJeECcIwV27QULyBXX5ZsByA==
+renovate@20.13.0:
+  version "20.13.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-20.13.0.tgz#7988e0d2967d621fe4132bdb2cc34d6e5cf3d786"
+  integrity sha512-dl3KQA+PGU0j+vpDPJFoYnB35v7HgjBAFAHrYkJiLtxC8zh6eEGe9Y1ftPKd5EXSzOj6ANbcKKH514u7JoKCRQ==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2043,6 +2048,7 @@ renovate@20.12.0:
     handlebars "4.7.6"
     handy-redis "1.8.1"
     hasha "5.2.0"
+    ignore "5.1.4"
     ini "1.3.5"
     js-yaml "3.14.0"
     json-dup-key-validator "1.0.2"
