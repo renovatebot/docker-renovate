@@ -873,10 +873,10 @@ handlebars@4.7.6:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-handy-redis@1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/handy-redis/-/handy-redis-1.8.1.tgz#7e5f0fc63bbe8e7ed7a4641e41d314b81a4cd6a0"
-  integrity sha512-/yA/8l351iLNC/hrbgiz5qrFZNSZYrIVu/lZK6sYPHV8QiKFUb9Xcb1pZjeO7Fe5Z/4Pn6l6KbaQrdkovWqSjQ==
+handy-redis@1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/handy-redis/-/handy-redis-1.8.3.tgz#3c0a5b1ff40f8ff01bb7c06ce3e0d29871fe4c4d"
+  integrity sha512-TMC47NAaKuUC5jDMlCLNvNDIiNhyUO/ONEM7Xsbv3kiTwR9E1hsx7zctPH4fEoSKvro2gPs8bBb4+Nwscigz2A==
   dependencies:
     "@types/redis" "^2.8.14"
     redis "^3.0.2"
@@ -2017,10 +2017,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@20.25.4:
-  version "20.25.4"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-20.25.4.tgz#caa91047c4ecbef507ac803c8734757e72f75b0d"
-  integrity sha512-jVJ+rhyF1sz99KemQo8sF99unyqofFkTIHL5z1FkUNGBiUk2PO++PvUD9IlfpOxKzfSjuRzeHosJ0XOduf8eBw==
+renovate@20.25.5:
+  version "20.25.5"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-20.25.5.tgz#2080481be6ca2c4efdacdc153a102afdb52f2d5e"
+  integrity sha512-oLluelVqjElWyBoTaxy/wbwUJtUL6uihZXS3EM/LnF1jzz2J97WObgaW9c1fgxVYcLEgjLnhwroYOgTTkI1qAw==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2046,7 +2046,7 @@ renovate@20.25.4:
     global-agent "2.1.8"
     got "9.6.0"
     handlebars "4.7.6"
-    handy-redis "1.8.1"
+    handy-redis "1.8.3"
     hasha "5.2.0"
     ignore "5.1.8"
     ini "1.3.5"
