@@ -718,10 +718,10 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
-fs-extra@9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.0.tgz#b6afc31036e247b2466dc99c29ae797d5d4580a3"
-  integrity sha512-pmEYSk3vYsG/bF651KPUXZ+hvjpgWYw/Gc7W9NFUe3ZVLczKKWIij3IKpOrQcdw4TILtibFslZ0UmR8Vvzig4g==
+fs-extra@9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz#910da0062437ba4c39fedd863f1675ccfefcb9fc"
+  integrity sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
   dependencies:
     at-least-node "^1.0.0"
     graceful-fs "^4.2.0"
@@ -2017,10 +2017,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.0.5:
-  version "21.0.5"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.0.5.tgz#1e8fe4b91e2efd260cb7acbfb3cd0205a64ee77f"
-  integrity sha512-bn+0Fe4kUcSbTZnLefMwAX1l5HE0DM5/PvTWHXLNxGgjCLW3HH0IwzB0nrrrWsD7mdFqpeaYwSX5UcjZUPrpJg==
+renovate@21.0.6:
+  version "21.0.6"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.0.6.tgz#75263a189e40a967ab733de6d47681bbfa307296"
+  integrity sha512-/Uwwc9frt9i15qqcj8C3FIJ/69HANXsyv/SFbMABkZApDK9qUtLrYQNbGannLvl4nmSF5q6qD20PQyUhZ30XmQ==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2041,7 +2041,7 @@ renovate@21.0.5:
     email-addresses "3.1.0"
     fast-safe-stringify "2.0.7"
     find-up "4.1.0"
-    fs-extra "9.0.0"
+    fs-extra "9.0.1"
     github-url-from-git "1.5.0"
     global-agent "2.1.8"
     got "9.6.0"
