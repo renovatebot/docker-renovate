@@ -2017,10 +2017,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.0.6:
-  version "21.0.6"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.0.6.tgz#75263a189e40a967ab733de6d47681bbfa307296"
-  integrity sha512-/Uwwc9frt9i15qqcj8C3FIJ/69HANXsyv/SFbMABkZApDK9qUtLrYQNbGannLvl4nmSF5q6qD20PQyUhZ30XmQ==
+renovate@21.1.0:
+  version "21.1.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.1.0.tgz#ea495198bf31af441f0d5b3fe85f882248e18eff"
+  integrity sha512-eJHFdmZWxLi387LrO7eC8JfD0Z81RGwUzmzydS5nukrXdwf7NV5Q6L7Dn/rGu8ouGoq7cD3QpAkJwjqfx3aouA==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
