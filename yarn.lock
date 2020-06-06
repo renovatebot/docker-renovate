@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@npmcli/move-file@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@npmcli/move-file/-/move-file-1.0.1.tgz#de103070dac0f48ce49cf6693c23af59c0f70464"
+  integrity sha512-Uv6h1sT+0DrblvIrolFtbvM1FgWm+/sy4B3pvLp67Zys+thcukzS5ekn7HsZFGpWP4Q3fYJCljbWQE/XivMRLw==
+  dependencies:
+    mkdirp "^1.0.4"
+
 "@renovate/pep440@0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@renovate/pep440/-/pep440-0.4.1.tgz#0b0d2c30547f3ecc6ac0083cd7afd15db04979be"
@@ -263,11 +270,12 @@ bunyan@1.8.12:
     mv "~2"
     safe-json-stringify "~1"
 
-cacache@15.0.3:
-  version "15.0.3"
-  resolved "https://registry.yarnpkg.com/cacache/-/cacache-15.0.3.tgz#2225c2d1dd8e872339950d6a39c051e0e9334392"
-  integrity sha512-bc3jKYjqv7k4pWh7I/ixIjfcjPul4V4jme/WbjvwGS5LzoPL/GzXr4C5EgPNLO/QEZl9Oi61iGitYEdwcrwLCQ==
+cacache@15.0.4:
+  version "15.0.4"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-15.0.4.tgz#b2c23cf4ac4f5ead004fb15a0efb0a20340741f1"
+  integrity sha512-YlnKQqTbD/6iyoJvEY3KJftjrdBYroCbxxYXzhOzsFLWlp6KX4BOlEf4mTx0cMUfVaTS3ENL2QtDWeRYoGLkkw==
   dependencies:
+    "@npmcli/move-file" "^1.0.1"
     chownr "^2.0.0"
     fs-minipass "^2.0.0"
     glob "^7.1.4"
@@ -278,7 +286,6 @@ cacache@15.0.3:
     minipass-flush "^1.0.5"
     minipass-pipeline "^1.2.2"
     mkdirp "^1.0.3"
-    move-file "^2.0.0"
     p-map "^4.0.0"
     promise-inflight "^1.0.1"
     rimraf "^3.0.2"
@@ -1483,7 +1490,7 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.5"
 
-mkdirp@^1.0.3:
+mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
@@ -1504,13 +1511,6 @@ moment@2.25.3:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
-
-move-file@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/move-file/-/move-file-2.0.0.tgz#83ffa309b5d7f69d518b28e1333e2ffadf331e3e"
-  integrity sha512-cdkdhNCgbP5dvS4tlGxZbD+nloio9GIimP57EjqFhwLcMjnU+XJKAZzlmg/TN/AK1LuNAdTSvm3CPPP4Xkv0iQ==
-  dependencies:
-    path-exists "^4.0.0"
 
 ms@^2.1.1:
   version "2.1.2"
@@ -2017,10 +2017,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.0.4:
-  version "21.0.4"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.0.4.tgz#558a711dd5f5f8d1649bacb574858b84088483ff"
-  integrity sha512-qAm/5OwKNqNYKp6YhYV6xuRmnzxXenZmBgJYM4zSi4fw2yAdfVJ8uBfuH6y/RuTQLO476JQpv8sCFbzWXoNwZA==
+renovate@21.0.5:
+  version "21.0.5"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.0.5.tgz#1e8fe4b91e2efd260cb7acbfb3cd0205a64ee77f"
+  integrity sha512-bn+0Fe4kUcSbTZnLefMwAX1l5HE0DM5/PvTWHXLNxGgjCLW3HH0IwzB0nrrrWsD7mdFqpeaYwSX5UcjZUPrpJg==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2029,7 +2029,7 @@ renovate@21.0.4:
     aws-sdk "2.686.0"
     azure-devops-node-api "10.1.1"
     bunyan "1.8.12"
-    cacache "15.0.3"
+    cacache "15.0.4"
     chalk "4.0.0"
     changelog-filename-regex "2.0.1"
     clean-git-ref "2.0.1"
