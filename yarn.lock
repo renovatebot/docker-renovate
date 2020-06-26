@@ -1993,10 +1993,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.18.0:
-  version "21.18.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.18.0.tgz#c5fd09e2bc32a4c9053d56f9b7c9a15c86761651"
-  integrity sha512-ubsN4p3cSqPMuP2lhlDN5hnv7HJ9glX48K3PnJbLe09tGirB0Sp/qYWYGRpvJpSorl11+dbMDxwD0zr3BqYtDA==
+renovate@21.18.1:
+  version "21.18.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.18.1.tgz#4b500d1ff3d43ab57086f77376f59c093c987955"
+  integrity sha512-L2TGRLccm5+0r50f22oEKw0qpXxYkZG9JF3jJ8Yct3V71o6xYuS+kcZQK6cuHX1JPNrJIbgkmCR2Hm4An1mNmg==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2052,7 +2052,7 @@ renovate@21.18.0:
     shlex "2.0.2"
     shortid "2.2.15"
     simple-git "1.132.0"
-    slugify "1.4.0"
+    slugify "1.4.2"
     toml "3.0.0"
     traverse "0.6.6"
     upath "1.2.0"
@@ -2248,10 +2248,10 @@ simple-git@1.132.0:
   dependencies:
     debug "^4.0.1"
 
-slugify@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.0.tgz#c9557c653c54b0c7f7a8e786ef3431add676d2cb"
-  integrity sha512-FtLNsMGBSRB/0JOE2A0fxlqjI6fJsgHGS13iTuVT28kViI4JjUiNqp/vyis0ZXYcMnpR3fzGNkv+6vRlI2GwdQ==
+slugify@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.2.tgz#2c9b2b3321c43110a0058982eea7102b998d5068"
+  integrity sha512-7UfMG5rtkxfOI5jg/+f4DMQS3ikUqfWnfMvitrhwdTV4pibWXq9mN4RNLHSV3M1lR++x7z+AG7znsiozdBP+aA==
 
 source-map@^0.6.1:
   version "0.6.1"
