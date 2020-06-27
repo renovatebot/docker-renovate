@@ -1551,10 +1551,10 @@ node-gyp@^7.0.0:
     tar "^6.0.1"
     which "^2.0.2"
 
-node-html-parser@1.2.19:
-  version "1.2.19"
-  resolved "https://registry.yarnpkg.com/node-html-parser/-/node-html-parser-1.2.19.tgz#2cb14ce7981dfe2c0f5af53cf8654a3d49cded7d"
-  integrity sha512-MQvBz+qk7SbqNPp0c7hR0F8lRTPXK5n2tww4eFmXf+cXp5hZHtL5rJHlAWlcjzRep+T5Pd5lz3lqFgN7IFYEiw==
+node-html-parser@1.2.20:
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/node-html-parser/-/node-html-parser-1.2.20.tgz#37e9ebc627dbe3ff446eea4ac93e3d254b7c6ee4"
+  integrity sha512-1fUpYjAducDrrBSE0etRUV1tM+wSFTudmrslMXuk35wL/L29E7e1CLQn4CNzFLnqtYpmDlWhkD6VUloyHA0dwA==
   dependencies:
     he "1.1.1"
 
@@ -1993,10 +1993,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.18.7:
-  version "21.18.7"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.18.7.tgz#7e1ad899c9d8ccf9ef3b26f19054dbf6adbf7d95"
-  integrity sha512-p1iMqQkBUQHyA/xM/rFcQ2eJ8T6taiW9LEq3Gzj6K5PAkQf9yh5nirovnt/BzIVWeFiBc/IcnCpbgfHg91MpEg==
+renovate@21.18.9:
+  version "21.18.9"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.18.9.tgz#c624247441d8ba71e72b5cb466e3d4d104e5d2a1"
+  integrity sha512-9AHFhcsFg6NCJFf4TSdvJekVJ4bzy2ruN25CyGsieYKnjFPs5K0e1c4mtrzRmnrvYVXauT1rpOQidfHup1cqJw==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2040,7 +2040,7 @@ renovate@21.18.7:
     moment "2.27.0"
     moment-timezone "0.5.31"
     node-emoji "1.10.0"
-    node-html-parser "1.2.19"
+    node-html-parser "1.2.20"
     p-all "2.1.0"
     p-map "4.0.0"
     parse-diff "0.7.0"
