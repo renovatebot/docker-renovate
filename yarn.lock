@@ -1606,6 +1606,11 @@ object-assign@^4.1.0:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
+object-hash@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-2.0.3.tgz#d12db044e03cd2ca3d77c0570d87225b02e1e6ea"
+  integrity sha512-JPKn0GMu+Fa3zt3Bmr66JhokJU5BaNBIh4ZeTlaCBzrBsOeXzwcKKAK1tbLiPKgvwmPXsDvvLHoWh5Bm7ofIYg==
+
 object-keys@^1.0.12:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
@@ -1993,10 +1998,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.20.0:
-  version "21.20.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.20.0.tgz#47e322cfda4e6b8acea1e799f251ba78d8d329f6"
-  integrity sha512-hdtJFT1mJUGs3t9ExKQvTUF/bYQI2i8Y1Ghc6D1OK+NItwRMCJcgQk12Tn5XTBYQ+saXSRaI1pvwdkjlrzT2ng==
+renovate@21.21.0:
+  version "21.21.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.21.0.tgz#eaa164f4fbbf87d0333688fa8caee47be6848cfd"
+  integrity sha512-WjMELuL7f79GRymlHsd8/EQNBdEvTaAoCRRpEedQSXpEfYd9jXrkbBe92/VEUNL0J11KNoN0wK0yjOyIAfFZ1w==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
@@ -2041,6 +2046,7 @@ renovate@21.20.0:
     moment-timezone "0.5.31"
     node-emoji "1.10.0"
     node-html-parser "1.2.20"
+    object-hash "2.0.3"
     p-all "2.1.0"
     p-map "4.0.0"
     parse-diff "0.7.0"
