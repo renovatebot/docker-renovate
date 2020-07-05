@@ -169,12 +169,12 @@ at-least-node@^1.0.0:
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
-aws-sdk@2.686.0:
-  version "2.686.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.686.0.tgz#c58c3874eff4c76c763d137df617e87971321eb7"
-  integrity sha512-QhYhJ5y8tUG5SlmY3CSf9RBaa3EFbta28oarOyiwceHKmY80cMCafRI1YypT6CVDx/q91dbnSNQfWhs0cZPbBQ==
+aws-sdk@2.709.0:
+  version "2.709.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.709.0.tgz#33b0c0fe8b9420c65610545394be047ac2d93c8f"
+  integrity sha512-F3sKXsCiutj9RglVXdqb/XJ3Ko3G+pX081Nf1YjVJpLydwE2v16FGxrLqE5pqyWMDeUf5nZHnBoMuOYD8ip+Kw==
   dependencies:
-    buffer "4.9.1"
+    buffer "4.9.2"
     events "1.1.1"
     ieee754 "1.1.13"
     jmespath "0.15.0"
@@ -243,10 +243,10 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-buffer@4.9.1:
-  version "4.9.1"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-4.9.1.tgz#6d1bb601b07a4efced97094132093027c95bc298"
-  integrity sha1-bRu2AbB6TvztlwlBMgkwJ8lbwpg=
+buffer@4.9.2:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-4.9.2.tgz#230ead344002988644841ab0244af8c44bbe3ef8"
+  integrity sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
@@ -1998,16 +1998,16 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.22.4:
-  version "21.22.4"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.22.4.tgz#cf5fd120ebdf5c0172302b88c796369cca05c817"
-  integrity sha512-g9/uBlt8vW0tKXRObFAz12KRnj7bgnli6BqIpvRMnwDF2bkR7nlxWUCzPHO6IzLwwRYkteeRizjrhbclISuINA==
+renovate@21.22.5:
+  version "21.22.5"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.22.5.tgz#95f889e565f7c00a6b34eba838c9b4657b78f6d1"
+  integrity sha512-2KsdQ7HXMEj+IGdirkr1MNOpe9ee2IRfJFrEXmb9Z8B7Lvu31xqEt1fzeb5JbkXUyEqMo+1EENAV5bBl2OOqeg==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@sindresorhus/is" "2.1.1"
     "@snyk/ruby-semver" "2.2.2"
     "@yarnpkg/lockfile" "1.1.0"
-    aws-sdk "2.686.0"
+    aws-sdk "2.709.0"
     azure-devops-node-api "10.1.1"
     bunyan "1.8.14"
     cacache "15.0.4"
