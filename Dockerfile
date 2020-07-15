@@ -32,7 +32,10 @@ RUN yarn install --link-duplicates
 COPY tsconfig.json .
 COPY tsconfig.app.json .
 COPY src src
-RUN yarn build
+
+RUN set -ex; \
+  yarn build; \
+  chmod +x dist/*.js;
 
 ARG RENOVATE_VERSION
 RUN yarn add renovate@${RENOVATE_VERSION} --link-duplicates
@@ -42,8 +45,6 @@ RUN yarn install --link-duplicates --production
 # check is re2 is usable
 RUN node -e "new require('re2')('.*').exec('test')"
 
-RUN set -ex; \
-  chmod +x dist/*.js;
 
 # TODO: enable
 #COPY src src
