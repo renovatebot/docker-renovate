@@ -25,24 +25,27 @@ RUN install-apt build-essential python3
 RUN npm install -g yarn-deduplicate
 
 COPY package.json .
+COPY yarn.lock .
+
+RUN yarn install --link-duplicates
+
+COPY tsconfig.json .
+COPY tsconfig.app.json .
+COPY src src
+RUN yarn build
 
 ARG RENOVATE_VERSION
-RUN yarn install --link-duplicates --production
-RUN yarn add renovate@${RENOVATE_VERSION} --link-duplicates --production
+RUN yarn add renovate@${RENOVATE_VERSION} --link-duplicates
 RUN yarn-deduplicate --strategy fewer
 RUN yarn install --link-duplicates --production
 
 # check is re2 is usable
 RUN node -e "new require('re2')('.*').exec('test')"
 
-# TODO: remove in v20
 RUN set -ex; \
-  mkdir dist; \
-  echo "#!/usr/bin/env node" >> dist/renovate.js; \
-  echo "require('renovate/dist/renovate.js');" >> dist/renovate.js; \
-  chmod +x dist/renovate.js;
+  chmod +x dist/*.js;
 
-# TODO: enable in v20
+# TODO: enable
 #COPY src src
 #RUN yarn build
 # compatability file
@@ -62,12 +65,13 @@ ENV RENOVATE_BINARY_SOURCE=docker
 COPY --from=tsbuild /usr/src/app/package.json package.json
 COPY --from=tsbuild /usr/src/app/dist dist
 
-# TODO: remove in v20
+# TODO: remove
 COPY --from=tsbuild /usr/src/app/node_modules node_modules
 
 # exec helper
 COPY bin/ /usr/local/bin/
-RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
+RUN ln -sf /usr/src/app/dist/index.js /usr/local/bin/renovate;
+RUN ln -sf /usr/src/app/dist/config-validator.js /usr/local/bin/renovate-config-validator;
 CMD ["renovate"]
 
 ARG RENOVATE_VERSION

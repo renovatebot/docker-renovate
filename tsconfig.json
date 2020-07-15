@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "./dist",
+    "target": "es2018",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["es2018"],
+    "types": [],
+  },
+  "exclude": [
+    "node_modules",
+    "./.cache",
+    "./dist",
+    "./bin",
+    "**/__mocks__/*",
+    "bin",
+    "coverage",
+    "tmp"
+  ]
+}
