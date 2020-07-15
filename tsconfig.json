@@ -5,6 +5,7 @@
     "target": "es2018",
     "module": "commonjs",
     "sourceMap": true,
+    "importHelpers": true,
     "lib": ["es2018"],
     "types": [],
   },

@@ -70,7 +70,7 @@ COPY --from=tsbuild /usr/src/app/node_modules node_modules
 
 # exec helper
 COPY bin/ /usr/local/bin/
-RUN ln -sf /usr/src/app/dist/index.js /usr/local/bin/renovate;
+RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
 RUN ln -sf /usr/src/app/dist/config-validator.js /usr/local/bin/renovate-config-validator;
 CMD ["renovate"]
 

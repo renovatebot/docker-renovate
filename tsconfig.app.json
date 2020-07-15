@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "files": ["src/index.ts", "src/config-validator.ts", "src/renovate.ts"]
+  "files": ["src/renovate.ts", "src/config-validator.ts"]
 }
