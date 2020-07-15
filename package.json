@@ -6,12 +6,15 @@
   "license": "AGPL-3.0",
   "private": true,
   "scripts": {
-    "build": "ncc build src/index.js"
+    "build": "tsc -p tsconfig.app.json"
   },
   "dependencies": {
-    "renovate": "21.29.3"
+    "renovate": "21.29.3",
+    "source-map-support": "0.5.19",
+    "tslib": "2.0.0"
   },
   "devDependencies": {
-    "@zeit/ncc": "0.22.3"
+    "@types/bunyan": "1.8.6",
+    "typescript": "3.9.6"
   }
 }

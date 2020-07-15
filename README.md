@@ -26,3 +26,8 @@ $ docker run --rm -it -v $PWD/config.js:/usr/src/app/config.js -v /tmp:/tmp -v /
 $ export RENOVATE_TOKEN=xxxxxxx
 $ docker run --rm -it -e RENOVATE_TOKEN -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock renovate/renovate:slim renovate-tests/gomod1
 ```
+
+#### config-validator
+```sh
+$ docker run --rm -it -v $PWD/config.js:/usr/src/app/config.js -e LOG_LEVEL=debug renovate/renovate:slim renovate-config-validator
+```
