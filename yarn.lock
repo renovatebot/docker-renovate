@@ -16,10 +16,12 @@
   dependencies:
     xregexp "4.2.0"
 
-"@renovatebot/ruby-semver@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@renovatebot/ruby-semver/-/ruby-semver-0.1.6.tgz#5f31ef2299254263084a3340a94b9d5fb2de46dc"
-  integrity sha512-dxIRRJBLpIdrGOgqJU3nLbnp1BDUtGC4yVH9OliEjRx0yx8wDgRWg7SGKze5B5uQxnPV8e7UKvbByBh0X8G+aA==
+"@renovatebot/ruby-semver@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@renovatebot/ruby-semver/-/ruby-semver-0.2.1.tgz#663fda43f2d1b5cdceca1f8e2cf2c8bdf4561d62"
+  integrity sha512-C/Lx16jZLB7q4b+zHF/av/BRrhSRDUh7KsP7xHTb2UwNAOfwkv8mMkQhrjjNpil3eQY//vFGLtnYCXlEolZ38w==
+  dependencies:
+    tslib "2.0.0"
 
 "@sindresorhus/is@2.1.1":
   version "2.1.1"
@@ -1986,13 +1988,13 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.31.1:
-  version "21.31.1"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.31.1.tgz#7ea651c69992dce9390f102efe41ef5fe4cad085"
-  integrity sha512-iB13yDB6IfEjwAejmso6C4Kmrm35C/pcrJBu2RQdH+INk9UAp1tZof3z+5xas3Kzj2d3aSHqOhDH0ZR50jxdkA==
+renovate@21.31.2:
+  version "21.31.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.31.2.tgz#3b231933b09281e6f28d5328cd4290ff13a794c6"
+  integrity sha512-ZnzH0qjTCqFBjFzw0WTxZkw90ki8EcNy233H0IzP0p+71nM6KqtDz0wVOZZDrGlNLkMec9/0D39C1NItUgkhRw==
   dependencies:
     "@renovate/pep440" "0.4.1"
-    "@renovatebot/ruby-semver" "0.1.6"
+    "@renovatebot/ruby-semver" "0.2.1"
     "@sindresorhus/is" "2.1.1"
     "@yarnpkg/lockfile" "1.1.0"
     aws-sdk "2.713.0"
