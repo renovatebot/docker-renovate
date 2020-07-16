@@ -1918,10 +1918,10 @@ redis@^3.0.2:
     redis-errors "^1.2.0"
     redis-parser "^3.0.0"
 
-registry-auth-token@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-4.1.1.tgz#40a33be1e82539460f94328b0f7f0f84c16d9479"
-  integrity sha512-9bKS7nTl9+/A1s7tnPeGrUpRcVY+LUh7bfFgzpndALdPfXQBfQV77rQVtqgUV3ti4vc/Ik81Ex8UJDWDQ12zQA==
+registry-auth-token@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-4.2.0.tgz#1d37dffda72bbecd0f581e4715540213a65eb7da"
+  integrity sha512-P+lWzPrsgfN+UEpDS3U8AQKg/UjZX6mQSJueZj3EK+vNESoqBSpBUD3gmu4sF9lOsjXWjF11dQKUqemf3veq1w==
   dependencies:
     rc "^1.2.8"
 
@@ -1986,10 +1986,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.31.0:
-  version "21.31.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.31.0.tgz#edbb55d74838947b20a66b3b773bda6a4f0f702a"
-  integrity sha512-elSMdY2Nb6zDOwJk03ZnHOG0D8KNrEcpeomLKOvIvUnqSkd2AllMtM0jc8jDOslaP4sxRz8KV7xJJld03UKpgA==
+renovate@21.31.1:
+  version "21.31.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.31.1.tgz#7ea651c69992dce9390f102efe41ef5fe4cad085"
+  integrity sha512-iB13yDB6IfEjwAejmso6C4Kmrm35C/pcrJBu2RQdH+INk9UAp1tZof3z+5xas3Kzj2d3aSHqOhDH0ZR50jxdkA==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.1.6"
@@ -2039,7 +2039,7 @@ renovate@21.31.0:
     p-map "4.0.0"
     parse-diff "0.7.0"
     parse-link-header "1.0.1"
-    registry-auth-token "4.1.1"
+    registry-auth-token "4.2.0"
     semver "7.3.2"
     semver-stable "3.0.0"
     semver-utils "1.1.4"
