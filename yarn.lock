@@ -1988,10 +1988,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.33.0:
-  version "21.33.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.33.0.tgz#2075800459aac0f53d4715852f0bd667c36f2d1b"
-  integrity sha512-B1pKTSO6mlu9dX5FLzc/kCPe7Kmd3fAI9h4/WhlMGER+NwhfgCrYKgt3MaCW1qsXBtX9RkxIZj3I5dPvbPJtpw==
+renovate@21.33.1:
+  version "21.33.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.33.1.tgz#f08952c0f3954d987f63092ac59eb102b4978059"
+  integrity sha512-SDobxtsOlE6k8kqsHXaW4++iAokA1wHcjNtxZm8VmedPr8iQAcKl0ieoi0oRDhDB7bnh6f/ArwUNJdkv4VR4yA==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
