@@ -449,10 +449,10 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
-  integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+commander@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.0.0.tgz#2b270da94f8fb9014455312f829a1129dbf8887e"
+  integrity sha512-s7EA+hDtTYNhuXkTlhqew4txMZVdszBmKWSPEMxGr8ru8JXR7bLUFIAtPhcSuFdJQ0ILMxnJi8GkQL0yvDy/YA==
 
 commander@~2.20.3:
   version "2.20.3"
@@ -559,10 +559,10 @@ define-properties@^1.1.3:
   dependencies:
     object-keys "^1.0.12"
 
-delay@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/delay/-/delay-4.3.0.tgz#efeebfb8f545579cb396b3a722443ec96d14c50e"
-  integrity sha512-Lwaf3zVFDMBop1yDuFZ19F9WyGcZcGacsbdlZtWjQmM50tOcMntm1njF/Nb/Vjij3KaSvCF+sEYGKrrjObu2NA==
+delay@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/delay/-/delay-4.4.0.tgz#71abc745f3ce043fe7f450491236541edec4ad0c"
+  integrity sha512-txgOrJu3OdtOfTiEOT2e76dJVfG/1dz2NZ4F0Pyt4UGZJryssMRp5vdM5wQoLwSOBNdrJv3F9PAhp/heqd7vrA==
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -1323,7 +1323,14 @@ markdown-it@10.0.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-markdown-table@1.1.3, markdown-table@^1.1.0:
+markdown-table@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-2.0.0.tgz#194a90ced26d31fe753d8b9434430214c011865b"
+  integrity sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==
+  dependencies:
+    repeat-string "^1.0.0"
+
+markdown-table@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.3.tgz#9fcb69bcfdb8717bfd0398c6ec2d93036ef8de60"
   integrity sha512-1RUZVgQlpJSPWYbFSpmudq5nHY1doEIv89gBtF0s4gW1GF2XorxcA/70M5vq7rLv0a6mhOUccRsqkwhwLCIQ2Q==
@@ -2001,10 +2008,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@21.33.7:
-  version "21.33.7"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.33.7.tgz#ffe90730cf385f2cf0e6806ffdfae6ab73d05078"
-  integrity sha512-9Gz0bO+5eQf48viMCSItdaDGDq6NcRzH+70hlQjr2XYgDOgBODkWxlrG4NySV/IP/PsaFm0eRO8xE5tT6R7kCQ==
+renovate@21.33.9:
+  version "21.33.9"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-21.33.9.tgz#3e39d4612d1b394e9e7915b1652741881f409530"
+  integrity sha512-DFSth56QBJHyElOgdm28Sb5g3QaUAO57QjQl21buAzo9q4uhWI1AR6YSDVqBfgSi5V23xWKUDQRukIQykSiMrQ==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2017,10 +2024,10 @@ renovate@21.33.7:
     chalk "4.1.0"
     changelog-filename-regex "2.0.1"
     clean-git-ref "2.0.1"
-    commander "5.1.0"
+    commander "6.0.0"
     conventional-commits-detector "1.0.2"
     deepmerge "4.2.2"
-    delay "4.3.0"
+    delay "4.4.0"
     detect-indent "6.0.0"
     email-addresses "3.1.0"
     fast-deep-equal "3.1.3"
@@ -2043,7 +2050,7 @@ renovate@21.33.7:
     linkify-markdown "1.0.0"
     luxon "1.24.1"
     markdown-it "10.0.0"
-    markdown-table "1.1.3"
+    markdown-table "2.0.0"
     minimatch "3.0.4"
     moment "2.27.0"
     moment-timezone "0.5.31"
@@ -2071,7 +2078,7 @@ renovate@21.33.7:
   optionalDependencies:
     re2 "1.15.4"
 
-repeat-string@^1.5.4:
+repeat-string@^1.0.0, repeat-string@^1.5.4:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
