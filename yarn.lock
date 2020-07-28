@@ -2033,10 +2033,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@22.4.0:
-  version "22.4.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-22.4.0.tgz#76e893a244f3db018aeba9a5088d2b9e138db377"
-  integrity sha512-Afzt+yeUsiIw2fnme0HeqEQvIPjMY6bbcuKyHSXuXy9oy0SDe57BWmUkLaTLvS70IGdv5UtkXi3bzSME8hrsgg==
+renovate@22.5.0:
+  version "22.5.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-22.5.0.tgz#978fd53feb01166a9bf10292d07bc6300b08a941"
+  integrity sha512-+KMUKYbTvByzCPzQbkcPNV3mCQUDhyR2huMsLo2Ltqs3NYsYpveWTeHfPVR3LmPewg1o2Nksvt11TrJjHUGG5Q==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
