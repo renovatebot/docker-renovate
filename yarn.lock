@@ -2033,10 +2033,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@22.6.2:
-  version "22.6.2"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-22.6.2.tgz#5952d0931ceba69f7c9d8f23635b1497fd8f3dc6"
-  integrity sha512-zieXJe85T6vO2q11PSD1AErTzmZblZs7bnJ+xdRQNdm9BH9JOni5yicmiDEe4e1aVIIWT6t8HbepQMBiHfvEvQ==
+renovate@22.6.3:
+  version "22.6.3"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-22.6.3.tgz#b0a5f0fd0054092a5c8392019edc0579d59b2228"
+  integrity sha512-gN7GazLwgEqymkCnHL2FGldy1r+FT75T0tu0VCDGSerIMnk3b9frMwQ+zKuN6eNConzI6EVqp/QQLBgDH7i2Og==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2093,7 +2093,7 @@ renovate@22.6.2:
     shlex "2.0.2"
     shortid "2.2.15"
     simple-git "2.15.0"
-    slugify "1.4.4"
+    slugify "1.4.5"
     toml "3.0.0"
     traverse "0.6.6"
     upath "1.2.0"
@@ -2296,10 +2296,10 @@ simple-git@2.15.0:
     "@kwsites/promise-deferred" "^1.1.1"
     debug "^4.1.1"
 
-slugify@1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.4.tgz#2f032ffa52b1e1ca2a27737c1ce47baae3d0883a"
-  integrity sha512-N2+9NJ8JzfRMh6PQLrBeDEnVDQZSytE/W4BTC4fNNPmO90Uu58uNwSlIJSs+lmPgWsaAF79WLhVPe5tuy7spjw==
+slugify@1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.5.tgz#a7517acf5f4c02a4df41e735354b660a4ed1efcf"
+  integrity sha512-WpECLAgYaxHoEAJ8Q1Lo8HOs1ngn7LN7QjXgOLbmmfkcWvosyk4ZTXkTzKyhngK640USTZUlgoQJfED1kz5fnQ==
 
 source-map-support@0.5.19:
   version "0.5.19"
