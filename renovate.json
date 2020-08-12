@@ -9,5 +9,12 @@
       "automerge": true,
       "masterIssueApproval": false
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["at any time"],
+    "stabilityDays": 0,
+    "masterIssueApproval": true
+  },
+  "postUpdateOptions": ["yarnDedupeHighest"]
 }
