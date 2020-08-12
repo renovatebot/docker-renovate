@@ -27,7 +27,7 @@ RUN npm install -g yarn-deduplicate
 COPY package.json .
 COPY yarn.lock .
 
-RUN yarn install --link-duplicates
+RUN yarn install --frozen-lockfile --link-duplicates
 
 COPY tsconfig.json .
 COPY tsconfig.app.json .
@@ -39,8 +39,8 @@ RUN set -ex; \
 
 ARG RENOVATE_VERSION
 RUN yarn add renovate@${RENOVATE_VERSION} --link-duplicates
-RUN yarn-deduplicate --strategy fewer
-RUN yarn install --link-duplicates --production
+RUN yarn-deduplicate --strategy highest
+RUN yarn install --frozen-lockfile --link-duplicates --production
 
 # check is re2 is usable
 RUN node -e "new require('re2')('.*').exec('test')"
