@@ -84,10 +84,10 @@
   dependencies:
     tslib "2.0.0"
 
-"@sindresorhus/is@3.1.1", "@sindresorhus/is@^3.0.0":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-3.1.1.tgz#6e39e4222add8b362da35720c9dd5d53345d5851"
-  integrity sha512-tLnujxFtfH7F+i5ghUfgGlJsvyCKvUnSMFMlWybFdX9/DdX8svb4Zwx1gV0gkkVCHXtmPSetoAR3QlKfOld6Tw==
+"@sindresorhus/is@3.1.2", "@sindresorhus/is@^3.0.0":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-3.1.2.tgz#548650de521b344e3781fbdb0ece4aa6f729afb8"
+  integrity sha512-JiX9vxoKMmu8Y3Zr2RVathBL1Cdu4Nt4MuNWemt1Nc06A0RAin9c5FArkhGsyMBWfCu4zj+9b+GxtjAnE4qqLQ==
 
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.5"
@@ -2559,14 +2559,14 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@22.25.1:
-  version "22.25.1"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-22.25.1.tgz#02a658ee9f2e05d26c46771b72f44586c9121c76"
-  integrity sha512-QjwThQrapmG89PJfunO8Fcjwq9+PKqe0lep96nZijpdUU9gg8mMHZL9MudKsfKYmF8M8hVnDOlNNBwjkxycddQ==
+renovate@22.25.2:
+  version "22.25.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-22.25.2.tgz#caac4bc455c69ffbd3fd9a51f723e7028df8afe4"
+  integrity sha512-6I05cl42BJVmyft8ewNqUiPP3nn6GjytHIGMCuOUYGtL7Aa+Aj3KXnad3kZnsPPieEKFZ19ABhFbiO10nKObCw==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
-    "@sindresorhus/is" "3.1.1"
+    "@sindresorhus/is" "3.1.2"
     "@yarnpkg/core" "2.1.1"
     "@yarnpkg/parsers" "2.1.0"
     aws-sdk "2.738.0"
