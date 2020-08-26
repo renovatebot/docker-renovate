@@ -1702,10 +1702,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luxon@1.24.1:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.24.1.tgz#a8383266131ed4eaed4b5f430f96f3695403a52a"
-  integrity sha512-CgnIMKAWT0ghcuWFfCWBnWGOddM0zu6c4wZAWmD0NN7MZTnro0+833DF6tJep+xlxRPg4KtsYEHYLfTMBQKwYg==
+luxon@1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.25.0.tgz#d86219e90bc0102c0eb299d65b2f5e95efe1fe72"
+  integrity sha512-hEgLurSH8kQRjY6i4YLey+mcKVAWXbDNlZRmM6AgWDJ1cY3atl8Ztf5wEY7VBReFbmGnwQPz7KYJblL8B2k0jQ==
 
 map-obj@^1.0.0:
   version "1.0.1"
@@ -2588,10 +2588,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@23.0.2:
-  version "23.0.2"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.0.2.tgz#d5c8071fca831429b813acbb6ffdde83972f349c"
-  integrity sha512-lpGXcxQ5NNYArcmoc6PRbBXfasFIOP/kC/lcKPKfrGBJvuMTr/RgcNxqBe0F42puK7afdDkoFQ4lW2FI8H0ujw==
+renovate@23.0.3:
+  version "23.0.3"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.0.3.tgz#4173688f8452d209e20d274e79204e9895700e46"
+  integrity sha512-UQn3Jq0DGGQ9JZ8cJdlETfN8h0MsunWmPMzaQSiXN20DXFvXDl5hHos7z/jP5GYM20kyT409Ckn6N/D3X9M7EQ==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2629,7 +2629,7 @@ renovate@23.0.2:
     json5 "2.1.3"
     later "1.2.0"
     linkify-markdown "1.0.0"
-    luxon "1.24.1"
+    luxon "1.25.0"
     markdown-it "11.0.0"
     markdown-table "2.0.0"
     minimatch "3.0.4"
