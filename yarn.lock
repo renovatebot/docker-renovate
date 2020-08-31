@@ -701,10 +701,10 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-6.0.0.tgz#2b270da94f8fb9014455312f829a1129dbf8887e"
-  integrity sha512-s7EA+hDtTYNhuXkTlhqew4txMZVdszBmKWSPEMxGr8ru8JXR7bLUFIAtPhcSuFdJQ0ILMxnJi8GkQL0yvDy/YA==
+commander@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
+  integrity sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -2588,10 +2588,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@23.13.0:
-  version "23.13.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.13.0.tgz#2ad0cd7533b5e5466e076ce6414dec9bd2f134a2"
-  integrity sha512-TrhXdhDgBx0n57YAHurmyeWSlqOeCaFfvc2/7N/u0OAJWEyqwxD5G3BjB/7djNjIsDvJoJ3KW9V7xBGv/aFjoQ==
+renovate@23.13.1:
+  version "23.13.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.13.1.tgz#f8ea5d3f72d10bb83f2af33bd30d16a4aee8988b"
+  integrity sha512-IKmxQmlrHHJ4nCFhvr0LO3gO9gZSWk4sJo8n+XfAIpRtIxGWVAip7V5/sC9yA6FzSW+icloqM5tEPPSWSa8BdQ==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2605,7 +2605,7 @@ renovate@23.13.0:
     chalk "4.1.0"
     changelog-filename-regex "2.0.1"
     clean-git-ref "2.0.1"
-    commander "6.0.0"
+    commander "6.1.0"
     conventional-commits-detector "1.0.2"
     deepmerge "4.2.2"
     delay "4.4.0"
