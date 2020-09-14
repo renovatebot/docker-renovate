@@ -2361,10 +2361,10 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-parse-diff@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/parse-diff/-/parse-diff-0.7.0.tgz#f11128d3aa02381b46ebc8320b470c2c327e67dc"
-  integrity sha512-88ar4IU2Fx+KgiyvVul0Y+YprMArTgLscO0nEKaEvWvhzRSSYefdf1M9PUmpx1pu5crUoVl2QNDMqjxfCeKptQ==
+parse-diff@0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/parse-diff/-/parse-diff-0.7.1.tgz#9b7a2451c3725baf2c87c831ba192d40ee2237d4"
+  integrity sha512-1j3l8IKcy4yRK2W4o9EYvJLSzpAVwz4DXqCewYyx2vEwk2gcf3DBPqc8Fj4XV3K33OYJ08A8fWwyu/ykD/HUSg==
 
 parse-entities@^1.0.2, parse-entities@^1.1.0:
   version "1.2.2"
@@ -2756,10 +2756,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@23.26.0:
-  version "23.26.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.26.0.tgz#573a1fdfab647c5f5b93a65d3729f2008da3106b"
-  integrity sha512-5U0nIliUmnQDgS3h97O+QD4i6N9AQkKa2ebPdki/xhlqyMYDvIiAZjq8nse3CrAGOIgHjgxv0nbzrfSGAtOAuA==
+renovate@23.26.1:
+  version "23.26.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.26.1.tgz#24f6b417231791b0c715c563c4d2f6c8361ab168"
+  integrity sha512-kgYqD7yRp5Z8DvGgD4OktSMm27W9Z/VW8XL/DmSLIiLdu0HtNh/QBfiOtWkGJwG4Qdrl8MnLeKUeRWsue17v/Q==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2807,7 +2807,7 @@ renovate@23.26.0:
     node-emoji "1.10.0"
     p-all "3.0.0"
     p-map "4.0.0"
-    parse-diff "0.7.0"
+    parse-diff "0.7.1"
     parse-link-header "1.0.1"
     registry-auth-token "4.2.0"
     semver "7.3.2"
