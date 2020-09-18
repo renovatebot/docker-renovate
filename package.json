@@ -15,6 +15,6 @@
   },
   "devDependencies": {
     "@types/bunyan": "1.8.6",
-    "typescript": "4.0.2"
+    "typescript": "4.0.3"
   }
 }
