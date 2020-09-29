@@ -6,6 +6,7 @@
     "module": "commonjs",
     "sourceMap": true,
     "importHelpers": true,
+    "esModuleInterop": true,
     "lib": ["es2018"],
     "types": [],
   },
