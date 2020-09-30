@@ -1357,10 +1357,10 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hasha@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/hasha/-/hasha-5.2.0.tgz#33094d1f69c40a4a6ac7be53d5fe3ff95a269e0c"
-  integrity sha512-2W+jKdQbAdSIrggA8Q35Br8qKadTrqCTC8+XZvBWepKDK6m9XkX6Iz1a2yh2KP01kzAR/dpuMeUnocoLYDcskw==
+hasha@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/hasha/-/hasha-5.2.1.tgz#0e5b492aa40de3819e80955f221d2fccef55b5aa"
+  integrity sha512-x15jnRSHTi3VmH+oHtVb9kgU/HuKOK8mjK8iCL3dPQXh4YJlUb9YSI8ZLiiqLAIvY2wuDIlZYZppy8vB2XISkQ==
   dependencies:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
@@ -2756,10 +2756,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@23.37.1:
-  version "23.37.1"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.37.1.tgz#6bbb955f9e4a85db816255aa3104760d7fb766ee"
-  integrity sha512-NtIUadhPuge8bp0guf9yvC4+sWSWe4fR+0BeN4sYL/rz/Ya9tIJHwGsK4qDzf2hkuZ2J4+TBNt6Bd37LRGGgMQ==
+renovate@23.37.2:
+  version "23.37.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.37.2.tgz#96387dde9e8c92e54e05b202750aae0f50e92c6f"
+  integrity sha512-SWKEbMMmbGv9TZR3FLBeDcwstFNBjiEbnhwvT1evt5lSfCUZd/jDhpIE3Nh6AF4Yi/BbE5kY76dAnVFVqZmoxg==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2788,7 +2788,7 @@ renovate@23.37.1:
     got "11.7.0"
     handlebars "4.7.6"
     handy-redis "1.8.3"
-    hasha "5.2.0"
+    hasha "5.2.1"
     ignore "5.1.8"
     ini "1.3.5"
     js-yaml "3.14.0"
