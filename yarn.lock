@@ -2776,10 +2776,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@23.44.5:
-  version "23.44.5"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.44.5.tgz#7adeffacc3797222bb75d672d6209e576aa5ed9c"
-  integrity sha512-2SvEb7m0NHFI/xKlkNMCKZe/Eg0T6JUVJyLD/8pa51xzC94UICxF3e0ley9hw4Z6rRoAaZoklgiTW2+p5guz6Q==
+renovate@23.44.6:
+  version "23.44.6"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.44.6.tgz#320807e846c066cd0119dc16f4f9322a84a05388"
+  integrity sha512-E3kluyI0fPjCKOVNqOY5WkmGs6X7F3DP1R3obrvqeEOKgJnlcyNesjzGDsiLO2UN9OF0ikTvfzAC1Det/JcQ/w==
   dependencies:
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
@@ -2835,7 +2835,7 @@ renovate@23.44.5:
     semver-utils "1.1.4"
     shlex "2.0.2"
     shortid "2.2.15"
-    simple-git "2.20.1"
+    simple-git "2.21.0"
     slugify "1.4.5"
     toml "3.0.0"
     traverse "0.6.6"
@@ -3071,10 +3071,10 @@ signal-exit@^3.0.0:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-simple-git@2.20.1:
-  version "2.20.1"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.20.1.tgz#bab3f4d083ed6e1655a7c62ab8e8920eecae86f6"
-  integrity sha512-aa9s2ZLjXlHCVGbDXQLInMLvLkxKEclqMU9X5HMXi3tLWLxbWObz1UgtyZha6ocHarQtFp0OjQW9KHVR1g6wbA==
+simple-git@2.21.0:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.21.0.tgz#d25d3fdc6a139cd7f80f197541a6f9f6e9d4cbc8"
+  integrity sha512-rohCHmEjD/ESXFLxF4bVeqgdb4Awc65ZyyuCKl3f7BvgMbZOBa/Ye3HN/GFnvruiUOAWWNupxhz3Rz5/3vJLTg==
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
     "@kwsites/promise-deferred" "^1.1.1"
