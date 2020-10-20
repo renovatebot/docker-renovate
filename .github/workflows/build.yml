@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - 'renovate/**'
+      - 'chore/**'
 
   pull_request:
 
