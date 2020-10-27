@@ -30,6 +30,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@iarna/toml@2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
+  integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
+
 "@kwsites/file-exists@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@kwsites/file-exists/-/file-exists-1.1.1.tgz#ad1efcac13e1987d8dbaf235ef3be5b0d96faa99"
@@ -2809,11 +2814,12 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@23.56.13:
-  version "23.56.13"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.56.13.tgz#51755163de0e46186351f12807b61cd46b2c896e"
-  integrity sha512-da5vgl9PTPoW10ky8UrR5+aVx5TquTN1kM4D+kGdZt70Gu896bU/7HlCqSsR6C40g+3zkS2KM+DN6lky5Sv2Fw==
+renovate@23.57.0:
+  version "23.57.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-23.57.0.tgz#19b542c694bb74f453f9a4be0f903f950466f162"
+  integrity sha512-uLNmMSWtzJUt3XjponjfHC9LHGkY+YKC9iVScgM0sakI7GmIOtbpwkDvMX5V8X7xGW+iwt6ZbwX7r00mje2n2g==
   dependencies:
+    "@iarna/toml" "2.2.5"
     "@renovate/pep440" "0.4.1"
     "@renovatebot/ruby-semver" "0.2.1"
     "@sindresorhus/is" "4.0.0"
@@ -2870,7 +2876,6 @@ renovate@23.56.13:
     shortid "2.2.16"
     simple-git "2.21.0"
     slugify "1.4.5"
-    toml "3.0.0"
     traverse "0.6.6"
     upath "2.0.0"
     url-join "4.0.1"
@@ -3399,11 +3404,6 @@ to-vfile@^2.2.0:
     is-buffer "^1.1.4"
     vfile "^2.0.0"
     x-is-function "^1.0.4"
-
-toml@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/toml/-/toml-3.0.0.tgz#342160f1af1904ec9d204d03a5d61222d762c5ee"
-  integrity sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==
 
 tough-cookie@^2.3.3, tough-cookie@~2.5.0:
   version "2.5.0"
