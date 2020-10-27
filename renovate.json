@@ -1,20 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>renovatebot/presets-internal:docker-images"],
-  "packageRules": [
-    {
-      "description": "Automerge renovate minor and patch updates",
-      "packageNames": ["renovate"],
-      "updateTypes": ["minor", "patch"],
-      "automerge": true,
-      "masterIssueApproval": false
-    }
-  ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["at any time"],
-    "stabilityDays": 0,
-    "masterIssueApproval": true
-  },
-  "postUpdateOptions": ["yarnDedupeHighest"]
+  "extends": ["github>renovatebot/presets-internal"]
 }
