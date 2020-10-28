@@ -1,7 +1,7 @@
 # Gitlab Configuration
 
 Here are some configuation examples for configuring renovate to run as gitlab pipeline.
-See [self-hosting](https://github.com/renovatebot/renovate/blob/master/docs/development/self-hosting.md#self-hosting-renovate) doc for additional information.
+See [self-hosting](https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#self-hosting-renovate) doc for additional information.
 
 ## Renovate slim with mapped docker socket
 
