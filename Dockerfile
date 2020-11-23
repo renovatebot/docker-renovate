@@ -1,9 +1,9 @@
 # renovate: datasource=npm depName=renovate versioning=npm
-ARG RENOVATE_VERSION=23.66.1
+ARG RENOVATE_VERSION=23.84.12
 
 # Base image
 #============
-FROM renovate/buildpack:2@sha256:0e2a006e0e363c2fe1cc9fd733185597174a35a23278d2a1e8eda72b3fe8ad78 AS base
+FROM renovate/buildpack:2@sha256:b78c162923bb70c2bc16e216c17e0fa6bfb2a09dd4991196ca804cab793153c0 AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
 # renovate: datasource=docker versioning=docker
-RUN install-tool node 14.15.0
+RUN install-tool node 14.15.1
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.10

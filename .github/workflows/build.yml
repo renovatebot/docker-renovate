@@ -19,13 +19,13 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - uses: actions/checkout@v2.3.3
+      - uses: actions/checkout@v2.3.4
 
       - name: Docker registry login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Build and Publish
-        uses: renovatebot/internal-tools@v1.1.14
+        uses: renovatebot/internal-tools@v1.2.3
         with:
           command: "docker-builder"
           last-only: true
