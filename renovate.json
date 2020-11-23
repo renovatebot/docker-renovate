@@ -5,7 +5,8 @@
     {
       "packageNames": ["renovate"],
       "automerge": true,
-      "separateMinorPatch": false
+      "separateMinorPatch": false,
+      "stabilityDays": 0
     }
   ]
 }
