@@ -1,7 +1,10 @@
-# Samples for bitbucket pipelines (bitbucket.org)
+# Samples for bitbucket pipelines
+
+This are samples for running a self-hosted renovate on bitbucket.org pipelines.
 
 *TODO* pin and update renovate
 
+**bitbucket-pipelines.yml**
 ```yml
 image: renovate/renovate
 
