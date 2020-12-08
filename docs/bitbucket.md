@@ -77,8 +77,12 @@ Use this for self-update renovate
 }
 ```
 
-### variables
+### Variables
 You need to defined pipeline variables
 - `USERNAME`: Bitbucket.org username
 - `PASSWORD`: Bitbucket.org password
 - `GITHUB_COM_TOKEN`: github token to fetch changelog (optional, highly recommend)
+
+### Schedule
+
+Configure a `hourly` schedule on `master` branch with `branches: master` pipeline.
