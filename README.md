@@ -14,7 +14,7 @@ For the `latest` image see [here](https://github.com/renovatebot/docker-renovate
 See [docs](https://docs.renovatebot.com/self-hosting/) for additional information to self-hosting renovate with docker.
 
 
-See [Gitlab docs](./docs/gitlab.md) for some gitlab configuration samples.
+See [Gitlab](./docs/gitlab.md) or [Bitbucket](./docs/bitbucket.md) docs for more configuration samples.
 
 
 ### Samples
