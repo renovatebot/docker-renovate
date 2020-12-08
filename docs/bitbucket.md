@@ -1,7 +1,6 @@
 # Samples for Bitbucket pipelines
 
 These are configuration examples for running a self-hosted Renovate on bitbucket.org pipelines.
-The branches
 
 ### bitbucket-pipelines.yml
 ```yml
