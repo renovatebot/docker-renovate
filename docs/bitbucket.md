@@ -46,7 +46,7 @@ module.exports = {
 }
 ```
 
-Using autodiscover
+Using autodiscover:
 ```js
 module.exports = {
   platform: 'bitbucket',
