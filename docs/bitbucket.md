@@ -1,6 +1,6 @@
-# Samples for bitbucket pipelines
+# Samples for Bitbucket pipelines
 
-This are samples for running a self-hosted renovate on bitbucket.org pipelines.
+These are configuration examples for running a self-hosted Renovate on bitbucket.org pipelines.
 The branches
 
 ### bitbucket-pipelines.yml
@@ -36,7 +36,7 @@ pipelines:
 ```
 
 ### config.js
-Manual repository config
+Example of manual repository config:
 ```js
 module.exports = {
   platform: 'bitbucket',
@@ -59,7 +59,7 @@ module.exports = {
 ```
 
 ### renovate.json
-Use this for self-update renovate
+Use this for self-update Renovate:
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
@@ -78,10 +78,10 @@ Use this for self-update renovate
 ```
 
 ### Variables
-You need to defined pipeline variables
+You need to define pipeline variables:
 - `USERNAME`: Bitbucket.org username
 - `PASSWORD`: Bitbucket.org password
-- `GITHUB_COM_TOKEN`: github token to fetch changelog (optional, highly recommend)
+- `GITHUB_COM_TOKEN`: GitHub token to fetch changelog (optional, highly recommended)
 
 ### Schedule
 
