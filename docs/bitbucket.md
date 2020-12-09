@@ -18,6 +18,7 @@ pipelines:
           - docker
         caches:
           - docker
+          - renovate
         script:
           - export LOG_LEVEL=debug RENOVATE_CONFIG_FILE="$BITBUCKET_CLONE_DIR/config.js"
           - renovate --dry-run
@@ -29,6 +30,7 @@ pipelines:
             - docker
           caches:
             - docker
+            - renovate
           script:
             - export LOG_LEVEL=debug RENOVATE_CONFIG_FILE="$BITBUCKET_CLONE_DIR/config.js"
             - renovate
