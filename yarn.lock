@@ -1322,24 +1322,7 @@ globby@^11.0.1:
     merge2 "^1.3.0"
     slash "^3.0.0"
 
-got@11.8.0:
-  version "11.8.0"
-  resolved "https://registry.yarnpkg.com/got/-/got-11.8.0.tgz#be0920c3586b07fd94add3b5b27cb28f49e6545f"
-  integrity sha512-k9noyoIIY9EejuhaBNLyZ31D5328LeqnyPNXJQb2XlJZcKakLqN5m6O/ikhq/0lw56kUYS54fVm+D1x57YC9oQ==
-  dependencies:
-    "@sindresorhus/is" "^4.0.0"
-    "@szmarczak/http-timer" "^4.0.5"
-    "@types/cacheable-request" "^6.0.1"
-    "@types/responselike" "^1.0.0"
-    cacheable-lookup "^5.0.3"
-    cacheable-request "^7.0.1"
-    decompress-response "^6.0.0"
-    http2-wrapper "^1.0.0-beta.5.2"
-    lowercase-keys "^2.0.0"
-    p-cancelable "^2.0.0"
-    responselike "^2.0.0"
-
-got@^11.7.0:
+got@11.8.1, got@^11.7.0:
   version "11.8.1"
   resolved "https://registry.yarnpkg.com/got/-/got-11.8.1.tgz#df04adfaf2e782babb3daabc79139feec2f7e85d"
   integrity sha512-9aYdZL+6nHmvJwHALLwKSUZ0hMwGaJGYv3hoPLPgnT8BoBXm1SjnZeky+91tfwJaDzun2s4RsBRy48IEYv2q2Q==
@@ -2857,10 +2840,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@24.6.0:
-  version "24.6.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.6.0.tgz#3432756f56a8a22435122ad190fa7a1ee1d9f022"
-  integrity sha512-C3Z6XaR5HACgXssExMAgeKu6QESqWgDhGl7ZA51pZRY32QqAltk17kSvsIb65Al8PHPhLT1dO0Rv7lLhIR5kGA==
+renovate@24.6.1:
+  version "24.6.1"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.6.1.tgz#6b01a4f8a5992f26ddd409596c5a78ba107cb17b"
+  integrity sha512-+t9WPbzXA3gaFNu6L+uWy+zJCnQki9kIi9a6eJ6MwMTXKb2Ao57rijfHKH9B3ivU1QgFR/+M9qR6+lj62aYpdw==
   dependencies:
     "@breejs/later" "4.0.2"
     "@iarna/toml" "2.2.5"
@@ -2889,7 +2872,7 @@ renovate@24.6.0:
     fs-extra "9.0.1"
     github-url-from-git "1.5.0"
     global-agent "2.1.12"
-    got "11.8.0"
+    got "11.8.1"
     handlebars "4.7.6"
     handy-redis "2.1.0"
     hasha "5.2.2"
