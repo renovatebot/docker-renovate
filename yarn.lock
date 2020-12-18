@@ -2840,10 +2840,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@24.9.3:
-  version "24.9.3"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.9.3.tgz#6fa39ae42d794ddf67b598bded7ebab5bbd683c3"
-  integrity sha512-syshSFs0nyjt72xqRutgs+yHgUkR37UeP38V0fAbIQPQn3CnUZKYP0a7JRDRt/WSdr9HjPXJz2NMQGnsEpMFUg==
+renovate@24.9.4:
+  version "24.9.4"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.9.4.tgz#1e4ce0e93f85f45d81111cf6c261f93c1b207851"
+  integrity sha512-vXkISR0Bj7C2mgJOTiaZ4TFHNrtRh/aHb49DtQiIgE2RO363sp2m0b1rLz06Sb//dTh4nFf377AJ6Bz+WSNgYQ==
   dependencies:
     "@breejs/later" "4.0.2"
     "@iarna/toml" "2.2.5"
