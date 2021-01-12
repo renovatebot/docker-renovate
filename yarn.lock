@@ -1381,10 +1381,10 @@ handlebars@4.7.6:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-handy-redis@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/handy-redis/-/handy-redis-2.1.0.tgz#783596960d48c3a81db9996f98ae2db78838d961"
-  integrity sha512-XEv5k1/vCkvASfzOTNqW4Ft1+QrMbY274uB9KSpBLw1EtzVefXoO4SgdAlUddMHQd6ftv7KWJgr7kb5TXRMk5w==
+handy-redis@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/handy-redis/-/handy-redis-2.2.1.tgz#33f4293dffba7e0c2b198c4a4ce7cd4a832b5ecc"
+  integrity sha512-Kmz9HhdAA9tGV1b1R6m3AJ8GcC+r/0uzyiTia39Q8tseJJc4kOwGGQr7cfPppD/xlO2ENE5IK+ToRahLuX1JVg==
   dependencies:
     "@types/redis" "^2.8.27"
 
@@ -2901,10 +2901,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@24.15.1:
-  version "24.15.1"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.15.1.tgz#9a6fb89dd38ae5b8c82de1915e0b521acd5c42fe"
-  integrity sha512-0BMm33elbYxk9GurPnRg1WkPpGxCDoEnNkyPB2f65fRc/jC/+vR3KHmsYYSXTwWabp6oMCfAYJe+djFI+BG3uw==
+renovate@24.15.2:
+  version "24.15.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.15.2.tgz#9389da37dc4d6f280e83a99605d8f8670d0df875"
+  integrity sha512-ZG44bB4r4yHJNMzz5KcWogOwehJGOrM+ZxdMHWnu0desU3fb6Sm9uTLn7qC7dyOIQXciEgok9y30gMmAlLcwPA==
   dependencies:
     "@breejs/later" "4.0.2"
     "@iarna/toml" "2.2.5"
@@ -2936,7 +2936,7 @@ renovate@24.15.1:
     global-agent "2.1.12"
     got "11.8.1"
     handlebars "4.7.6"
-    handy-redis "2.1.0"
+    handy-redis "2.2.1"
     hasha "5.2.2"
     ignore "5.1.8"
     ini "1.3.8"
