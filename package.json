@@ -11,7 +11,7 @@
   "dependencies": {
     "renovate": "24.16.2",
     "source-map-support": "0.5.19",
-    "tslib": "2.0.3"
+    "tslib": "2.1.0"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.6",
