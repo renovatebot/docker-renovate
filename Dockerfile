@@ -16,6 +16,8 @@ RUN install-tool node 14.15.4
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.10
 
+WORKDIR /usr/src/app
+
 # Build image
 #============
 FROM base as tsbuild
