@@ -24,7 +24,7 @@ rootlesskit \
     --host="$DOCKER_HOST"\
   &
 
-function cleanup()
+function cleanup ()
 {
   echo "bye bye"
 #    killall rootlesskit
