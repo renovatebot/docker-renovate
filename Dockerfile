@@ -60,6 +60,8 @@ RUN node -e "new require('re2')('.*').exec('test')"
 #============
 FROM base as final
 
+COPY buildpack/ /usr/local/buildpack/
+
 # renovate: datasource=docker versioning=docker
 RUN install-tool docker 20.10.3
 
@@ -73,6 +75,8 @@ COPY --from=tsbuild /usr/src/app/node_modules node_modules
 
 # exec helper
 COPY bin/ /usr/local/bin/
+
+
 RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
 RUN ln -sf /usr/src/app/dist/config-validator.js /usr/local/bin/renovate-config-validator;
 CMD ["renovate"]

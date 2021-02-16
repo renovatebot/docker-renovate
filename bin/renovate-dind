@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# https://github.com/docker-library/docker/blob/094faa88f437cafef7aeb0cc36e75b59046cc4b9/20.10/dind/dockerd-entrypoint.sh#L168
+set -e
+
+if [[ $EUID -eq 0 ]]; then
+  echo "dind as root not supported" >&2
+  exit 2
+fi
+
+
+# TODO: move to renovate cache
+mkdir -p ${HOME}/.local/share/docker /run/user/${USER_ID}
+
+rootlesskit \
+  --net="${DOCKERD_ROOTLESS_ROOTLESSKIT_NET:-vpnkit}" \
+  --mtu="${DOCKERD_ROOTLESS_ROOTLESSKIT_MTU:-1500}" \
+  --disable-host-loopback \
+  --port-driver=builtin \
+  --copy-up=/etc \
+  --copy-up=/run \
+  ${DOCKERD_ROOTLESS_ROOTLESSKIT_FLAGS:-} \
+  dockerd \
+    --host="$DOCKER_HOST"\
+  &
+
+function cleanup()
+{
+  echo "bye bye"
+#    killall rootlesskit
+  kill $(cat $XDG_RUNTIME_DIR/docker.pid)
+}
+
+trap cleanup EXIT
+
+# TODO: wait for docker startup
+sleep 2
+
+docker info
+
+renovate "$@"
