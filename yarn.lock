@@ -1264,10 +1264,10 @@ cross-spawn@7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-crypto-random-string@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-3.3.0.tgz#c7a4682b2a87146a1f8b7378ea2606f95775e7e6"
-  integrity sha512-teWAwfMb1d6brahYyKqcBEb5Yp8PJPvPOdOonXDnvaKOTmKDFNVE8E3Y2XQuzjNV/3XMwHbrX9fHWvrhRKt4Gg==
+crypto-random-string@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-3.3.1.tgz#13cee94cac8001e4842501608ef779e0ed08f82d"
+  integrity sha512-5j88ECEn6h17UePrLi6pn1JcLtAiANa3KExyr9y9Z5vo2mv56Gh3I4Aja/B9P9uyMwyxNHAHWv+nE72f30T5Dg==
   dependencies:
     type-fest "^0.8.1"
 
@@ -3338,10 +3338,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@24.55.0:
-  version "24.55.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.55.0.tgz#bbefe90a4abdfa04c9cb9ac6f2bd5923a32c09c2"
-  integrity sha512-zUuFrvZ/45A0D3DbDuTwPi1VzlscOC///JTYLgc2uJuZcfdPacla+mFaGqwnf18tvJDe2GTk9b7f0/v2ILwqgA==
+renovate@24.56.0:
+  version "24.56.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.56.0.tgz#9c426f000c80faa6d255e09c6fd73c8fef0fcd7d"
+  integrity sha512-M8Y7di6cd89Mnpal1JMF93Ad+0A9gTNR6VNZ2+hHpJUCRS1LdN+y6HdIMjdCtYokLDPsLBfavrE9GJ1t3yfTJg==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
@@ -3359,7 +3359,7 @@ renovate@24.55.0:
     clean-git-ref "2.0.1"
     commander "6.2.1"
     conventional-commits-detector "1.0.3"
-    crypto-random-string "3.3.0"
+    crypto-random-string "3.3.1"
     deepmerge "4.2.2"
     delay "5.0.0"
     detect-indent "6.0.0"
