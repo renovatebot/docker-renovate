@@ -1824,10 +1824,10 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
-handlebars@4.7.6:
-  version "4.7.6"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.6.tgz#d4c05c1baf90e9945f77aa68a7a219aa4a7df74e"
-  integrity sha512-1f2BACcBfiwAfStCKZNrUCgqNZkGsAT7UM3kkYtXuLo0KnaVfjKOyf7PRzB6++aK9STyT1Pd2ZCPe3EGOXleXA==
+handlebars@4.7.7:
+  version "4.7.7"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"
+  integrity sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
   dependencies:
     minimist "^1.2.5"
     neo-async "^2.6.0"
@@ -3338,10 +3338,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@24.62.0:
-  version "24.62.0"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.62.0.tgz#101e071537accef91b7e539cdc80cc9e5e59b005"
-  integrity sha512-kkoxQt5BebIyDAH2OQx6G5sdlzL9FYmXtGnhKQlOXfiXZJlU1nDEHNcmw7uOwcIuhNg/cVtuZLn/NCQv1fpK7w==
+renovate@24.62.2:
+  version "24.62.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.62.2.tgz#c4ebe959ccf7fa5b6a99ce9cfc48f2b924b29653"
+  integrity sha512-v328DhKnZyJpa1+z5dluwqswp2EJNk9wf3absFAEnU1TTzBU103IV1ynOzZJSA0jPOBN88lFsBfoXt9mY8E0yA==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
@@ -3372,7 +3372,7 @@ renovate@24.62.0:
     github-url-from-git "1.5.0"
     global-agent "2.1.12"
     got "11.8.1"
-    handlebars "4.7.6"
+    handlebars "4.7.7"
     handy-redis "2.2.1"
     hasha "5.2.2"
     ignore "5.1.8"
