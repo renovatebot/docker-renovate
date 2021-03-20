@@ -2823,10 +2823,10 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-parse-diff@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/parse-diff/-/parse-diff-0.7.1.tgz#9b7a2451c3725baf2c87c831ba192d40ee2237d4"
-  integrity sha512-1j3l8IKcy4yRK2W4o9EYvJLSzpAVwz4DXqCewYyx2vEwk2gcf3DBPqc8Fj4XV3K33OYJ08A8fWwyu/ykD/HUSg==
+parse-diff@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/parse-diff/-/parse-diff-0.8.1.tgz#d8d3d11a97da7a0dc6c657bbb72024c0738359cd"
+  integrity sha512-0QG0HqwXCC/zMohOlaxkQmV1igZq1LQ6xsv/ziex6TDbY0GFxr3TDJN+/aHjWH3s2WTysSW3Bhs9Yfh6DOelFA==
 
 parse-entities@^1.0.2, parse-entities@^1.1.0:
   version "1.2.2"
@@ -3254,10 +3254,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@24.89.3:
-  version "24.89.3"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.89.3.tgz#13bff66c767616d5245d338e335d5dfdcc9c040c"
-  integrity sha512-T2VfH/BnIaB2hNG2NpslkkqpkDig4yueHk1XOFz2f3Rk+1RXI5gZQnzYF5l2dRuHdAEMaYfQ/7wBbhfAAE0vsA==
+renovate@24.89.4:
+  version "24.89.4"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-24.89.4.tgz#9bf032b9da0305824779d69e7ba68fdbd974c266"
+  integrity sha512-9wC8eG9b6DFEBP621ZB9asaBStq/F7rOMm3lSq9g5GVd/TuQnk2hOBbNno1wq13oXAhIpNS8/l1mRZ6KpneoLg==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
@@ -3308,7 +3308,7 @@ renovate@24.89.3:
     p-all "3.0.0"
     p-map "4.0.0"
     p-queue "6.6.2"
-    parse-diff "0.7.1"
+    parse-diff "0.8.1"
     parse-link-header "1.0.1"
     redis "3.0.2"
     registry-auth-token "4.2.1"
