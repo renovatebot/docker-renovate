@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.app.json"
   },
   "dependencies": {
-    "renovate": "24.104.0",
+    "renovate": "24.104.1",
     "source-map-support": "0.5.19",
     "tslib": "2.1.0"
   },
