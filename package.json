@@ -2,8 +2,11 @@
   "name": "renovate-docker",
   "version": "0.0.0-PLACEHOLDER",
   "repository": "https://github.com/renovatebot/docker-renovate.git",
-  "author": "Rhys Arkins <rhys@arkins.net>",
   "license": "AGPL-3.0",
+  "author": "Rhys Arkins <rhys@arkins.net>",
+  "contributors": [
+    "Michael Kriese <michael.kriese@visualon.de>"
+  ],
   "private": true,
   "scripts": {
     "build": "tsc -p tsconfig.app.json"

@@ -40,20 +40,13 @@ RUN set -ex; \
   chmod +x dist/*.js;
 
 ARG RENOVATE_VERSION
+RUN npm --no-git-tag-version version ${RENOVATE_VERSION}
 RUN yarn add renovate@${RENOVATE_VERSION}
 RUN yarn-deduplicate --strategy highest
 RUN yarn install --frozen-lockfile --production
 
 # check is re2 is usable
 RUN node -e "new require('re2')('.*').exec('test')"
-
-
-# TODO: enable
-#COPY src src
-#RUN yarn build
-# compatability file
-#RUN echo "require('./index.js');" > dist/renovate.js
-#RUN cp -r ./node_modules/renovate/data ./dist/data
 
 
 # Final image
@@ -67,8 +60,6 @@ ENV RENOVATE_BINARY_SOURCE=docker
 
 COPY --from=tsbuild /usr/src/app/package.json package.json
 COPY --from=tsbuild /usr/src/app/dist dist
-
-# TODO: remove
 COPY --from=tsbuild /usr/src/app/node_modules node_modules
 
 # exec helper
@@ -79,7 +70,7 @@ CMD ["renovate"]
 
 ARG RENOVATE_VERSION
 
-RUN npm --no-git-tag-version version ${RENOVATE_VERSION} && renovate --version;
+RUN renovate --version;
 
 LABEL org.opencontainers.image.version="${RENOVATE_VERSION}"
 

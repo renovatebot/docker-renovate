@@ -3,13 +3,9 @@ name: cron
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: '0 1 * * *'
-
-env:
-  # https://github.com/chalk/supports-color/issues/106
-  FORCE_COLOR: true
 
 jobs:
   build:
@@ -26,5 +22,4 @@ jobs:
         with:
           command: "docker-builder"
           tag-suffix: slim
-          dry-run: ${{github.ref != 'refs/heads/master'}}
           prune: true

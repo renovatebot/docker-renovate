@@ -1,7 +1,7 @@
 # Gitlab Configuration
 
 Here are some configuation examples for configuring renovate to run as gitlab pipeline.
-See [self-hosting](https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#self-hosting-renovate) doc for additional information.
+See [self-hosting](https://github.com/renovatebot/renovate/blob/HEAD/docs/usage/self-hosting.md#self-hosting-renovate) doc for additional information.
 
 For gitlab.com we recommend to checkout [this](https://gitlab.com/renovate-bot/renovate-runner). We've prepared some pipeline templates to simply run renovate on pipeline schedules.
 

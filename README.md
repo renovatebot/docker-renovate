@@ -1,11 +1,11 @@
-[![Build status](https://github.com/renovatebot/docker-renovate/workflows/build/badge.svg)](https://github.com/renovatebot/docker-renovate/actions?query=workflow%3Abuild)
+[![Build status](https://github.com/renovatebot/docker-renovate/actions/workflows/build.yml/badge.svg)](https://github.com/renovatebot/docker-renovate/actions?query=workflow%3Abuild)
 [![Docker Image Size](https://img.shields.io/docker/image-size/renovate/renovate/slim)](https://hub.docker.com/r/renovate/renovate)
 [![Version](https://img.shields.io/docker/v/renovate/renovate/slim)](https://hub.docker.com/r/renovate/renovate)
 
 # docker-renovate
 
 
-This repository is the source for the Docker Hub image `renovate/renovate`. Commits to `master` branch are automatically built and published.
+This repository is the source for the Docker Hub image `renovate/renovate`. Commits to `main` branch are automatically built and published.
 It will publish the `slim` and the versioned tags with `slim` suffix.
 For the `latest` image see [here](https://github.com/renovatebot/docker-renovate-full)
 
