@@ -2330,10 +2330,10 @@ markdown-escapes@^1.0.0:
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.4.tgz#c95415ef451499d7602b91095f3c8e8975f78535"
   integrity sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==
 
-markdown-it@12.0.4:
-  version "12.0.4"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-12.0.4.tgz#eec8247d296327eac3ba9746bdeec9cfcc751e33"
-  integrity sha512-34RwOXZT8kyuOJy25oJNJoulO8L0bTHYWXcdZBYZqFnjIy3NgjeoM3FmPXIOFQ26/lSHYMr8oc62B6adxXcb3Q==
+markdown-it@12.0.6:
+  version "12.0.6"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-12.0.6.tgz#adcc8e5fe020af292ccbdf161fe84f1961516138"
+  integrity sha512-qv3sVLl4lMT96LLtR7xeRJX11OUFjsaD5oVat2/SNBIb21bJXwal2+SklcRbTwGwqWpWH/HRtYavOoJE+seL8w==
   dependencies:
     argparse "^2.0.1"
     entities "~2.1.0"
@@ -3246,10 +3246,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@25.3.1:
-  version "25.3.1"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.3.1.tgz#80688f4995b88fbed2ee6f4e14d302e221b50c09"
-  integrity sha512-lpV8I4h1jPtLCeBBUqgJFMxgoSMNHKHCZgOl76p5xBdC9ZJ9wVE2D0gCJhFHy6rgDrGGMYdxaEFb/eIfMObMrA==
+renovate@25.3.2:
+  version "25.3.2"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.3.2.tgz#d9e33f63a92ad009f6ac75a1fe3241a38c379f7b"
+  integrity sha512-7kznoFOPt8nC6kW0+xVpn3iqc1FDgdq6aJcPujMLPT0u6jGaT4V2M32dUv26DHAl3Gv8NSsvPzPgUxcMAt1gqw==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
@@ -3291,7 +3291,7 @@ renovate@25.3.1:
     json5 "2.2.0"
     linkify-markdown "1.0.0"
     luxon "1.26.0"
-    markdown-it "12.0.4"
+    markdown-it "12.0.6"
     markdown-table "2.0.0"
     minimatch "3.0.4"
     moo "0.5.1"
