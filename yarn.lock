@@ -3163,10 +3163,10 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
-redis@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/redis/-/redis-3.1.0.tgz#39daec130d74b78decca93513c61db0af5d86ce6"
-  integrity sha512-//lAOcEtNIKk2ekZibes5oyWKYUVWMvMB71lyD/hS9KRePNkB7AU3nXGkArX6uDKEb2N23EyJBthAv6pagD0uw==
+redis@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/redis/-/redis-3.1.1.tgz#a44bee7c072dcf685e139048d6a1a4d3b00f5d01"
+  integrity sha512-QhkKhOuzhogR1NDJfBD34TQJz2ZJwDhhIC6ZmvpftlmfYShHHQXjjNspAJ+Z2HH5NwSBVYBVganbiZ8bgFMHjg==
   dependencies:
     denque "^1.5.0"
     redis-commands "^1.7.0"
@@ -3246,10 +3246,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@25.4.3:
-  version "25.4.3"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.4.3.tgz#105d6512c09f7a76c49d8ec377b4a65a823af0d0"
-  integrity sha512-vEHZvH0bux5tVHr/gtYYjRpiMLf9Fb0UrTZslnrZioABf09ThwwQObzvnILbv563yKpFfzFbs64VVx04uz7lsA==
+renovate@25.4.4:
+  version "25.4.4"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.4.4.tgz#45d8c87936d62b9e31b05f430b69243f49932e3f"
+  integrity sha512-UTK3vZhQLGo0ecsUtdGFCbjegrcuJ/vwtlz10qZQP1EvZsBNO/X4JJ+Eak59wTN3ZgZMcgfHCxhxwkK9HWYX0w==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
@@ -3302,7 +3302,7 @@ renovate@25.4.3:
     p-queue "6.6.2"
     parse-diff "0.8.1"
     parse-link-header "1.0.1"
-    redis "3.1.0"
+    redis "3.1.1"
     registry-auth-token "4.2.1"
     semver "7.3.5"
     semver-stable "3.0.0"
