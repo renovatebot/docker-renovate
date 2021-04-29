@@ -563,7 +563,12 @@
   dependencies:
     tslib "2.1.0"
 
-"@sindresorhus/is@4.0.0", "@sindresorhus/is@^4.0.0":
+"@sindresorhus/is@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.0.1.tgz#d26729db850fa327b7cacc5522252194404226f5"
+  integrity sha512-Qm9hBEBu18wt1PO2flE7LPb30BHMQt1eQgbV76YntdNk73XZGpn3izvGTYxbGgzXKgbCjiia0uxTd3aTNQrY/g==
+
+"@sindresorhus/is@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.0.0.tgz#2ff674e9611b45b528896d820d3d7a812de2f0e4"
   integrity sha512-FyD2meJpDPjyNQejSjvnhpgI/azsQkA4lGbuu5BQZfjvJ9cbRZXzeWL2HceCekW4lixO9JPesIIQkSoLjeJHNQ==
@@ -3246,17 +3251,17 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@25.4.8:
-  version "25.4.8"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.4.8.tgz#bfaf8b07ac75d882ecfd36b5a54e69e7ca2d23f7"
-  integrity sha512-2B5DDzAWpc7TKhLA/L03zMQozxBMAHhTOePgeZaxnYqqc77P+dcF1Re+xgEsCjv8lR+vS9XSy1AF1YNPOgf/UA==
+renovate@25.5.0:
+  version "25.5.0"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.5.0.tgz#76b3f0d88cad5d3c55bcac4edd3b8c3932000eda"
+  integrity sha512-6HGoP7MTDlrVchj1nz6XjiU5qU1hhV7jNFdpYG3F7UVsiQc7VfjE+6XpnLxLo/4Oew/iJ9B824prcgQyuI2QXw==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
     "@iarna/toml" "2.2.5"
     "@renovate/pep440" "1.0.0"
     "@renovatebot/ruby-semver" "1.0.0"
-    "@sindresorhus/is" "4.0.0"
+    "@sindresorhus/is" "4.0.1"
     "@yarnpkg/core" "2.4.0"
     "@yarnpkg/parsers" "2.3.0"
     azure-devops-node-api "10.2.2"
