@@ -7,6 +7,11 @@
       "automerge": true,
       "separateMinorPatch": false,
       "stabilityDays": 0
+    },
+    {
+      "description": "Do not pin package.json deps",
+      "matchFiles": ["package.json"],
+      "rangeStrategy": "replace"
     }
   ]
 }

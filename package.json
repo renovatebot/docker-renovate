@@ -13,7 +13,7 @@
     "test": "tsc -NoEmit"
   },
   "dependencies": {
-    "renovate": "25.21.16",
+    "renovate": ">=24",
     "source-map-support": "0.5.19",
     "tslib": "2.2.0"
   },
