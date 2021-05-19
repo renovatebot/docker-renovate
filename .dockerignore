@@ -1,8 +1,7 @@
 *
 !package.json
-!yarn.lock
+!.yarnrc
 !src
 !bin
 !tsconfig.json
 !tsconfig.app.json
-
