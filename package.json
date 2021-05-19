@@ -9,10 +9,11 @@
   ],
   "private": true,
   "scripts": {
-    "build": "tsc -p tsconfig.app.json"
+    "build": "tsc -p tsconfig.app.json",
+    "test": "tsc -NoEmit"
   },
   "dependencies": {
-    "renovate": "25.21.13",
+    "renovate": ">=24",
     "source-map-support": "0.5.19",
     "tslib": "2.2.0"
   },

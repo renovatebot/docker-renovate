@@ -2,17 +2,13 @@ name: build
 
 on:
   push:
-    branches:
-      - main
-      - 'renovate/**'
-
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     timeout-minutes: 60
+    if: ${{ github.event_name != 'pull_request' || github.repository_owner != github.event.pull_request.head.repo.owner.login }}
 
     steps:
       - uses: actions/checkout@v2.3.4
