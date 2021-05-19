@@ -22,26 +22,18 @@ WORKDIR /usr/src/app
 #============
 FROM base as tsbuild
 
-RUN install-npm yarn-deduplicate
-
-COPY package.json .
-COPY yarn.lock .
-
-ARG RENOVATE_VERSION
-RUN npm --no-git-tag-version version ${RENOVATE_VERSION}
-RUN yarn add -E renovate@${RENOVATE_VERSION}
-
-RUN yarn install --frozen-lockfile
-
-COPY tsconfig.json .
-COPY tsconfig.app.json .
-COPY src src
+COPY . .
 
 RUN set -ex; \
+  yarn install; \
   yarn build; \
-  chmod +x dist/*.js; \
-  yarn-deduplicate --strategy highest; \
-  yarn install --frozen-lockfile --production
+  chmod +x dist/*.js;
+
+ARG RENOVATE_VERSION
+RUN set -ex; \
+  yarn version --new-version ${RENOVATE_VERSION}; \
+  yarn add -E  renovate@${RENOVATE_VERSION} --production;  \
+  node -e "new require('re2')('.*').exec('test')";
 
 # Final image
 #============
