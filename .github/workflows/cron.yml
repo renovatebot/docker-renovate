@@ -20,6 +20,6 @@ jobs:
       - name: Build and Publish
         uses: renovatebot/internal-tools@v1.6.6
         with:
-          command: "docker-builder"
-          tag-suffix: slim
+          command: docker-builder
           prune: true
+          tag-suffix: slim

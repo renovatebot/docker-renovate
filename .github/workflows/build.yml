@@ -20,7 +20,7 @@ jobs:
       - name: Build and Publish
         uses: renovatebot/internal-tools@v1.6.6
         with:
-          command: "docker-builder"
+          command: docker-builder
           last-only: true
-          tag-suffix: slim
           dry-run: ${{github.ref != 'refs/heads/main'}}
+          tag-suffix: slim
