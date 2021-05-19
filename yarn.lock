@@ -3188,10 +3188,10 @@ remark@^9.0.0:
     remark-stringify "^5.0.0"
     unified "^6.0.0"
 
-renovate@25.21.12:
-  version "25.21.12"
-  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.21.12.tgz#e36a28e237c2c58e4ebefdb8d7502dc265c5df5c"
-  integrity sha512-YnG0CSh4WzG10n3udTzmhuT397WMOEQDkq4UX77X7Dc38oMdPdveD7BOdbYpnzeSCQ5o8Ui5YXzCsXZ+XvmT2w==
+renovate@25.21.13:
+  version "25.21.13"
+  resolved "https://registry.yarnpkg.com/renovate/-/renovate-25.21.13.tgz#37b09d891bff5715f431de4b4cfc491e13939c45"
+  integrity sha512-d6HsncVHS7m7miT8YRptzn5xvyY1S4Rw3n7Wa5nYF/9GFRmwqfJr1N6dA6vynB92cWkFLOZQSrQrk4htYetHYg==
   dependencies:
     "@aws-sdk/client-ecr" "3.5.0"
     "@breejs/later" "4.0.2"
@@ -3252,7 +3252,7 @@ renovate@25.21.12:
     shlex "2.0.2"
     shortid "2.2.16"
     simple-git "2.38.1"
-    slugify "1.5.2"
+    slugify "1.5.3"
     traverse "0.6.6"
     upath "2.0.1"
     url-join "4.0.1"
@@ -3454,10 +3454,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-slugify@1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.5.2.tgz#8650209bdf29b4818a1cc9a9333050a41bb04b6b"
-  integrity sha512-Grpsq9/NLsae2qF2GJcoTcnDxIKp1Yt59mC+Lq+SE5xovVAckY8xG4A8jUPdY7IXhHg84u0cU/oij1XX4FXxpA==
+slugify@1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.5.3.tgz#36e009864f5476bfd5db681222643d92339c890d"
+  integrity sha512-/HkjRdwPY3yHJReXu38NiusZw2+LLE2SrhkWJtmlPDB1fqFSvioYj62NkPcrKiNCgRLeGcGK7QBvr1iQwybeXw==
 
 smart-buffer@^4.1.0:
   version "4.1.0"
