@@ -3,7 +3,7 @@
   "extends": ["github>renovatebot/.github"],
   "packageRules": [
     {
-      "packageNames": ["renovate"],
+      "matchPackageNames": ["renovate"],
       "automerge": true,
       "separateMinorPatch": false,
       "stabilityDays": 0
