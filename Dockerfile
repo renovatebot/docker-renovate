@@ -10,7 +10,7 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
   org.opencontainers.image.url="https://renovatebot.com" \
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
-# renovate: datasource=docker versioning=docker
+# renovate: datasource=npm depName=node versioning=node
 RUN install-tool node 14.17.0
 
 # renovate: datasource=npm versioning=npm
