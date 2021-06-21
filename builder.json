@@ -2,5 +2,5 @@
   "image": "renovate",
   "startVersion": "24.119.4",
   "cache": "docker-build-cache",
-  "maxVersions": 50
+  "maxVersions": 10
 }
