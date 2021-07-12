@@ -39,7 +39,7 @@ Renovate will map `baseDir` to the docker side container running tools like `pyt
     disable_entrypoint_overwrite = false
     oom_kill_disable = false
     disable_cache = false
-    volumes = ["/cache", "/tmp:/tmp:rw", "/var/run/docker.sock:/var/run/docker.sock"]
+    volumes = ["/certs/client", "/cache", "/tmp:/tmp:rw", "/var/run/docker.sock:/var/run/docker.sock"]
     shm_size = 0
   [runners.cache]
     [runners.cache.s3]
