@@ -11,14 +11,14 @@ jobs:
     if: ${{ github.event_name != 'pull_request' || github.repository_owner != github.event.pull_request.head.repo.owner.login }}
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2.3.4
 
       - name: Docker registry login
         if: github.ref == 'refs/heads/main'
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Build and Publish
-        uses: renovatebot/internal-tools@v1.7.4
+        uses: renovatebot/internal-tools@25848ea5993239db66833ceea7c633d6fed2c821 # renovate: tag=v1.7.4
         with:
           command: docker-builder
           last-only: true
