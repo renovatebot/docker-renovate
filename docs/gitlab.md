@@ -53,7 +53,7 @@ Renovate will map `baseDir` to the docker side container running tools like `pyt
 The following pipeline runs renovate normally on master branch and for self-update it runs in [`dryRun`](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) mode.
 
 ```yml
-image: renovate/renovate:25.52.1-slim@sha256:24018f8ab9ddb05c0c423722688fa5d071647a8acd4731b00b79b93fb1e3240b
+image: renovate/renovate:25.56.5-slim@sha256:26f7721fa2f7ec302c05ae08ab72f96fbe037e03f5d770e710f9d11975cb574e
 
 variables:
   LOG_LEVEL: debug
@@ -119,7 +119,7 @@ This sample uses the `docker-in-docker` gitlab runner.
 
 ### Gitlab pipeline
 ```yml
-image: renovate/renovate:25.52.1-slim@sha256:24018f8ab9ddb05c0c423722688fa5d071647a8acd4731b00b79b93fb1e3240b
+image: renovate/renovate:25.56.5-slim@sha256:26f7721fa2f7ec302c05ae08ab72f96fbe037e03f5d770e710f9d11975cb574e
 
 variables:
   RENOVATE_BASE_DIR: $CI_PROJECT_DIR/renovate
