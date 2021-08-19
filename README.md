@@ -11,7 +11,7 @@ For the `latest` image see [here](https://github.com/renovatebot/docker-renovate
 
 ## Usage
 
-Read the [self-hosting docs](https://docs.renovatebot.com/self-hosting/) for more information on how to self-host Renovate with Docker.
+Read the [self-hosting docs](https://docs.renovatebot.com/getting-started/running/#self-hosting-renovate) for more information on how to self-host Renovate with Docker.
 
 
 See [Gitlab](./docs/gitlab.md) or [Bitbucket](./docs/bitbucket.md) docs for more configuration samples.
