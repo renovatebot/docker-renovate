@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "renovate": ">=24",
-    "source-map-support": "0.5.19",
+    "source-map-support": "0.5.20",
     "tslib": "2.3.1"
   },
   "devDependencies": {
