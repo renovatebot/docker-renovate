@@ -4,7 +4,7 @@ These are configuration examples for running a self-hosted Renovate on bitbucket
 
 ### bitbucket-pipelines.yml
 ```yml
-image: renovate/renovate:27.14.0-slim
+image: renovate/renovate:27.31.10-slim
 
 definitions:
   caches:
