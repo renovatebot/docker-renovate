@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
 
-      - uses: sigstore/cosign-installer@116dc6872c0a067bcb78758f18955414cdbf918f # renovate: tag=v1.4.1
+      - uses: sigstore/cosign-installer@179e0f15e70e22ca2e7254fc12d68a9fbab35614 # tag=v2.0.1
 
       - name: Docker registry login
         if: github.ref == 'refs/heads/main'
