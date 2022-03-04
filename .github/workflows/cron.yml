@@ -24,7 +24,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Build and Publish
-        uses: renovatebot/internal-tools@4979b63cfbee4ccf8cb45ade25f724a48f01115c # tag=v1.12.0
+        uses: renovatebot/internal-tools@23eb86b8295e2cebd5ede0ba1fdd72d72089eeda # tag=v1.12.1
         with:
           command: docker-builder
           prune: true
