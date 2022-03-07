@@ -1,0 +1,28 @@
+name: test
+
+on:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+
+      - name: test
+        run: |
+          ls -la /var/run/docker.sock
+          docker info
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock renovate/renovate:slim docker ps
