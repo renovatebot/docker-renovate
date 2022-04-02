@@ -129,7 +129,7 @@ variables:
   LOG_LEVEL: debug
 
 services:
-  - docker:19.03-dind
+  - docker:20.10.14-dind-rootless
 
 before_script:
   # Prepare renovate directory
