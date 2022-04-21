@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event_name != 'pull_request' || github.repository_owner != github.event.pull_request.head.repo.owner.login }}
 
     steps:
-      - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748 # tag=v3.0.1
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
 
       - uses: sigstore/cosign-installer@bb61838e7ee5bf314f85f2e219b3706835fa6306 # tag=v2.2.1
 
