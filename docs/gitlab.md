@@ -1,13 +1,13 @@
-# Gitlab Configuration
+# GitLab Configuration
 
-Here are some configuation examples for configuring renovate to run as gitlab pipeline.
+Here are some configuration examples for configuring Renovate to run as GitLab pipeline.
 See [self-hosting](https://docs.renovatebot.com/getting-started/running/#self-hosting-renovate) doc for additional information.
 
-For gitlab.com we recommend to checkout [this](https://gitlab.com/renovate-bot/renovate-runner). We've prepared some pipeline templates to simply run renovate on pipeline schedules.
+For gitlab.com we recommend to check out the [renovate-bot/renovate-runner](https://gitlab.com/renovate-bot/renovate-runner) project. Here we have prepared some pipeline templates to run Renovate on pipeline schedules.
 
-## Renovate slim with mapped docker socket
+## Renovate slim with mapped Docker socket
 
-This sample will configure the renovate slim image, with will use docker side containers to run additional tools required to update lockfiles.
+This sample will configure the Renovate slim image, with will use docker side containers to run additional tools required to update lockfiles.
 Some [managers](https://docs.renovatebot.com/modules/manager/) need side containers for dependency extraction too (eg: `gradle`).
 
 This sample will not work on gitlab.com hosted shared runner, you need a self-hosted runner!
@@ -18,11 +18,11 @@ This sample will not work on gitlab.com hosted shared runner, you need a self-ho
 - `GITHUB_COM_TOKEN`: suppress github api rate limits (**required**)
 - `RENOVATE_EXTRA_FLAGS`: pass additional commandline args (**optional**)
 
-### Gitlab runner config
+### GitLab runner config
 
-You should register and use a separate gitlab runner, because we are mapping the host docker socket to renovate.
+You should register and use a separate GitLab runner, because we are mapping the host Docker socket to renovate.
 You also need to map the host `/tmp` folder symmetrically, because renovate will use `/tmp/renovate` as [`baseDir`](https://docs.renovatebot.com/self-hosted-configuration/#basedir) by default.
-Renovate will map `baseDir` to the docker side container running tools like `python`, `java`, `gradle` and more.
+Renovate will map `baseDir` to the Docker side container running tools like `python`, `java`, `gradle` and more.
 
 ```toml
 [[runners]]
@@ -48,9 +48,9 @@ Renovate will map `baseDir` to the docker side container running tools like `pyt
     run_exec = ""
 ```
 
-### Gitlab pipeline
+### GitLab pipeline
 
-The following pipeline runs renovate normally on master branch and for self-update it runs in [`dryRun`](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) mode.
+The following pipeline runs Renovate normally on `master` branch and for self-update it runs in [`dryRun`](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) mode.
 
 ```yml
 image: renovate/renovate:32.6.0-slim@sha256:6a722989e5402841f18b1a488dc3b117fd6afae0f61544134069fd3dba5bba83
@@ -74,13 +74,13 @@ renovate:
 
 ### Renovate config
 
-The `config.js` should be in repo root, because renovate will load it from current directory by default.
+The `config.js` should be in repo root, because Renovate will load it from current directory by default.
 
-If you want to override the git author and commiter, you need to override with environment variables (see below).
-This is necessary, because the env is preset by gitlab and overrides any git config done by renovate.
+If you want to override the Git author and committer, you need to override with environment variables (see below).
+This is necessary, because the env is preset by Gitlab and overrides any Git config done by Renovate.
 
-There is `hostRule` for the gitlab docker registry.
-The `hostRule`is only required if you use the gitlab registry and renovate should provide updated from that.
+There is a `hostRule` for the GitLab Docker registry.
+The `hostRule`is only required if you use the GitLab registry and Renovate should provide updates from that.
 `GITLAB_REGISTRY_TOKEN` is a gitlab [variable](https://docs.gitlab.com/ee/ci/variables/#create-a-custom-variable-in-the-ui).
 
 ```js
@@ -108,16 +108,17 @@ module.exports = {
 ```
 
 
-## Renovate slim with docker-in-docker
+## Renovate slim with Docker-in-Docker (dind)
 
-This sample uses the `docker-in-docker` gitlab runner.
+This sample uses the `docker-in-docker` GitLab runner.
 
 **Additional project environment:**
 - `RENOVATE_TOKEN`: access token for renovate to gitlab api (**required**)
 - `GITHUB_COM_TOKEN`: suppress github api rate limits (**required**)
 - `RENOVATE_EXTRA_FLAGS`: pass additional commandline args (**optional**)
 
-### Gitlab pipeline
+### GitLab pipeline
+
 ```yml
 image: renovate/renovate:32.6.0-slim@sha256:6a722989e5402841f18b1a488dc3b117fd6afae0f61544134069fd3dba5bba83
 
