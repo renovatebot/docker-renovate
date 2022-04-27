@@ -149,3 +149,97 @@ renovate:
   script:
     - renovate --dry-run $RENOVATE_EXTRA_FLAGS
 ```
+
+## Parallel Renovate jobs per project
+
+The default `renovate` job of [renovate-bot/renovate-runner](https://gitlab.com/renovate-bot/renovate-runner) does a single run which discovers all repositories and prepares updates for each repository one after another.
+
+These updates can be speed up by doing the runs once for each project in parallel. This also reduces the risk of the run failing altogether if there are errors with one or more repositories.
+
+This is possible in GitLab using [dynamic child pipelines](https://docs.gitlab.com/ee/ci/pipelines/parent_child_pipelines.html#dynamic-child-pipelines).  For this, we need two GitLab pipelines, the usual toplevel `.gitlab-ci.yml` and a separate `templates/.gitlab-ci.yml`:
+
+<details>
+<summary>.gitlab-ci.yml</summary>
+
+```yaml
+include:
+  - project: 'renovate-bot/renovate-runner'
+    file: '/templates/renovate-dind.gitlab-ci.yml'
+    ref: v8.81.6
+
+renovate:
+  variables:
+    RENOVATE_AUTODISCOVER: 'true'
+    RENOVATE_AUTODISCOVER_FILTER: '<group>/**'
+  script:
+    - renovate --write-discovered-repos=template/renovate-repos.json
+    - sed "s~###RENOVATE_REPOS###~$(cat template/renovate-repos.json)~" template/.gitlab-ci.yml > .gitlab-renovate-repos.yml
+  artifacts:
+    paths:
+      - renovate-repos.json
+      - .gitlab-renovate-repos.yml
+
+renovate:repos:
+  stage: deploy
+  needs:
+    - renovate
+  inherit:
+    variables: false
+  trigger:
+    include:
+      - job: renovate
+        artifact: .gitlab-renovate-repos.yml
+```
+</details>
+
+This slightly adjusts the `renovate` job to fetch and [write the list of discovered repositories](https://docs.renovatebot.com/self-hosted-configuration/#writediscoveredrepos) to `template/renovate-repos.json`. This file and the `template/.gitlab-ci.yml` is then used to generate a `.gitlab-renovate-repos.yml`. Here we use `sed` but anything else would be equally fine; for `sed` it's important to use a different delimiter than the common `/` since the `template/renovate-repos.json` will contain `/` characters.
+  
+The `renovate:repos` job uses the generated `.gitlab-renovate-repos.yml` to trigger a child pipeline. The `inherit.variables: false` here is essential to [ensure all predefined GitLab variables are populated](https://gitlab.com/gitlab-org/gitlab/-/issues/214340#note_423996331) normally in the child pipeline.
+
+<details>
+<summary>template/.gitlab-ci.yml</summary>
+
+```yaml
+include:
+  - project: 'renovate-bot/renovate-runner'
+    file: '/templates/renovate-dind.gitlab-ci.yml'
+    ref: v8.81.6
+
+variables:
+  RENOVATE_ONBOARDING: 'true'
+
+renovate:
+  parallel:
+    matrix:
+      - RENOVATE_EXTRA_FLAGS: ###RENOVATE_REPOS###
+  resource_group: $RENOVATE_EXTRA_FLAGS
+```
+</details>
+
+This is a fairly basic integration of the original `renovate` job with the most interesting part being the `RENOVATE_EXTRA_FLAGS` variable used as [parallel matrix](https://docs.gitlab.com/ee/ci/yaml/#parallelmatrix). Since `template/renovate-repos.json` contains a JSON array, it can directly be used as YAML list here. The `###RENOVATE_REPOS###` is an arbitrary identifier (and valid YAML comment).
+
+The `template/.gitlab-ci.yml` uses this filename since the [Renovate `gitlabci-include` manager](https://docs.renovatebot.com/modules/manager/gitlabci-include/) supports only `.gitlab-ci.yml` by default.
+
+The result:
+
+<details>
+<summary>Example .gitlab-renovate-repos.yml</summary>
+
+```yaml
+include:
+  - project: 'renovate-bot/renovate-runner'
+    file: '/templates/renovate-dind.gitlab-ci.yml'
+    ref: v8.81.6
+
+variables:
+  RENOVATE_ONBOARDING: 'true'
+
+renovate:
+  parallel:
+    matrix:
+      - RENOVATE_EXTRA_FLAGS: ["<group>/project-foo", "<group>/project-bar", ...]
+  resource_group: $RENOVATE_EXTRA_FLAGS
+```
+</details>
+  
+The `ref` used in both pipelines should be updated to the latest version. Also the `templates` directory name is arbitrary.
