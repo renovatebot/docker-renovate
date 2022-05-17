@@ -2,7 +2,11 @@ name: build
 
 on:
   push:
+    branches-ignore:
+      - 'renovate/**'
   pull_request:
+    branches:
+     - main
 
 permissions:
   contents: read

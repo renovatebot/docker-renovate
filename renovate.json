@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>renovatebot/.github"],
+  "prCreation": "immediate",
+  "platformAutomerge": true,
   "packageRules": [
     {
       "matchPackageNames": ["renovate"],
