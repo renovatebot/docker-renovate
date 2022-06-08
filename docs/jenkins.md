@@ -47,7 +47,6 @@ pipeline {
         RENOVATE_ENDPOINT = 'https://git.example.com/api/v4/'
         RENOVATE_REPOSITORIES = 'user1/repo1, user2/repo2'
         RENOVATE_ONBOARDING_CONFIG = '{ "extends":["config:base"] }'
-        RENOVATE_BINARY_SOURCE = 'install'
         BUILDPACK = true
     }
 
