@@ -94,7 +94,6 @@ pipeline {
 ### Renovate specific config explained
 
 - `args '... --group-add 0'`: give Docker container user root rights
-- `RENOVATE_BINARY_SOURCE = 'install'`: allows to use npm and node versions explicitely set in the `engines` section of your `package.json` for renovation, especially to keep RenovateBot from downgrading package-lock.json to v1 (see also [Renovate downgraded npm lockfile version from v2 to v1](https://github.com/renovatebot/renovate/discussions/14409))
 - `BUILDPACK = true`: necessary for making `RENOVATE_BINARY_SOURCE` work
 - `disableConcurrentBuilds()`: don't allow parallel execution of renovate jobs (because they would interfere with each other)
 
