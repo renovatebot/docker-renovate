@@ -1,9 +1,9 @@
 # renovate: datasource=npm depName=renovate versioning=npm
-ARG RENOVATE_VERSION=32.78.1
+ARG RENOVATE_VERSION=32.87.0
 
 # Base image
 #============
-FROM renovate/buildpack:6@sha256:a3f5031556b079322c0058523f00239ee8010465da68e780dc522be8ec2791a2 AS base
+FROM renovate/buildpack:6@sha256:b5a48747676645f972871e7e5277f3fed2d7d5a3df261c6a8238e6a8cf667d06 AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
@@ -14,7 +14,7 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
 RUN install-tool node v16.15.1
 
 # renovate: datasource=npm versioning=npm
-RUN install-tool yarn 1.22.18
+RUN install-tool yarn 1.22.19
 
 WORKDIR /usr/src/app
 
