@@ -47,7 +47,6 @@ pipeline {
         RENOVATE_ENDPOINT = 'https://git.example.com/api/v4/'
         RENOVATE_REPOSITORIES = 'user1/repo1, user2/repo2'
         RENOVATE_ONBOARDING_CONFIG = '{ "extends":["config:base"] }'
-        BUILDPACK = true
     }
 
     parameters {
@@ -93,7 +92,6 @@ pipeline {
 ### Renovate specific config explained
 
 - `args '... --group-add 0'`: give Docker container user root rights
-- `BUILDPACK = true`: necessary for making `RENOVATE_BINARY_SOURCE` work
 - `disableConcurrentBuilds()`: don't allow parallel execution of renovate jobs (because they would interfere with each other)
 
 ### Schedule
