@@ -29,6 +29,12 @@ RUN set -ex; \
   yarn build; \
   chmod +x dist/*.js;
 
+# hardcode node version to renovate
+RUN set -ex; \
+  NODE_VERSION=$(node -v | cut -c2-); \
+  sed -i "1 s:.*:#\!\/opt\/buildpack\/tools\/node\/${NODE_VERSION}\/bin\/node:" "dist/renovate.js"; \
+  sed -i "1 s:.*:#\!\/opt\/buildpack\/tools\/node\/${NODE_VERSION}\/bin\/node:" "dist/config-validator.js";
+
 ARG RENOVATE_VERSION
 RUN set -ex; \
   yarn version --new-version ${RENOVATE_VERSION}; \
@@ -53,7 +59,6 @@ COPY bin/ /usr/local/bin/
 RUN ln -sf /usr/src/app/dist/renovate.js /usr/local/bin/renovate;
 RUN ln -sf /usr/src/app/dist/config-validator.js /usr/local/bin/renovate-config-validator;
 CMD ["renovate"]
-
 
 RUN set -ex; \
   renovate --version; \
