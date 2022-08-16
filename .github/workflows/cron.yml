@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
 
-      - uses: sigstore/cosign-installer@09a077b27eb1310dcfb21981bee195b30ce09de0 # tag=v2.5.0
+      - uses: sigstore/cosign-installer@b3413d484cc23cf8778c3d2aa361568d4eb54679 # tag=v2.5.1
 
       - name: Docker registry login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
