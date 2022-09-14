@@ -91,7 +91,7 @@ pipeline {
 
 ### Renovate specific config explained
 
-- `args '... --group-add 0'`: give Docker container user root rights
+- `args '... --group-add 0'`: give Docker container user root group rights to some required files and folders
 - `disableConcurrentBuilds()`: don't allow parallel execution of renovate jobs (because they would interfere with each other)
 
 ### Schedule
