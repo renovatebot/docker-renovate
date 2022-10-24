@@ -27,7 +27,7 @@ The following pipeline runs Renovate normally on the default branch (eg. `main` 
 pipeline {
     agent {
         docker {
-            image 'renovate/renovate:32.238.4-slim'
+            image 'renovate/renovate:33.1.0-slim'
             args '-v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp --group-add 0'
         }
     }
