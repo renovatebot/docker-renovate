@@ -3,7 +3,7 @@ ARG RENOVATE_VERSION=34.71.0
 
 # Base image
 #============
-FROM ghcr.io/containerbase/buildpack:5.8.0
+FROM ghcr.io/containerbase/buildpack:5.8.1
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
@@ -30,13 +30,14 @@ ARG RENOVATE_VERSION
 
 RUN install-tool renovate
 
-# Compabillity, so `config.js` can access renovate deps
+# Compabillity, so `config.js` can access renovate and deps
 RUN ln -sf /opt/buildpack/tools/renovate/${RENOVATE_VERSION}/lib/node_modules ./node_modules;
 
 RUN set -ex; \
   renovate --version; \
   renovate-config-validator; \
-  node -e "new require('re2')('.*').exec('test')";
+  node -e "new require('re2')('.*').exec('test')"; \
+  true
 
 LABEL org.opencontainers.image.version="${RENOVATE_VERSION}"
 
