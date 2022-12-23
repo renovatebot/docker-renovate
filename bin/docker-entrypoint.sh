@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ -f "$BASH_ENV" && -z "${BUILDPACK+x}" ]]; then
-  # shellcheck source=/dev/null
-  . "$BASH_ENV"
+if [[ -f "/usr/local/etc/env" && -z "${CONTAINERBASE_ENV+x}" ]]; then
+    # shellcheck source=/dev/null
+  . /usr/local/etc/env
 fi
 
 if [[ "${1:0:1}" = '-' ]]; then
