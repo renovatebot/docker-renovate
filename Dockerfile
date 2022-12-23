@@ -30,6 +30,14 @@ ARG RENOVATE_VERSION
 
 RUN install-tool renovate
 
+# Compabillity, so `config.js` can access renovate deps
+RUN ln -sf /opt/buildpack/tools/renovate/${RENOVATE_VERSION}/lib/node_modules ./node_modules;
+
+RUN set -ex; \
+  renovate --version; \
+  renovate-config-validator; \
+  node -e "new require('re2')('.*').exec('test')";
+
 LABEL org.opencontainers.image.version="${RENOVATE_VERSION}"
 
 # Numeric user ID for the ubuntu user. Used to indicate a non-root user to OpenShift
