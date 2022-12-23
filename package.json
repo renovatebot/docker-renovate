@@ -7,18 +7,5 @@
   "contributors": [
     "Michael Kriese <michael.kriese@visualon.de>"
   ],
-  "private": true,
-  "scripts": {
-    "build": "tsc -p tsconfig.app.json",
-    "test": "tsc -NoEmit"
-  },
-  "dependencies": {
-    "renovate": ">=24",
-    "source-map-support": "0.5.21",
-    "tslib": "2.4.1"
-  },
-  "devDependencies": {
-    "@types/bunyan": "1.8.8",
-    "typescript": "4.9.4"
-  }
+  "private": true
 }
