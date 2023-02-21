@@ -24,7 +24,6 @@ WORKDIR /usr/src/app
 # renovate: datasource=github-releases depName=docker lookupName=moby/moby
 RUN install-tool docker 20.10.7
 
-ENV RENOVATE_BINARY_SOURCE=docker
 ENV RENOVATE_X_IGNORE_NODE_WARN=true
 
 COPY bin/ /usr/local/bin/
