@@ -10,6 +10,7 @@ on:
 permissions:
   contents: read
   id-token: write
+  packages: write
 
 jobs:
   build:
@@ -21,11 +22,20 @@ jobs:
       - uses: sigstore/cosign-installer@c3667d99424e7e6047999fb6246c0da843953c65 # v3.0.1
 
       - name: Docker registry login
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
-      - name: Build and Publish
+      - name: Build and Publish to docker.io
         uses: containerbase/internal-tools@c1d6f949a65c2388101e357ff36d7b960ae1735f # v1.15.7
         with:
           command: docker-builder
-          prune: true
+          tag-suffix: slim
+
+      - name: Build and Publish to ghcr.io
+        uses: containerbase/internal-tools@c1d6f949a65c2388101e357ff36d7b960ae1735f # v1.15.7
+        with:
+          command: docker-builder
+          image-prefix: ghcr.io/${{ github.repository_owner }}
           tag-suffix: slim
