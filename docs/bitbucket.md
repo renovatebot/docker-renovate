@@ -1,8 +1,10 @@
 # Samples for Bitbucket pipelines
 
 These are configuration examples for running a self-hosted Renovate on bitbucket.org pipelines.
+The pipeline should also work on shared runners.
 
-### bitbucket-pipelines.yml
+## bitbucket-pipelines.yml
+
 ```yml
 image: renovate/renovate:35.14.1-slim
 
@@ -14,10 +16,7 @@ pipelines:
   default:
     - step:
         name: renovate dry-run
-        services:
-          - docker
         caches:
-          - docker
           - renovate
         script:
           - export LOG_LEVEL=debug RENOVATE_CONFIG_FILE="$BITBUCKET_CLONE_DIR/config.js"
@@ -26,18 +25,17 @@ pipelines:
     master:
       - step:
           name: renovate
-          services:
-            - docker
           caches:
-            - docker
             - renovate
           script:
             - export LOG_LEVEL=debug RENOVATE_CONFIG_FILE="$BITBUCKET_CLONE_DIR/config.js"
             - renovate
 ```
 
-### config.js
+## config.js
+
 Example of manual repository config:
+
 ```js
 module.exports = {
   platform: 'bitbucket',
@@ -49,6 +47,7 @@ module.exports = {
 ```
 
 Using autodiscover:
+
 ```js
 module.exports = {
   platform: 'bitbucket',
@@ -59,8 +58,10 @@ module.exports = {
 }
 ```
 
-### renovate.json
+## renovate.json
+
 Use this for self-update Renovate:
+
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
@@ -78,12 +79,14 @@ Use this for self-update Renovate:
 }
 ```
 
-### Variables
+## Variables
+
 You need to define pipeline variables:
+
 - `USERNAME`: Bitbucket.org username
 - `PASSWORD`: Bitbucket.org password
 - `GITHUB_COM_TOKEN`: GitHub token to fetch changelog (optional, highly recommended)
 
-### Schedule
+## Schedule
 
 Configure a `hourly` schedule on `master` branch with `branches: master` pipeline.

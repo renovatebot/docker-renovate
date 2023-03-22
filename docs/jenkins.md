@@ -1,9 +1,10 @@
 # Samples for Jenkins pipelines
 
-These are configuration examples for running a self-hosted Renovate on Jenkins pipelines. This example accesses a privately hosted GitLab instance.
+These are configuration examples for running a self-hosted Renovate on Jenkins pipelines.
+This example accesses a privately hosted GitLab instance.
 See [self-hosting](https://docs.renovatebot.com/getting-started/running/#self-hosting-renovate) doc for additional information.
 
-## Renovate with mapped Docker socket
+## Renovate slim
 
 The following pipeline runs Renovate normally on the default branch (eg. `main` or `master`).
 
@@ -21,14 +22,15 @@ The following pipeline runs Renovate normally on the default branch (eg. `main` 
 - `RENOVATE_EXTRA_FLAGS`: pass additional commandline args (**optional**)
 
 ### Jenkinsfile
-```yml
+
+```groovy
 #!groovy
 
 pipeline {
     agent {
         docker {
             image 'renovate/renovate:35.14.1-slim'
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp --group-add 0'
+            args '-v /tmp:/tmp --group-add 0'
         }
     }
 
