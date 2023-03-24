@@ -33,6 +33,7 @@ jobs:
         uses: containerbase/internal-tools@3387b659f9bc387f2509eb312d1a9ccd0a38098d # v1.18.8
         with:
           command: docker-builder
+          platforms: linux/amd64,linux/arm64
           last-only: true
           dry-run: ${{github.ref != 'refs/heads/main'}}
           tag-suffix: slim
@@ -41,6 +42,7 @@ jobs:
         uses: containerbase/internal-tools@3387b659f9bc387f2509eb312d1a9ccd0a38098d # v1.18.8
         with:
           command: docker-builder
+          platforms: linux/amd64,linux/arm64
           image-prefix: ghcr.io/${{ github.repository_owner }}
           last-only: true
           dry-run: ${{github.ref != 'refs/heads/main'}}
