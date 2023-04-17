@@ -9,7 +9,7 @@
       "matchPackageNames": ["renovate"],
       "automerge": true,
       "separateMinorPatch": false,
-      "stabilityDays": 0
+      "minimumReleaseAge": null
     },
     {
       "description": "Do not pin package.json deps",
