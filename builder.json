@@ -1,6 +1,5 @@
 {
   "image": "renovate",
   "startVersion": "35.0.0",
-  "cache": "docker-build-cache",
-  "maxVersions": 10
+  "cache": "docker-build-cache"
 }
