@@ -34,7 +34,7 @@ ARG RENOVATE_VERSION
 RUN install-tool renovate
 
 # Compabillity, so `config.js` can access renovate and deps
-RUN ln -sf /opt/buildpack/tools/renovate/${RENOVATE_VERSION}/node_modules ./node_modules;
+RUN ln -sf /opt/containerbase/tools/renovate/${RENOVATE_VERSION}/node_modules ./node_modules;
 
 RUN set -ex; \
   renovate --version; \
