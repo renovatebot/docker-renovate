@@ -29,7 +29,7 @@ The following pipeline runs Renovate normally on the default branch (eg. `main` 
 pipeline {
     agent {
         docker {
-            image 'renovate/renovate:35.141.3-slim'
+            image 'renovate/renovate:35.158.0-slim'
             args '-v /tmp:/tmp --group-add 0'
         }
     }
