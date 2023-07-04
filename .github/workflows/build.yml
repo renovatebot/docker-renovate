@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
-      - uses: sigstore/cosign-installer@d13028333d784fcc802b67ec924bcebe75aa0a5f # v3.1.0
+      - uses: sigstore/cosign-installer@6e04d228eb30da1757ee4e1dd75a0ec73a653e06 # v3.1.1
 
       - name: Docker registry login
         if: github.ref == 'refs/heads/main'
@@ -30,18 +30,33 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
       - name: Build and Publish to docker.io
-        uses: containerbase/internal-tools@8e1b46117ff7cec70bc903a18dab9fb4ea01dfcd # v1.18.7
+        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
         with:
           command: docker-builder
           last-only: true
           dry-run: ${{github.ref != 'refs/heads/main'}}
-          tag-suffix: slim
 
       - name: Build and Publish to ghcr.io
-        uses: containerbase/internal-tools@8e1b46117ff7cec70bc903a18dab9fb4ea01dfcd # v1.18.7
+        if: github.ref == 'refs/heads/main'
+        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
         with:
           command: docker-builder
           image-prefix: ghcr.io/${{ github.repository_owner }}
           last-only: true
-          dry-run: ${{github.ref != 'refs/heads/main'}}
+
+      - name: Build and Publish slim to docker.io
+        if: github.ref == 'refs/heads/main'
+        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        with:
+          command: docker-builder
+          last-only: true
+          tag-suffix: slim
+
+      - name: Build and Publish slim to ghcr.io
+        if: github.ref == 'refs/heads/main'
+        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        with:
+          command: docker-builder
+          image-prefix: ghcr.io/${{ github.repository_owner }}
+          last-only: true
           tag-suffix: slim

@@ -4,7 +4,7 @@ These are configuration examples for running a self-hosted Renovate on Jenkins p
 This example accesses a privately hosted GitLab instance.
 See [self-hosting](https://docs.renovatebot.com/getting-started/running/#self-hosting-renovate) doc for additional information.
 
-## Renovate slim
+## Renovate
 
 The following pipeline runs Renovate normally on the default branch (eg. `main` or `master`).
 
@@ -29,7 +29,7 @@ The following pipeline runs Renovate normally on the default branch (eg. `main` 
 pipeline {
     agent {
         docker {
-            image 'renovate/renovate:35.141.3-slim'
+            image 'renovate/renovate:36.0.0'
             args '-v /tmp:/tmp --group-add 0'
         }
     }
