@@ -3,7 +3,7 @@ ARG RENOVATE_VERSION=36.0.0
 
 # Base image
 #============
-FROM ghcr.io/containerbase/base:9.0.6@sha256:bb79b7d314cd86b6eba0c79e98f5c3702ef4b59d66e19ec00f9b91625c2d8e80 AS base
+FROM ghcr.io/containerbase/base:9.0.8@sha256:f59bd22ab967e677907f9d5da2f14e9ac397aff65648aa1d171c06fa9d1e556b AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
@@ -21,8 +21,8 @@ RUN install-tool yarn 1.22.19
 
 WORKDIR /usr/src/app
 
-# renovate: datasource=github-releases depName=docker lookupName=moby/moby
-RUN install-tool docker 20.10.7
+# renovate: datasource=github-releases packageName=moby/moby
+RUN install-tool docker v24.0.2
 
 ENV RENOVATE_X_IGNORE_NODE_WARN=true
 
