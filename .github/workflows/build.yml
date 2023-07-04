@@ -35,9 +35,24 @@ jobs:
           command: docker-builder
           last-only: true
           dry-run: ${{github.ref != 'refs/heads/main'}}
-          tag-suffix: slim
 
       - name: Build and Publish to ghcr.io
+        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        with:
+          command: docker-builder
+          image-prefix: ghcr.io/${{ github.repository_owner }}
+          last-only: true
+          dry-run: ${{github.ref != 'refs/heads/main'}}
+
+      - name: Build and Publish slim to docker.io
+        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        with:
+          command: docker-builder
+          last-only: true
+          dry-run: ${{github.ref != 'refs/heads/main'}}
+          tag-suffix: slim
+
+      - name: Build and Publish slim to ghcr.io
         uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
         with:
           command: docker-builder

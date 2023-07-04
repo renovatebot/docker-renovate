@@ -18,7 +18,7 @@ jobs:
 
       - uses: aquasecurity/trivy-action@e5f43133f6e8736992c9f3c1b3296e24b37e17f2 # 0.10.0
         with:
-          image-ref: 'ghcr.io/renovatebot/renovate:slim'
+          image-ref: 'ghcr.io/renovatebot/renovate'
           format: 'sarif'
           output: 'trivy-results.sarif'
 
