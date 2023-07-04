@@ -21,7 +21,7 @@ RUN install-tool yarn 1.22.19
 
 WORKDIR /usr/src/app
 
-# renovate: datasource=github-releases depName=docker lookupName=moby/moby
+# renovate: datasource=github-releases packageName=moby/moby
 RUN install-tool docker 20.10.7
 
 ENV RENOVATE_X_IGNORE_NODE_WARN=true
