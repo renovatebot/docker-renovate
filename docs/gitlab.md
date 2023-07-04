@@ -21,7 +21,7 @@ This sample will configure the Renovate slim image.
 The following pipeline runs Renovate normally on `main` branch and for self-update it runs in [`dryRun`](https://docs.renovatebot.com/self-hosted-configuration/#dryrun) mode.
 
 ```yml
-image: renovate/renovate:35.158.0-slim@sha256:33d17011b600640f107e134b06d523a73e57a8adec2b0b319fc17077f3e77a3a
+image: renovate/renovate:36.0.0
 
 variables:
   LOG_LEVEL: debug
