@@ -16,6 +16,11 @@
       "description": "Do not pin package.json deps",
       "matchFiles": ["package.json"],
       "rangeStrategy": "replace"
+    },
+    {
+      "matchBaseBranches": ["/^v\\d+$/"],
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
     }
   ]
 }
