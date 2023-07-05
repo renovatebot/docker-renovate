@@ -4,6 +4,7 @@
   "ignorePresets": [":maintainLockFilesWeekly"],
   "prCreation": "immediate",
   "automergeType": "pr",
+  "baseBranches": ["$default", "/^v\\d+$/"],
   "packageRules": [
     {
       "matchPackageNames": ["renovate"],
