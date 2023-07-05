@@ -34,7 +34,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
       - name: Build and Publish to docker.io
-        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
           platforms: linux/amd64,linux/arm64
@@ -43,7 +43,7 @@ jobs:
 
       - name: Build and Publish to ghcr.io
         if: github.ref == 'refs/heads/main'
-        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
           image-prefix: ghcr.io/${{ github.repository_owner }}
@@ -51,7 +51,7 @@ jobs:
 
       - name: Build and Publish slim to docker.io
         if: github.ref == 'refs/heads/main'
-        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
           last-only: true
@@ -59,7 +59,7 @@ jobs:
 
       - name: Build and Publish slim to ghcr.io
         if: github.ref == 'refs/heads/main'
-        uses: containerbase/internal-tools@7fe2efd64c81896621492c7d130b9f4f31aff0fa # v1.18.9
+        uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
           platforms: linux/amd64,linux/arm64
