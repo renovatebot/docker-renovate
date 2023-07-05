@@ -3,10 +3,10 @@ name: build
 on:
   push:
     branches:
-      - main
+      - v35
   pull_request:
     branches:
-      - main
+      - v35
 
 permissions:
   contents: read
@@ -24,7 +24,7 @@ jobs:
       - uses: sigstore/cosign-installer@6e04d228eb30da1757ee4e1dd75a0ec73a653e06 # v3.1.1
 
       - name: Docker registry login
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/v35'
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
@@ -34,7 +34,7 @@ jobs:
         with:
           command: docker-builder
           last-only: true
-          dry-run: ${{github.ref != 'refs/heads/main'}}
+          dry-run: ${{github.ref != 'refs/heads/v35'}}
           tag-suffix: slim
 
       - name: Build and Publish to ghcr.io
@@ -43,5 +43,5 @@ jobs:
           command: docker-builder
           image-prefix: ghcr.io/${{ github.repository_owner }}
           last-only: true
-          dry-run: ${{github.ref != 'refs/heads/main'}}
+          dry-run: ${{github.ref != 'refs/heads/v35'}}
           tag-suffix: slim
