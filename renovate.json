@@ -14,7 +14,7 @@
     },
     {
       "description": "Do not pin package.json deps",
-      "matchFiles": ["package.json"],
+      "matchFileNames": ["package.json"],
       "rangeStrategy": "replace"
     },
     {
