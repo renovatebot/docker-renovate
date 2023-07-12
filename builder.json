@@ -1,5 +1,5 @@
 {
   "image": "renovate",
   "startVersion": "36.0.0",
-  "cache": "ghcr.io/renovatebot/docker-build-cache"
+  "cache": "docker.io/renovate/docker-build-cache"
 }
