@@ -28,7 +28,7 @@ jobs:
       - uses: sigstore/cosign-installer@6e04d228eb30da1757ee4e1dd75a0ec73a653e06 # v3.1.1
 
       - name: Docker registry login
-        if: github.ref == 'refs/heads/main'
+        if: github.ref_name == 'main'
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
@@ -37,12 +37,12 @@ jobs:
         uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ github.ref_name == 'main' && 'linux/amd64,linux/arm64' || '' }}
           last-only: true
-          dry-run: ${{github.ref != 'refs/heads/main'}}
+          dry-run: ${{ github.ref_name != 'main' }}
 
       - name: Build and Publish to ghcr.io
-        if: github.ref == 'refs/heads/main'
+        if: github.ref_name == 'main'
         uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
@@ -50,7 +50,7 @@ jobs:
           last-only: true
 
       - name: Build and Publish slim to docker.io
-        if: github.ref == 'refs/heads/main'
+        if: github.ref_name == 'main'
         uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
@@ -58,7 +58,7 @@ jobs:
           tag-suffix: slim
 
       - name: Build and Publish slim to ghcr.io
-        if: github.ref == 'refs/heads/main'
+        if: github.ref_name == 'main'
         uses: containerbase/internal-tools@fc244328b0a7922683c5466705520a8843bb4e17 # v1.19.1
         with:
           command: docker-builder
