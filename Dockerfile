@@ -14,7 +14,7 @@ LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" 
 RUN prepare-tool all
 
 # renovate: datasource=node
-RUN install-tool node v18.16.1
+RUN install-tool node v18.17.0
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.19
