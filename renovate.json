@@ -7,6 +7,11 @@
   "baseBranches": ["$default", "/^v\\d+$/"],
   "packageRules": [
     {
+      "description": "No longer updates these branches",
+      "matchBaseBranches": ["v35"],
+      "enabled": false
+    },
+    {
       "matchPackageNames": ["renovate"],
       "automerge": true,
       "separateMinorPatch": false,
