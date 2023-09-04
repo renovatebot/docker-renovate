@@ -63,7 +63,7 @@ module.exports = {
   endpoint: process.env.CI_API_V4_URL,
   hostRules: [
     {
-      baseUrl: 'https://registry.example.com',
+      matchHost: 'https://registry.example.com',
       username: 'other-user',
       password: process.env.GITLAB_REGISTRY_TOKEN,
     },
