@@ -47,8 +47,8 @@ The `config.js` should be in repo root, because Renovate will load it from curre
 If you want to override the Git author and committer, you need to override with environment variables (see below).
 This is necessary, because the env is preset by Gitlab and overrides any Git config done by Renovate.
 
-There is a `hostRule` for the GitLab Docker registry.
-The `hostRule`is only required if you use the GitLab registry and Renovate should provide updates from that.
+There are `hostRule`'s for the GitLab container registry, python package repository, npm package registry, and composer package registry.
+These `hostRule`'s are only required if you use the specific registry and Renovate should provide updates from that.
 `GITLAB_REGISTRY_TOKEN` is a gitlab [variable](https://docs.gitlab.com/ee/ci/variables/#create-a-custom-variable-in-the-ui).
 
 ```js
@@ -66,6 +66,21 @@ module.exports = {
       matchHost: 'https://registry.example.com',
       username: 'other-user',
       password: process.env.GITLAB_REGISTRY_TOKEN,
+    },
+    {
+      matchHost: process.env.CI_API_V4_URL,
+      hostType: 'pypi',
+      token: process.env.RENOVATE_TOKEN,
+    },
+    {
+      matchHost: process.env.CI_API_V4_URL,
+      hostType: 'npm',
+      token: process.env.RENOVATE_TOKEN,
+    },
+    {
+      matchHost: process.env.CI_API_V4_URL,
+      hostType: 'packagist',
+      token: process.env.RENOVATE_TOKEN,
     },
   ],
   platform: 'gitlab',
