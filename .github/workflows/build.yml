@@ -34,7 +34,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
       - name: Build and Publish
-        uses: containerbase/internal-tools@3eeb1e17b27610f63af7dca29fc0ec7775e92c4f # v1.21.30
+        uses: containerbase/internal-tools@0473479405307b8c75949e5bd9a298e960298215 # v1.21.31
         with:
           command: docker-builder
           platforms: ${{ github.ref_name == 'main' && 'linux/amd64,linux/arm64' || '' }}
@@ -45,7 +45,7 @@ jobs:
 
       - name: Build and Publish slim
         if: github.ref_name == 'main'
-        uses: containerbase/internal-tools@3eeb1e17b27610f63af7dca29fc0ec7775e92c4f # v1.21.30
+        uses: containerbase/internal-tools@0473479405307b8c75949e5bd9a298e960298215 # v1.21.31
         with:
           command: docker-builder
           image-prefixes: ghcr.io/${{ github.repository_owner }}
