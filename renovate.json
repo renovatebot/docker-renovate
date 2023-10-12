@@ -1,9 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>renovatebot/.github"],
+  "extends": [
+    "local>renovatebot/.github",
+    "local>renovatebot/.github//merge-queue.json"
+  ],
   "ignorePresets": [":maintainLockFilesWeekly"],
-  "prCreation": "immediate",
-  "automergeType": "pr",
   "baseBranches": ["$default", "/^v\\d+$/"],
   "packageRules": [
     {
