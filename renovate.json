@@ -5,8 +5,6 @@
     "local>renovatebot/.github//merge-queue.json"
   ],
   "ignorePresets": [":maintainLockFilesWeekly"],
-  "prCreation": "immediate",
-  "automergeType": "pr",
   "baseBranches": ["$default", "/^v\\d+$/"],
   "packageRules": [
     {
