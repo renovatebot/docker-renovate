@@ -6,7 +6,7 @@ The pipeline should also work on shared runners.
 ## bitbucket-pipelines.yml
 
 ```yml
-image: renovate/renovate:37.56.3
+image: renovate/renovate:37.61.3
 
 definitions:
   caches:
