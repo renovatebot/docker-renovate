@@ -17,7 +17,7 @@ RUN prepare-tool all
 RUN install-tool node v18.18.2
 
 # renovate: datasource=npm versioning=npm
-RUN install-tool yarn 1.22.19
+RUN install-tool yarn 1.22.20
 
 WORKDIR /usr/src/app
 
