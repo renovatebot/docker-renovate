@@ -42,13 +42,3 @@ jobs:
           image-prefixes: ghcr.io/${{ github.repository_owner }}
           last-only: true
           dry-run: ${{ github.ref_name != 'main' }}
-
-
-      - name: Build and Publish slim
-        if: github.ref_name == 'main'
-        uses: containerbase/internal-tools@cce4ed496d2180a0ea727e82ec3e838c68d107b0 # v3.0.18
-        with:
-          command: docker-builder
-          image-prefixes: ghcr.io/${{ github.repository_owner }}
-          last-only: true
-          tag-suffix: slim
