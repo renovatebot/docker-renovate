@@ -1,28 +1,17 @@
-# renovate: datasource=npm depName=renovate versioning=npm
+# renovate: datasource=npm depName=renovate
 ARG RENOVATE_VERSION=37.78.1
 
 # Base image
 #============
-FROM ghcr.io/containerbase/base:9.26.0@sha256:d64249bced930342154688a79d0bc537423c2e5918c476361e0e22f5fd734c83 AS base
+FROM ghcr.io/renovatebot/base-image:1.0.0@sha256:0ab2ac48ff39d8e8803be935ea9d0845aa3965ef30a2373d03e664322ee5ca92 AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
   org.opencontainers.image.url="https://renovatebot.com" \
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
-# prepare all tools
-RUN prepare-tool all
-
-# renovate: datasource=node
-RUN install-tool node v18.19.0
-
-# renovate: datasource=npm versioning=npm
-RUN install-tool yarn 1.22.21
 
 WORKDIR /usr/src/app
-
-# renovate: datasource=github-releases packageName=moby/moby
-RUN install-tool docker v24.0.7
 
 ENV RENOVATE_X_IGNORE_NODE_WARN=true
 
