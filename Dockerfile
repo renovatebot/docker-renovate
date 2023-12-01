@@ -31,7 +31,9 @@ RUN set -ex; \
   node -e "new require('re2')('.*').exec('test')"; \
   true
 
-LABEL org.opencontainers.image.version="${RENOVATE_VERSION}"
+LABEL \
+  org.opencontainers.image.version="${RENOVATE_VERSION}" \
+  org.label-schema.version="${RENOVATE_VERSION}"
 
 # Numeric user ID for the ubuntu user. Used to indicate a non-root user to OpenShift
 USER 1000
