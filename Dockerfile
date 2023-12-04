@@ -20,6 +20,7 @@ CMD ["renovate"]
 
 ARG RENOVATE_VERSION
 
+ARG RE_DOWNLOAD_MIRROR=https://github.com/containerbase/node-re2-prebuild
 RUN install-tool renovate
 
 # Compabillity, so `config.js` can access renovate and deps
