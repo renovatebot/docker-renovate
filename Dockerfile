@@ -1,28 +1,17 @@
 # renovate: datasource=npm depName=renovate versioning=npm
-ARG RENOVATE_VERSION=37.76.1
+ARG RENOVATE_VERSION=37.83.0
 
 # Base image
 #============
-FROM ghcr.io/containerbase/base:9.25.0@sha256:f0d880fff787b8a67b44f745d111b9336488754e7077903b91c4a761b5aee820 AS base
+FROM ghcr.io/renovatebot/base-image:1.1.2@sha256:54df57ae52fa4e89bd06485bb77d15e9009452d67eee8fce29354efd5d0c8608 AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
   org.opencontainers.image.url="https://renovatebot.com" \
   org.opencontainers.image.licenses="AGPL-3.0-only"
 
-# prepare all tools
-RUN prepare-tool all
-
-# renovate: datasource=node
-RUN install-tool node v18.19.0
-
-# renovate: datasource=npm versioning=npm
-RUN install-tool yarn 1.22.21
 
 WORKDIR /usr/src/app
-
-# renovate: datasource=github-releases packageName=moby/moby
-RUN install-tool docker v24.0.7
 
 ENV RENOVATE_X_IGNORE_NODE_WARN=true
 
@@ -42,7 +31,9 @@ RUN set -ex; \
   node -e "new require('re2')('.*').exec('test')"; \
   true
 
-LABEL org.opencontainers.image.version="${RENOVATE_VERSION}"
+LABEL \
+  org.opencontainers.image.version="${RENOVATE_VERSION}" \
+  org.label-schema.version="${RENOVATE_VERSION}"
 
 # Numeric user ID for the ubuntu user. Used to indicate a non-root user to OpenShift
 USER 1000
