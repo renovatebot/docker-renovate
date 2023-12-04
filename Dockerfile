@@ -20,7 +20,7 @@ CMD ["renovate"]
 
 ARG RENOVATE_VERSION
 
-ARG RE_DOWNLOAD_MIRROR=https://github.com/containerbase/node-re2-prebuild
+ARG RE2_DOWNLOAD_MIRROR=https://github.com/containerbase/node-re2-prebuild/releases/download RE2_DOWNLOAD_SKIP_PATH=1
 RUN install-tool renovate
 
 # Compabillity, so `config.js` can access renovate and deps
