@@ -3,7 +3,7 @@ ARG RENOVATE_VERSION=37.128.2
 
 # Base image
 #============
-FROM ghcr.io/renovatebot/base-image:1.13.1@sha256:80b4fac7bb32c01933b638da402e019db90ba861e18ff60c9e06d2caa21a7f7b AS base
+FROM ghcr.io/renovatebot/base-image:1.13.2@sha256:7a8653bf454e04f3401bf8058e2d23e9c4c6183b91ccfb789970cc48204216cd AS base
 
 LABEL name="renovate"
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/renovate" \
