@@ -1,5 +1,8 @@
 # docker-renovate
 
+> [!IMPORTANT]
+> This image is now build from main renovate repo
+
 [![Build status](https://github.com/renovatebot/docker-renovate/actions/workflows/build.yml/badge.svg)](https://github.com/renovatebot/docker-renovate/actions?query=workflow%3Abuild)
 [![Docker Image Size](https://img.shields.io/docker/image-size/renovate/renovate/latest)](https://hub.docker.com/r/renovate/renovate)
 [![Version](https://img.shields.io/docker/v/renovate/renovate/latest)](https://hub.docker.com/r/renovate/renovate)
