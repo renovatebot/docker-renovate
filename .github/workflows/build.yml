@@ -26,16 +26,16 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
-      - uses: sigstore/cosign-installer@1fc5bd396d372bee37d608f955b336615edf79c8 # v3.2.0
+      - uses: sigstore/cosign-installer@e1523de7571e31dbe865fd2e80c5c7c23ae71eb4 # v3.4.0
 
       - name: Docker registry login
-        if: github.ref_name == 'main' && false
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+        if: github.ref_name == 'main' && false
 
       - name: Build and Publish
-        uses: containerbase/internal-tools@9f7cb1408116743c56ef02d432761ed7f5ecdd2a # v3.0.23
+        uses: containerbase/internal-tools@e7bd2e8cedd99c9b24982865534cb7c9bf88620b # v3.0.55
         with:
           command: docker-builder
           platforms: ${{ github.ref_name == 'main' && 'linux/amd64,linux/arm64' || '' }}
@@ -43,12 +43,11 @@ jobs:
           last-only: true
           dry-run: ${{ github.ref_name != 'main' || true }}
 
-
       - name: Build and Publish slim
-        if: github.ref_name == 'main' && false
-        uses: containerbase/internal-tools@9f7cb1408116743c56ef02d432761ed7f5ecdd2a # v3.0.23
+        uses: containerbase/internal-tools@e7bd2e8cedd99c9b24982865534cb7c9bf88620b # v3.0.55
         with:
           command: docker-builder
           image-prefixes: ghcr.io/${{ github.repository_owner }}
           last-only: true
           tag-suffix: slim
+        if: github.ref_name == 'main' && false
