@@ -6,6 +6,7 @@
   ],
   "ignorePresets": [":maintainLockFilesWeekly"],
   "baseBranches": ["$default", "/^v\\d+$/"],
+  "enabled": false,
   "packageRules": [
     {
       "description": "No longer updates these branches",

@@ -1,9 +1,9 @@
 name: build
 
 on:
-  push:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
   pull_request:
     branches:
       - main
@@ -42,7 +42,6 @@ jobs:
           image-prefixes: ghcr.io/${{ github.repository_owner }}
           last-only: true
           dry-run: ${{ github.ref_name != 'main' }}
-
 
       - name: Build and Publish slim
         if: github.ref_name == 'main'
